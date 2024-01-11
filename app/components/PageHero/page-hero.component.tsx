@@ -4,7 +4,7 @@ import { LottiePlayer } from '../LottiePlayer/lottie-player.component'
 
 export const PageHero = () => {
   return (
-    <section className="flex justify-center items-center lg:pt-0 relative h-lvh isolate overflow-hidden bg-gray-900">
+    <section className="flex justify-center items-center lg:pt-0 relative h-screen isolate overflow-hidden bg-gray-900">
       <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
