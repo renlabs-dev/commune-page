@@ -7,7 +7,7 @@ type TLottiePlayerProps = {
 }
 
 export const LottiePlayer = (props: TLottiePlayerProps) => {
-  const { animationData, className = 'opacity-40 max-w-4xl' } = props
+  const { animationData, className = 'opacity-40 max-w-4xl animate-fadeIn' } = props
   return (
     <Lottie
       animationData={animationData}

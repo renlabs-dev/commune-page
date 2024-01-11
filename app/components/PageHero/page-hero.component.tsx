@@ -42,7 +42,7 @@ export const PageHero = () => {
         />
       </div>
       <div className="mx-auto max-w-7xl py-0 md:pt-40 z-50 md:flex lg:px-8 lg:py-40">
-        <div className="flex items-center lg:items-start flex-col z-50 justify-center mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl ">
+        <div className="flex items-center flex-col z-50 justify-center mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl ">
 
           <div className='flex items-center'>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -65,14 +65,10 @@ export const PageHero = () => {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center absolute top-2/4 left-2/3 md:top-auto md:left-auto lg:justify-start mx-auto max-w-2xl lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-lg flex-none md:max-w-3xl lg:max-w-5xl">
-            <LottiePlayer
-              animationData={developer}
-              className='opacity-40 max-w-4xl'
-            />
+        {/* <div className="flex justify-center absolute top-2/4 left-2/3 md:top-auto md:left-auto lg:justify-start mx-auto max-w-2xl lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+          <div className="transition ease-in-out delay-150 max-w-lg flex-none md:max-w-3xl lg:max-w-5xl">
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
