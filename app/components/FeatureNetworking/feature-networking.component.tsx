@@ -36,7 +36,7 @@ const features = [
 
 export const FeatureNetworking = () => {
   return (
-    <section id='network' className="flex justify-center items-center h-svh lg:pt-0 relative isolate overflow-hidden bg-gray-900">
+    <section id='network' className="flex justify-center items-center h-lvh lg:pt-0 relative isolate overflow-hidden bg-gray-900">
       <svg
         className="absolute inset-0 rotate-180 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
