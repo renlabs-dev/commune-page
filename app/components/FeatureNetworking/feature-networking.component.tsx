@@ -36,7 +36,7 @@ const features = [
 
 export const FeatureNetworking = () => {
   return (
-    <section id='network' className="flex justify-center items-center h-screen lg:pt-0 relative isolate overflow-hidden bg-gray-900">
+    <section id='network' className="flex justify-center items-center h-full lg:pt-0 relative isolate overflow-hidden bg-gray-900">
       <svg
         className="absolute inset-0 rotate-180 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
@@ -66,16 +66,15 @@ export const FeatureNetworking = () => {
         aria-hidden="true"
       >
         <div
-          className="aspect-[1108/632] rotate-180 w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-30"
+          className="aspect-[500/800] rotate-45 w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-10"
           style={{
             clipPath:
               'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
           }}
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-2xl lg:mx-0">
-
           <h2 className="text-base font-semibold leading-7 text-indigo-400">Everything you need</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Networking & Wrapping
             Over Everything 🌎</p>

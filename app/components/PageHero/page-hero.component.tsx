@@ -41,7 +41,7 @@ export const PageHero = () => {
           }}
         />
       </div>
-      <div className="mx-auto max-w-7xl py-0 md:pt-40 z-50 md:flex lg:px-8 lg:py-40">
+      <div className="mx-auto max-w-7xl py-0 z-50 md:flex lg:px-8 lg:py-40">
         <div className="flex items-center flex-col z-50 justify-center mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl ">
 
           <div className='flex items-center'>
