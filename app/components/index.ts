@@ -1,3 +1,3 @@
-export { FeatureNetworking } from './FeatureNetworking'
+export { HeroSection, NetworkingSection, ReusabilitySection, ScalabilitySection, NamespacesSection, TokenomicsSection, ValidatorsSection } from './Sections'
 export { LottiePlayer } from './LottiePlayer'
-export { PageHero } from './PageHero'
+export { GradientLayer, GridLines } from './BackgroundEffects'
