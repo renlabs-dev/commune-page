@@ -1,0 +1,7 @@
+export { HeroSection } from './Hero'
+export { NetworkingSection } from './Networking'
+export { ReusabilitySection } from './Reusability'
+export { ScalabilitySection } from './Scalability'
+export { NamespacesSection } from './Namespaces'
+export { TokenomicsSection } from './Tokenomics'
+export { ValidatorsSection } from './Validators'
