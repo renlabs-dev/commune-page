@@ -1,0 +1,1 @@
+export { NamespacesSection } from './namespaces-section.component'
