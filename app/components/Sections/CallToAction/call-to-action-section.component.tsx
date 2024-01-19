@@ -3,20 +3,19 @@ export const CallToActionSection = () => {
     <section
       className={`relative isolate m-8 flex w-full max-w-screen-2xl flex-col items-center overflow-hidden rounded-xl bg-gray-800 px-6 py-12 text-center shadow-2xl drop-shadow-xl sm:rounded-3xl lg:m-8`}
     >
-      {/* <div className="relative isolate overflow-hidden w-full m-8 bg-gray-800 px-6 py-24 text-center shadow-2xl sm:rounded-3xl"> */}
-      <h2 className='max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-        Join our Commune on Discord
+      <h2 className='max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-3xl'>
+        Commune Hub
       </h2>
-      <p className='mt-6 max-w-xl text-lg leading-8 text-gray-300'>
-        Connect, innovate, and shape the future of software development.
+      <p className='mt-6 max-w-xl text-base leading-8 text-gray-300'>
+        Join Commune&apos;s Discord. Code, connect, innovate – Shape the Future Together! 🚀
       </p>
       <a
         target='_blank'
-        className='relative isolate mt-6 max-w-sm overflow-hidden rounded-xl px-12 py-2 text-center text-white shadow-2xl outline drop-shadow-xl hover:text-gray-300 hover:outline-gray-300 sm:rounded-3xl lg:m-8'
+        className='relative isolate mt-6 max-w-sm overflow-hidden rounded-2xl px-12 py-2 text-center text-blue-400 shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white drop-shadow-xl hover:text-gray-300 hover:outline-gray-300  lg:m-8'
         href='https://discord.com/invite/A8JGkZ9Dmm'
         //  className="rounded-md bg-gray-100 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
-        Join now <span aria-hidden='true'>→</span>
+        Join our community now! <span aria-hidden='true'>→</span>
       </a>
       <svg
         viewBox='0 0 1024 1024'
