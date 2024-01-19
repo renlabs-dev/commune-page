@@ -1,16 +1,28 @@
-import { HeroSection, NamespacesSection, NetworkingSection, ReusabilitySection, ScalabilitySection, TokenomicsSection, ValidatorsSection } from "./components";
-
+import { GenericSection, Header, HeroSection } from './components'
+import { sections } from './utils'
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-      <NetworkingSection />
-      <ReusabilitySection />
-      <ScalabilitySection />
-      <NamespacesSection />
-      <TokenomicsSection />
-      <ValidatorsSection />
-    </main>
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <HeroSection />
+        {sections.map((section, index) => {
+          return (
+            <GenericSection
+              key={index}
+              sectionName={section.sectionName}
+              title={section.title}
+              subtitle={section.subtitle}
+              color={section.color}
+              features={section.features}
+              gradientColor={section.gradientColor}
+            />
+          )
+        })}
+      </main>
+    </>
   )
 }
