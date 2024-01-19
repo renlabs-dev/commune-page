@@ -1,1 +1,0 @@
-export { TokenomicsSection } from './tokenomics-section.component'

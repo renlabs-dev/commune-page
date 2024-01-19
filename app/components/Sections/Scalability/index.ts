@@ -1,1 +1,0 @@
-export { ScalabilitySection } from './scalability-section.component'
