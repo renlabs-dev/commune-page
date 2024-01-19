@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Lottie from 'react-lottie-player'
 
 type TLottiePlayerProps = {
@@ -7,13 +7,9 @@ type TLottiePlayerProps = {
 }
 
 export const LottiePlayer = (props: TLottiePlayerProps) => {
-  const { animationData, className = 'opacity-40 max-w-4xl animate-fadeIn' } = props
+  const { animationData, className = 'opacity-40 max-w-4xl animate-fadeIn' } =
+    props
   return (
-    <Lottie
-      animationData={animationData}
-      play
-      loop
-      className={className}
-    />
+    <Lottie animationData={animationData} play loop className={className} />
   )
 }
