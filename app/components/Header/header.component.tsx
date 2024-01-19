@@ -26,10 +26,11 @@ export const Header = () => {
         <a href='#' className='-m-1.5 p-1.5'>
           <span className='sr-only'>Commune AI</span>
           <Image
-            src={'./commune-v2.svg'}
-            width={30}
-            height={30}
+            src={'./commune-v1.svg'}
+            width={61.67}
+            height={90}
             alt='commune logo'
+            className='h-12'
           />
         </a>
         <div className='flex lg:hidden'>
@@ -71,10 +72,11 @@ export const Header = () => {
                 alt=""
               /> */}
               <Image
-                src={'./commune-v2.svg'}
-                width={30}
-                height={30}
-                alt='commune-logo'
+                src={'./commune-v1.svg'}
+                width={61.67}
+                height={90}
+                alt='commune logo'
+                className='h-12'
               />
             </a>
             <button
