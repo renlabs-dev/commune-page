@@ -27,7 +27,7 @@ export const GenericSection = ({
   return (
     <section
       id={sectionName}
-      className={`${color} relative isolate m-6 w-full max-w-screen-2xl overflow-hidden rounded-xl bg-gray-800 text-center shadow-2xl drop-shadow-xl sm:rounded-3xl lg:m-8`}
+      className={`${color} relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 p-6 text-center shadow-2xl drop-shadow-xl md:p-12 lg:m-8 lg:px-24 lg:py-40`}
     >
       <GridLines />
       <GradientLayer
@@ -35,7 +35,7 @@ export const GenericSection = ({
         gradientStyle={gradientStyle}
       />
 
-      <div className='mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-24 text-left md:text-left lg:px-8 lg:py-40'>
+      <div className='mx-auto flex max-w-7xl flex-col items-center justify-center text-left'>
         <div className='mx-auto max-w-2xl text-center lg:mx-0'>
           <h2 className='text-base font-semibold leading-7 text-indigo-400'>
             {subtitle}
