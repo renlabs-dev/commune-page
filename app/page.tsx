@@ -5,28 +5,24 @@ import { sections } from './utils'
 export default async function Home() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <HeroSection />
-        <div className='mx-8 flex flex-col items-center'>
-          {sections.map((section, index) => {
-            return (
-              <GenericSection
-                key={index}
-                sectionName={section.sectionName}
-                title={section.title}
-                subtitle={section.subtitle}
-                color={section.color}
-                features={section.features}
-                gradientColor={section.gradientColor}
-              />
-            )
-          })}
-          <CallToActionSection />
-        </div>
-      </main>
+      <Header />
+      <HeroSection />
+      <div className='mx-8 flex flex-col items-center'>
+        <CallToActionSection />
+        {sections.map((section, index) => {
+          return (
+            <GenericSection
+              key={index}
+              sectionName={section.sectionName}
+              title={section.title}
+              subtitle={section.subtitle}
+              color={section.color}
+              features={section.features}
+              gradientColor={section.gradientColor}
+            />
+          )
+        })}
+      </div>
     </>
   )
 }
