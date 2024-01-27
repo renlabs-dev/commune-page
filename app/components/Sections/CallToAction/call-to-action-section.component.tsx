@@ -4,7 +4,7 @@ export const CallToActionSection = () => {
   return (
     <section
       id='discord'
-      className={`relative isolate m-6 flex w-11/12 max-w-screen-xl flex-col items-center overflow-hidden rounded-3xl bg-gray-800  p-6 text-center shadow-2xl drop-shadow-xl lg:m-8`}
+      className={`relative isolate m-6 flex w-11/12 max-w-screen-xl flex-col items-center overflow-hidden rounded-3xl bg-gray-800  p-6 text-center shadow-2xl lg:m-8`}
     >
       <h2 className='max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-3xl'>
         Commune Hub
