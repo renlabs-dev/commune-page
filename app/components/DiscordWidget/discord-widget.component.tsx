@@ -18,13 +18,14 @@ export const DiscordWidget = async () => {
   if (data)
     return (
       <div className='lg:max-w-10/12 mt-8 flex flex-col items-center rounded-2xl bg-gradient-to-br from-blue-600 to-gray-400 p-6 shadow-xl md:flex-row md:items-center lg:px-6'>
-        <div className='mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-900/40 shadow-xl md:mb-0 md:mr-3'>
+        <div className='p-1.5 mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-900/40 shadow-xl md:mb-0 md:mr-3'>
           <Image
             src={'./commune-v2.svg'}
+            priority
             width={25}
             height={25}
-            className='mr-[3px]'
-            alt={'Commune Logo'}
+            alt='commune logo'
+            className='mr-[3px] h-8'
           />
         </div>
         <div className='sm:flex-col md:flex md:items-start '>
