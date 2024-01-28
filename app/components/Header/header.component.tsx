@@ -7,7 +7,11 @@ import Link from 'next/link'
 
 const navigation = [
   { name: 'Docs', href: '#', external: false },
-  { name: 'Whitepaper', href: 'https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf', external: true },
+  {
+    name: 'Whitepaper',
+    href: 'https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf',
+    external: true,
+  },
   { name: 'Modules', href: '#', external: false },
 ]
 
@@ -17,12 +21,12 @@ export const Header = () => {
   return (
     <header className='fixed z-50 w-full'>
       <nav
-        className={`mx-auto ${mobileMenuOpen && 'hidden'} grid grid-cols-3 grid-flow-col w-full items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
+        className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
         aria-label='Global'
       >
         <Link
           href='#'
-          className={`p-1.5 col-span-1 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
+          className={`col-span-1 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
         >
           <span className='sr-only'>Commune AI</span>
           <Image
@@ -34,7 +38,7 @@ export const Header = () => {
             priority
           />
         </Link>
-        <div className='hidden lg:flex lg:gap-x-12 justify-center'>
+        <div className='hidden justify-center lg:flex lg:gap-x-12'>
           {navigation.map((item) => (
             <Link
               target={item.external ? '_blank' : '_self'}
@@ -43,10 +47,10 @@ export const Header = () => {
               className='text-sm font-semibold leading-6 text-gray-100 hover:text-gray-400'
             >
               {item.name}
-            </ Link>
+            </Link>
           ))}
         </div>
-        <div className='hidden lg:flex lg:gap-x-4 justify-end'>
+        <div className='hidden justify-end lg:flex lg:gap-x-4'>
           <Link
             href='https://github.com/commune-ai'
             target='_blank'
@@ -58,7 +62,7 @@ export const Header = () => {
               src={'./github-icon-white.svg'}
               width={32}
               height={32}
-              alt="Github logo"
+              alt='Github logo'
             />
           </Link>
           <Link
@@ -72,16 +76,15 @@ export const Header = () => {
               src={'./discord-icon-white.svg'}
               width={32}
               height={32}
-              alt="Discord logo"
+              alt='Discord logo'
             />
           </Link>
         </div>
-        <div className='flex lg:hidden col-span-3 justify-end'>
+        <div className='col-span-3 flex justify-end lg:hidden'>
           <button
             type='button'
-            className='-m-2.5 items-center justify-center p-1.5 text-gray-100 flex h-12 w-12 rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]
+            className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]
             '
-
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className='sr-only'>Open main menu</span>
@@ -90,15 +93,13 @@ export const Header = () => {
         </div>
       </nav>
 
-      <nav
-        className={`lg:hidden ${mobileMenuOpen ? 'visible' : 'hidden'}`}
-      >
+      <nav className={`lg:hidden ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className='fixed inset-0 z-10' />
         <div className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900/50 px-6 py-6 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
           <div className='flex items-center justify-between'>
             <Link
               href='#'
-              className="p-1.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]"
+              className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
             >
               <span className='sr-only'>Commune</span>
               <Image
@@ -111,7 +112,7 @@ export const Header = () => {
             </Link>
             <button
               type='button'
-              className='-m-2.5 items-center justify-center p-1.5 text-gray-100 flex h-12 w-12 rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]'
+              className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className='sr-only'>Close menu</span>
@@ -120,7 +121,7 @@ export const Header = () => {
           </div>
           <div className='mt-6 flow-root'>
             <div className='-my-6 divide-y divide-gray-400/20'>
-              <div className='mt-10 space-y-2 py-6 ml-2'>
+              <div className='ml-2 mt-10 space-y-2 py-6'>
                 {navigation.map((item) => (
                   <Link
                     target={item.external ? '_blank' : '_self'}
@@ -132,31 +133,31 @@ export const Header = () => {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className='py-6'>
                 <Link
                   href='https://github.com/commune-ai'
                   target='_blank'
-                  className={`p-1.5 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
+                  className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
                 >
                   <span className='sr-only'>Commune Github</span>
                   <Image
                     src={'./github-icon-white.svg'}
                     width={32}
                     height={32}
-                    alt="Github logo"
+                    alt='Github logo'
                   />
                 </Link>
                 <Link
                   href='https://github.com/commune-ai'
                   target='_blank'
-                  className="p-1.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]"
+                  className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
                 >
                   <span className='sr-only'>Commune Discord</span>
                   <Image
                     src={'./discord-icon-white.svg'}
                     width={32}
                     height={32}
-                    alt="Discord logo"
+                    alt='Discord logo'
                   />
                 </Link>
               </div>
