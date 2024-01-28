@@ -1,4 +1,3 @@
-'use client'
 type TGradientLayerProps = {
   wrapperOverwriteStyle?: string
   gradientColor?: string
