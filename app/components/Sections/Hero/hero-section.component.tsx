@@ -22,17 +22,23 @@ export const HeroSection = () => {
             Renovating the way we build software for everyone.
           </p>
           <div className='z-10 mt-10 flex items-center gap-x-6'>
-            <Link
-              href='#discord'
-              className='rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all ease-in hover:from-indigo-500 hover:to-blue-900 hover:ease-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400'
-            >
-              Get started
+            <Link href='#discord'>
+              <span
+                className='rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all ease-in hover:from-indigo-500 hover:to-blue-900 hover:ease-in focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400'
+                aria-label='Get started with Commune AI'
+              >
+                Get started
+              </span>
             </Link>
             <Link
               href='#networking'
               className='text-sm font-semibold leading-6 text-white'
-            >
-              Learn more <span aria-hidden='true'>→</span>
+              aria-label='Learn more about Commune AI'  >
+              <span>
+
+                Learn more <span aria-hidden='true'>→</span>
+              </span>
+
             </Link>
           </div>
         </div>
