@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import { GenericSection, Header, HeroSection } from './components'
 import { CallToActionSection } from './components/Sections/CallToAction'
 import Loading from './loading'
