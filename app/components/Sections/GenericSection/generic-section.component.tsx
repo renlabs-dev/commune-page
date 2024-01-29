@@ -28,17 +28,20 @@ export const GenericSection = ({
   return (
     <section
       id={sectionName}
-      className={`relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 ${color} p-6 py-12 text-center shadow-2xl md:p-12 lg:m-8 lg:px-24 lg:py-40`}
+      className={`relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 ${color} px-6 py-16 text-center shadow-2xl md:p-12 lg:m-8 lg:p-24 `}
     >
       <GridLines />
-      <GradientLayer gradientColor={gradientColor} gradientStyle={gradientStyle} />
+      <GradientLayer
+        gradientColor={gradientColor}
+        gradientStyle={gradientStyle}
+      />
 
-      <div className='mx-auto max-w-7xl flex flex-col items-center justify-center text-left'>
+      <div className='mx-auto flex max-w-7xl flex-col items-center justify-center text-left'>
         <div className='mx-auto max-w-2xl'>
-          <h2 className='text-base font-semibold leading-7 text-indigo-400 text-center'>
+          <h2 className='text-center text-base font-semibold leading-7 text-indigo-400'>
             {subtitle}
           </h2>
-          <p className='mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl text-center'>
+          <p className='mt-2 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl'>
             {title}
           </p>
         </div>

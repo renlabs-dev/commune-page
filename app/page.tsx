@@ -1,5 +1,10 @@
 import { Suspense } from 'react'
-import { GenericSection, Header, HeroSection } from './components'
+import {
+  GenericSection,
+  Header,
+  HeroSection,
+  FrequentQuestions,
+} from './components'
 import { CallToActionSection } from './components/Sections/CallToAction'
 import Loading from './loading'
 import { sections } from './utils'
@@ -24,6 +29,7 @@ export default async function Home() {
             />
           )
         })}
+        <FrequentQuestions />
       </div>
     </Suspense>
   )

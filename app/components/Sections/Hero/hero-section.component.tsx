@@ -3,7 +3,7 @@ import { GridLines, GradientLayer } from '../..'
 
 export const HeroSection = () => {
   return (
-    <section
+    <div
       id='hero'
       className='relative isolate flex h-screen items-center justify-center overflow-hidden bg-gray-900 px-10 lg:pt-0'
     >
@@ -33,16 +33,15 @@ export const HeroSection = () => {
             <Link
               href='#networking'
               className='text-sm font-semibold leading-6 text-white'
-              aria-label='Learn more about Commune AI'  >
+              aria-label='Learn more about Commune AI'
+            >
               <span>
-
                 Learn more <span aria-hidden='true'>→</span>
               </span>
-
             </Link>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

@@ -39,7 +39,12 @@ export const DiscordWidget = async () => {
             </div>
           </div>
         </div>
-        <a className='relative' href={data.instant_invite} target='_blank' rel='noopener noreferrer'>
+        <a
+          className='relative'
+          href={data.instant_invite}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <span className='absolute right-0 mt-[10px] inline-block h-3 w-3 animate-ping rounded-full bg-gradient-to-br from-indigo-500 to-gray-100 md:mt-0 lg:mr-1' />
           <span className='absolute right-0 mt-[10px] inline-block h-3 w-3 rounded-full bg-gradient-to-br from-indigo-500 to-gray-100 md:mt-0 lg:mr-1' />
           <button className='mt-3 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-800 px-4 py-3 text-sm font-semibold text-white hover:from-indigo-500 hover:to-blue-900 md:ml-6 md:mt-0'>
