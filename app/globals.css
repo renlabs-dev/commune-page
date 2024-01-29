@@ -7,20 +7,19 @@
 }
 
 section {
-  animation: fadeAndSlide 1.5s linear both;
+  animation: fadeAndSlideRight 1.5s linear both;
   animation-timeline: view();
   animation-duration: 1ms;
-  animation-range: entry 2% cover 20%;
+  animation-range: entry 1% cover 12%;
 }
 
-@keyframes fadeAndSlide {
+@keyframes fadeAndSlideRight {
   from {
-    transform: translateY(5%);
+    transform: translateX(-20%);
     opacity: 0;
   }
   to {
     opacity: 1;
-    transform: translateY(0%);
-
+    transform: translateX(0);
   }
 }
