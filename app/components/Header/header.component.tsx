@@ -1,9 +1,26 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+
+type THeaderLinkProps = {
+  href: string,
+  target: string,
+  icon: string,
+  alt: string,
+  className: string
+}
+
+const HeaderLink = ({ href, target = '_blank', icon, alt, className }: THeaderLinkProps) => {
+  return (
+    <Link href={href} target={target} className={className}>
+      {/* <span className='sr-only'>{alt}</span> */}
+      <Image src={icon} width={32} height={32} alt={alt} />
+    </Link>
+  );
+};
 
 const navigation = [
   { name: 'Docs', href: '#', external: false },
@@ -13,10 +30,10 @@ const navigation = [
     external: true,
   },
   { name: 'Modules', href: '#', external: false },
-]
+];
 
 export const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className='fixed z-50 w-full'>
@@ -51,40 +68,24 @@ export const Header = () => {
           ))}
         </div>
         <div className='hidden justify-end lg:flex lg:gap-x-4'>
-          <Link
+          <HeaderLink
             href='https://github.com/commune-ai'
             target='_blank'
+            icon='./github-icon-white.svg'
+            alt="Commune's Github Link"
             className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
-          >
-            <span className='sr-only'>Commune Github</span>
-            <Image
-              priority
-              src={'./github-icon-white.svg'}
-              width={32}
-              height={32}
-              alt='Github logo'
-            />
-          </Link>
-          <Link
-            href='https://github.com/commune-ai'
+          />
+          <HeaderLink
+            href='https://discord.com/invite/A8JGkZ9Dmm'
             target='_blank'
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
-          >
-            <span className='sr-only'>Commune Discord</span>
-            <Image
-              priority
-              src={'./discord-icon-white.svg'}
-              width={32}
-              height={32}
-              alt='Discord logo'
-            />
-          </Link>
+            icon='./discord-icon-white.svg'
+            alt="Commune's Discord Link"
+            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`} />
         </div>
         <div className='col-span-3 flex justify-end lg:hidden'>
           <button
             type='button'
-            className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]
-            '
+            className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className='sr-only'>Open main menu</span>
@@ -134,37 +135,25 @@ export const Header = () => {
                 ))}
               </div>
               <div className='py-6'>
-                <Link
+                <HeaderLink
                   href='https://github.com/commune-ai'
                   target='_blank'
+                  icon='./github-icon-white.svg'
+                  alt="Commune's Github Link"
                   className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
-                >
-                  <span className='sr-only'>Commune Github</span>
-                  <Image
-                    src={'./github-icon-white.svg'}
-                    width={32}
-                    height={32}
-                    alt='Github logo'
-                  />
-                </Link>
-                <Link
-                  href='https://github.com/commune-ai'
+                />
+                <HeaderLink
+                  href='https://discord.com/invite/A8JGkZ9Dmm'
                   target='_blank'
+                  icon='./discord-icon-white.svg'
+                  alt="Commune's Discord Link"
                   className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
-                >
-                  <span className='sr-only'>Commune Discord</span>
-                  <Image
-                    src={'./discord-icon-white.svg'}
-                    width={32}
-                    height={32}
-                    alt='Discord logo'
-                  />
-                </Link>
+                />
               </div>
             </div>
           </div>
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
