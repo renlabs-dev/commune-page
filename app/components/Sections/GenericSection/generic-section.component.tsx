@@ -1,18 +1,19 @@
 import { ForwardRefExoticComponent, SVGProps } from 'react'
 import { GridLines, GradientLayer } from '../..'
 
-type TGenericSectionProps = {
+type Feature = {
+  description: string
+  icon: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>
+}
+
+type GenericSectionProps = {
   title: string
   subtitle: string
   sectionName: string
-  features: Array<{
-    description: string
-    icon: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>
-  }>
+  features: Feature[]
   color: string
   gradientColor?: string
   gradientStyle?: string
-  direction?: string
 }
 
 export const GenericSection = ({
@@ -23,24 +24,21 @@ export const GenericSection = ({
   color,
   gradientColor,
   gradientStyle,
-}: TGenericSectionProps) => {
+}: GenericSectionProps) => {
   return (
     <section
       id={sectionName}
-      className={`${color} relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 p-6 text-center shadow-2xl md:p-12 lg:m-8 lg:px-24 lg:py-40`}
+      className={`relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 ${color} p-6 py-12 text-center shadow-2xl md:p-12 lg:m-8 lg:px-24 lg:py-40`}
     >
       <GridLines />
-      <GradientLayer
-        gradientColor={gradientColor}
-        gradientStyle={gradientStyle}
-      />
+      <GradientLayer gradientColor={gradientColor} gradientStyle={gradientStyle} />
 
-      <div className='mx-auto flex max-w-7xl flex-col items-center justify-center text-left'>
-        <div className='mx-auto max-w-2xl text-center lg:mx-0'>
-          <h2 className='text-base font-semibold leading-7 text-indigo-400'>
+      <div className='mx-auto max-w-7xl flex flex-col items-center justify-center text-left'>
+        <div className='mx-auto max-w-2xl'>
+          <h2 className='text-base font-semibold leading-7 text-indigo-400 text-center'>
             {subtitle}
           </h2>
-          <p className='mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl'>
+          <p className='mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl text-center'>
             {title}
           </p>
         </div>

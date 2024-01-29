@@ -2,7 +2,6 @@ type TGridLinesProps = { svgOverwriteStyle?: string }
 
 export const GridLines = (props: TGridLinesProps) => {
   const { svgOverwriteStyle } = props
-
   return (
     <>
       <svg
