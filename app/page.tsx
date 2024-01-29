@@ -1,10 +1,12 @@
+import { Suspense } from 'react'
 import { GenericSection, Header, HeroSection } from './components'
 import { CallToActionSection } from './components/Sections/CallToAction'
+import Loading from './loading'
 import { sections } from './utils'
 
 export default async function Home() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <HeroSection />
       <div className='mx-8 flex flex-col items-center'>
@@ -23,6 +25,6 @@ export default async function Home() {
           )
         })}
       </div>
-    </>
+    </Suspense>
   )
 }
