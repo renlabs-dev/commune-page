@@ -5,3 +5,22 @@
 :root {
   scroll-behavior: smooth;
 }
+
+section {
+  animation: fadeAndSlide 1.5s linear both;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-range: entry 2% cover 20%;
+}
+
+@keyframes fadeAndSlide {
+  from {
+    transform: translatey(5%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+
+  }
+}
