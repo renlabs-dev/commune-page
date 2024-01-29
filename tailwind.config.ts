@@ -8,11 +8,36 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
+      animation: {
+        fade: 'fadeOut 0.6s ease-in-out',
+        'close-accordion': 'closeAccordion 0.3s ease-in-out',
+        'open-accordion': 'openAccordion 0.3s ease-in-out',
+        'fade-slide-down': 'fadeAndSlideDown 0.4s linear both',
+      },
+      keyframes: {
+        fadeOut: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        openAccordion: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(90deg)' },
+        },
+        closeAccordion: {
+          from: { transform: 'rotate(90deg)' },
+          to: { transform: 'rotate(0deg)' },
+        },
+        fadeAndSlideDown: {
+          from: {
+            transform: 'translateY(-4%)',
+            opacity: '0',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0%)',
+          },
+        },
+      },
     },
   },
   plugins: [],

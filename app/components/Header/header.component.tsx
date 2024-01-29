@@ -1,26 +1,32 @@
-"use client"
+'use client'
 
-import Image from 'next/image';
-import { useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import Image from 'next/image'
+import { useState } from 'react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 type THeaderLinkProps = {
-  href: string,
-  target: string,
-  icon: string,
-  alt: string,
+  href: string
+  target: string
+  icon: string
+  alt: string
   className: string
 }
 
-const HeaderLink = ({ href, target = '_blank', icon, alt, className }: THeaderLinkProps) => {
+const HeaderLink = ({
+  href,
+  target = '_blank',
+  icon,
+  alt,
+  className,
+}: THeaderLinkProps) => {
   return (
     <Link href={href} target={target} className={className}>
       {/* <span className='sr-only'>{alt}</span> */}
       <Image src={icon} width={32} height={32} alt={alt} />
     </Link>
-  );
-};
+  )
+}
 
 const navigation = [
   { name: 'Docs', href: '#', external: false },
@@ -30,10 +36,10 @@ const navigation = [
     external: true,
   },
   { name: 'Modules', href: '#', external: false },
-];
+]
 
 export const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <header className='fixed z-50 w-full'>
@@ -80,7 +86,8 @@ export const Header = () => {
             target='_blank'
             icon='./discord-icon-white.svg'
             alt="Commune's Discord Link"
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`} />
+            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
+          />
         </div>
         <div className='col-span-3 flex justify-end lg:hidden'>
           <button
@@ -155,5 +162,5 @@ export const Header = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
