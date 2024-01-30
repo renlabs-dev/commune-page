@@ -14,6 +14,8 @@ const config: Config = {
         'open-accordion': 'openAccordion 0.3s ease-in-out',
         'fade-slide-down': 'fadeAndSlideDown 0.4s ease-in-out both',
         'scale-up-sm': 'scaleUpSm 0.05s linear both',
+        'scale-down-md': 'scaleDownMd 0.4s linear both',
+
       },
       keyframes: {
         fadeOut: {
@@ -29,8 +31,12 @@ const config: Config = {
           to: { transform: 'rotate(0deg)' },
         },
         scaleUpSm: {
-          from: { scale: '1' },
+          from: { scale: '1'},
           to: { scale: '1.02' },
+        },
+        scaleDownMd: {
+          from: { scale: '1.04', opacity: '0.1', transform: 'translateY(-30%)'},
+          to: { scale: '1' , opacity: '1', transform: 'translateY(0%)'},
         },
         fadeAndSlideDown: {
           from: {
