@@ -9,7 +9,6 @@ export const FrequentQuestions = () => {
     <section
       className={` relative m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-600/20 px-10 py-16 text-left shadow-2xl md:p-12 lg:m-8 lg:p-24`}
     >
-      {/* <GridLines /> */}
       <GradientLayer
         gradientColor='from-blue-400 via-blue-200'
         wrapperOverwriteStyle='lg:top-'

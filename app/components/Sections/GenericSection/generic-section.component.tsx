@@ -28,7 +28,7 @@ export const GenericSection = ({
   return (
     <section
       id={sectionName}
-      className={`relative isolate m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800 ${color} px-6 py-16 text-center shadow-2xl md:p-12 lg:m-8 lg:p-24 `}
+      className={`relative m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800/40 ${color} px-6 py-16 text-center shadow-2xl md:p-12 lg:m-8 lg:p-24 `}
     >
       <GridLines />
       <GradientLayer
