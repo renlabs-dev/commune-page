@@ -44,7 +44,7 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className='fixed z-50 w-full animate-fade-slide-down'>
+    <header className='fixed z-50 w-full h-screen animate-fade-slide-down'>
       <nav
         className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
         aria-label='Global'
