@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -22,33 +21,36 @@ const HeaderLink = ({
 }: THeaderLinkProps) => {
   return (
     <Link href={href} target={target} className={className}>
-      {/* <span className='sr-only'>{alt}</span> */}
       <Image src={icon} width={32} height={32} alt={alt} />
     </Link>
   )
 }
 
 const navigation = [
-  { name: 'Docs', href: '#', external: false },
+  {
+    name: 'Docs',
+    href: 'https://www.communeai.org/docs/introduction',
+    external: true,
+  },
   {
     name: 'Whitepaper',
     href: 'https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf',
     external: true,
   },
-  { name: 'Modules', href: '#', external: false },
+  // { name: 'Modules', href: '/modules', external: false },
 ]
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className='fixed z-50 w-full'>
+    <header className='fixed z-50 w-full animate-fade-slide-down'>
       <nav
         className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
         aria-label='Global'
       >
         <Link
-          href='#'
+          href='/'
           className={`col-span-1 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
         >
           <span className='sr-only'>Commune AI</span>

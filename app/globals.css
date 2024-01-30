@@ -6,20 +6,39 @@
   scroll-behavior: smooth;
 }
 
-section {
-  animation: fadeAndSlideRight 1.5s linear both;
+section:nth-child(even) {
+  animation: fadeAndSlideBottomLeft 3s linear both;
   animation-timeline: view();
   animation-duration: 1ms;
-  animation-range: entry 1% cover 12%;
+  animation-range: entry 0% cover 12%;
 }
 
-@keyframes fadeAndSlideRight {
+section {
+  animation: fadeAndSlideBottomRight 3s linear both;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-range: entry 0% cover 12%;
+}
+
+@keyframes fadeAndSlideBottomRight {
   from {
-    transform: translateX(-20%);
+    transform: translate(-10%, -8%);
+
     opacity: 0;
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes fadeAndSlideBottomLeft {
+  from {
+    transform: translate(10%, -8%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
