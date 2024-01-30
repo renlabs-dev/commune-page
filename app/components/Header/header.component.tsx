@@ -44,7 +44,7 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className='fixed z-50 w-full h-screen animate-fade-slide-down'>
+    <header className={`fixed z-50 w-full ${mobileMenuOpen && 'h-screen'} animate-fade-slide-down`}>
       <nav
         className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
         aria-label='Global'
@@ -91,7 +91,7 @@ export const Header = () => {
             className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
         </div>
-        <div className='col-span-3 flex justify-end lg:hidden'>
+        <div className='col-span-3 ml-auto lg:hidden'>
           <button
             type='button'
             className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
