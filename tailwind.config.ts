@@ -12,7 +12,8 @@ const config: Config = {
         fade: 'fadeOut 0.6s ease-in-out',
         'close-accordion': 'closeAccordion 0.3s ease-in-out',
         'open-accordion': 'openAccordion 0.3s ease-in-out',
-        'fade-slide-down': 'fadeAndSlideDown 0.4s linear both',
+        'fade-slide-down': 'fadeAndSlideDown 0.4s ease-in-out both',
+        'scale-up-sm': 'scaleUpSm 0.05s linear both',
       },
       keyframes: {
         fadeOut: {
@@ -26,6 +27,10 @@ const config: Config = {
         closeAccordion: {
           from: { transform: 'rotate(90deg)' },
           to: { transform: 'rotate(0deg)' },
+        },
+        scaleUpSm: {
+          from: { scale: '1' },
+          to: { scale: '1.02' },
         },
         fadeAndSlideDown: {
           from: {
