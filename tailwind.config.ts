@@ -35,7 +35,7 @@ const config: Config = {
           to: { scale: '1.02' },
         },
         scaleDownMd: {
-          from: { scale: '1.04', opacity: '0.1', transform: 'translateY(-30%)'},
+          from: { scale: '1.04', opacity: '0.7', transform: 'translateY(-30%)'},
           to: { scale: '1' , opacity: '1', transform: 'translateY(0%)'},
         },
         fadeAndSlideDown: {
