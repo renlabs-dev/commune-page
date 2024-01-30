@@ -10,7 +10,7 @@ const CtaWrapper = ({
   gradientColor = 'blue',
 }: CTAWrapper) => {
   return (
-    <section
+    <div
       id='discord'
       className='relative flex flex-col items-center justify-center overflow-hidden rounded-3xl bg-gray-800/40 p-12 text-center shadow-xl md:flex-row'
     >
@@ -18,13 +18,13 @@ const CtaWrapper = ({
         gradientColor={`from-${gradientColor}-400 via-${gradientColor}-200`}
       />
       {children}
-    </section>
+    </div>
   )
 }
 
 export const CallToActionSection = () => {
   return (
-    <div className='m-6 flex w-11/12 max-w-screen-xl flex-col gap-12 lg:flex-row'>
+    <section className='m-6 flex w-11/12 max-w-screen-xl flex-col gap-12 lg:flex-row'>
       <CtaWrapper gradientColor='blue'>
         <div>
           <div className='px-12'>
@@ -60,6 +60,6 @@ export const CallToActionSection = () => {
           </div>
         </div>
       </CtaWrapper>
-    </div>
+    </section>
   )
 }
