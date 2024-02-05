@@ -5,10 +5,10 @@ export const HeroSection = () => {
   return (
     <div
       id='hero'
-      className='relative isolate flex h-screen items-center justify-center overflow-hidden bg-gray-900 px-10 lg:pt-0'
+      className='relative isolate flex h-[75vh] items-center justify-center overflow-hidden bg-gray-900 px-10 lg:pt-0'
     >
       <GridLines />
-      <GradientLayer gradientColor='from-sky-400 to-sky-200' />
+      <GradientLayer gradientColor='from-sky-400 to-sky-200 scale-75' />
 
       <div className='max-w-7xl py-0 lg:px-8 lg:py-40'>
         <div className='mx-auto flex max-w-2xl flex-shrink-0 flex-col items-center justify-center lg:mx-0 lg:max-w-xl '>
