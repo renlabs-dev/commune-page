@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { links } from '@/app/utils'
 
 type THeaderLinkProps = {
   href: string
@@ -29,15 +30,14 @@ const HeaderLink = ({
 const navigation = [
   {
     name: 'Docs',
-    href: 'https://www.communeai.org/docs/introduction',
+    href: links.docs,
     external: true,
   },
   {
     name: 'Whitepaper',
-    href: 'https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf',
+    href: links.whitepaper,
     external: true,
   },
-  // { name: 'Modules', href: '/modules', external: false },
 ]
 
 export const Header = () => {
@@ -50,7 +50,7 @@ export const Header = () => {
         aria-label='Global'
       >
         <Link
-          href='/'
+          href={links.home}
           className={`col-span-1 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
         >
           <span className='sr-only'>Commune AI</span>
@@ -77,14 +77,14 @@ export const Header = () => {
         </div>
         <div className='hidden justify-end lg:flex lg:gap-x-4'>
           <HeaderLink
-            href='https://github.com/commune-ai'
+            href={links.github}
             target='_blank'
             icon='./github-icon-white.svg'
             alt="Commune's Github Link"
             className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
           <HeaderLink
-            href='https://discord.com/invite/A8JGkZ9Dmm'
+            href={links.discord}
             target='_blank'
             icon='./discord-icon-white.svg'
             alt="Commune's Discord Link"
@@ -108,7 +108,7 @@ export const Header = () => {
         <div className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900/50 px-6 py-6 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
           <div className='flex items-center justify-between'>
             <Link
-              href='#'
+              href='/'
               className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
             >
               <span className='sr-only'>Commune</span>
@@ -145,14 +145,14 @@ export const Header = () => {
               </div>
               <div className='py-6'>
                 <HeaderLink
-                  href='https://github.com/commune-ai'
+                  href={links.github}
                   target='_blank'
                   icon='./github-icon-white.svg'
                   alt="Commune's Github Link"
                   className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
                 />
                 <HeaderLink
-                  href='https://discord.com/invite/A8JGkZ9Dmm'
+                  href={links.discord}
                   target='_blank'
                   icon='./discord-icon-white.svg'
                   alt="Commune's Discord Link"

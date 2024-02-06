@@ -1,4 +1,6 @@
-import { DiscordWidget, DocsCTA, GradientLayer } from '../..'
+import Link from 'next/link'
+import { DiscordWidget, GradientLayer } from '../..'
+import { links } from '@/app/utils'
 
 type CTAWrapper = {
   children: React.ReactElement
@@ -56,7 +58,13 @@ export const CallToActionSection = () => {
           </div>
 
           <div className='mt-6 flex items-center justify-center'>
-            <DocsCTA />
+            <Link
+              href={links.docs}
+              target='_blank'
+              className='text-md font-base mt-8 flex items-center justify-center p-6 leading-6 text-blue-300 hover:animate-scale-up-sm hover:text-blue-400 '
+            >
+              <span>Go to Docs →</span>
+            </Link>
           </div>
         </div>
       </CtaWrapper>

@@ -1,6 +1,6 @@
 'use client'
 import { Disclosure } from '@headlessui/react'
-import { GradientLayer } from '..'
+import { GradientLayer } from '../..'
 import { faqData } from '@/app/utils/sections-mock/frequent-questions'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
