@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Commune AI',
   description:
     'Commune AI: Revolutionizing software development with seamless connectivity, effortless code reuse, limitless scalability, and honest, unbiased voting. Join us!',
+  robots: 'all'
 }
 
 export default function RootLayout({

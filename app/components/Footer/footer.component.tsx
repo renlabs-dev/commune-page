@@ -51,7 +51,7 @@ export const Footer = () => {
         <nav className="-mb-6 columns-3 sm:flex sm:justify-center text-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-200">
+              <a href={item.href} className="text-sm leading-6 text-gray-200 hover:text-gray-400">
                 {item.name}
               </a>
             </div>
@@ -59,13 +59,13 @@ export const Footer = () => {
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-200 hover:text-gray-500">
+            <a key={item.name} href={item.href} className="text-gray-200 hover:text-gray-400">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+        <p className="mt-10 text-center text-xs leading-5 text-gray-300">
           &copy; 2024 Commune, Inc. All rights reserved.
         </p>
       </div>
