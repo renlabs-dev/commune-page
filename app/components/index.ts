@@ -1,6 +1,4 @@
-export { HeroSection, GenericSection } from './Sections'
+export { HeroSection, GenericSection, CallToActionSection, FrequentQuestions } from './Sections'
 export { GradientLayer, GridLines } from './BackgroundEffects'
 export { Header } from './Header'
 export { DiscordWidget } from './DiscordWidget'
-export { FrequentQuestions } from './FrequentQuestions'
-export { DocsCTA } from './DocsCTA'
