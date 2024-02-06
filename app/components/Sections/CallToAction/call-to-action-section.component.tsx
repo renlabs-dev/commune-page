@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { DiscordWidget, GradientLayer } from '../..'
+import { links } from '@/app/utils'
 
 type CTAWrapper = {
   children: React.ReactElement
@@ -58,7 +59,7 @@ export const CallToActionSection = () => {
 
           <div className='mt-6 flex items-center justify-center'>
             <Link
-              href='https://www.communeai.org/docs/introduction'
+              href={links.docs}
               target='_blank'
               className='text-md font-base mt-8 flex items-center justify-center p-6 leading-6 text-blue-300 hover:animate-scale-up-sm hover:text-blue-400 '
             >
