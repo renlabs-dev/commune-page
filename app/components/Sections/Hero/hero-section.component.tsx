@@ -17,7 +17,7 @@ export const HeroSection = () => {
               commune ai
             </h1>
           </div>
-          <p className='mt-6 text-center text-xl animate-scale-down-md  font-extralight leading-relaxed tracking-tight text-gray-100 lg:text-center'>
+          <p className='mt-6 text-center text-xl animate-scale-down-md font-extralight leading-relaxed tracking-tight text-gray-100 lg:text-center'>
             Renovating the way we build software.
           </p>
           <div className='z-10 mt-10 flex animate-scale-down-md items-center gap-x-6'>
