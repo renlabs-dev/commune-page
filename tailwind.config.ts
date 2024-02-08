@@ -12,9 +12,9 @@ const config: Config = {
         fade: 'fadeOut 0.6s ease-in-out',
         'close-accordion': 'closeAccordion 0.3s ease-in-out',
         'open-accordion': 'openAccordion 0.3s ease-in-out',
-        'fade-slide-down': 'fadeAndSlideDown 0.4s ease-in-out both',
-        'scale-up-sm': 'scaleUpSm 0.05s linear both',
-        'scale-down-md': 'scaleDownMd 0.4s linear both',
+        'fade-slide-down': 'fadeAndSlideDown 0.2s ease-in-out both',
+        'scale-up-sm': 'scaleUpSm 0.03s ease-in-out both',
+        'scale-down-md': 'scaleDownMd 0.2s ease-in-out both',
 
       },
       keyframes: {
@@ -35,17 +35,17 @@ const config: Config = {
           to: { scale: '1.02' },
         },
         scaleDownMd: {
-          from: { scale: '1.04', opacity: '0.7', transform: 'translateY(-30%)'},
-          to: { scale: '1' , opacity: '1', transform: 'translateY(0%)'},
+          from: { scale: '0.96', transform: 'translateY(-5%)'},
+          to: { scale: '1', transform: 'translateY(0%)'},
         },
         fadeAndSlideDown: {
           from: {
-            transform: 'translateY(-4%)',
-            opacity: '0',
+            transform: 'translateY(-0.5%)',
+            scale: '0.96',
           },
           to: {
-            opacity: '1',
             transform: 'translateY(0%)',
+            scale: '1'
           },
         },
       },
