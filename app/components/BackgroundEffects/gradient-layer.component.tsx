@@ -13,7 +13,7 @@ export const GradientLayer: React.FC<TGradientLayerProps> = ({
 
   return (
     <div
-      className={`absolute top-10 -z-10 transform-gpu blur-3xl ${wrapperOverwriteStyle}`}
+      className={`absolute top-10 lg:top-[calc(60%-30rem)] -z-10 transform-gpu blur-3xl ${wrapperOverwriteStyle}`}
       aria-hidden='true'
     >
       <div
