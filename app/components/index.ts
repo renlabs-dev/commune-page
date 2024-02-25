@@ -2,3 +2,5 @@ export { HeroSection, GenericSection, CallToActionSection, FrequentQuestions } f
 export { GradientLayer, GridLines } from './BackgroundEffects'
 export { Header } from './Header'
 export { DiscordWidget } from './DiscordWidget'
+export { Footer } from './Footer'
+
