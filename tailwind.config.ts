@@ -9,13 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        fade: 'fadeOut 0.6s ease-in-out',
+        'fade': 'fadeOut 0.6s ease-in-out',
         'close-accordion': 'closeAccordion 0.3s ease-in-out',
         'open-accordion': 'openAccordion 0.3s ease-in-out',
         'fade-slide-down': 'fadeAndSlideDown 0.2s ease-in-out both',
         'scale-up-sm': 'scaleUpSm 0.03s ease-in-out both',
         'scale-down-md': 'scaleDownMd 0.2s ease-in-out both',
-
       },
       keyframes: {
         fadeOut: {
@@ -51,6 +50,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 }
 export default config

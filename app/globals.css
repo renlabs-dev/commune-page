@@ -42,3 +42,31 @@ section {
     transform: translate(0, 0);
   }
 }
+/* 
+h1 {
+  font-size: 2.441rem;
+  line-height: 2.25rem;
+  margin-bottom: 2.441rem;
+  &:not(:first-child){
+    margin: 2.441rem 0;
+  }
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.953rem;
+  margin: 1.953rem 0;
+  font-weight: 500;
+
+}
+
+h3 {
+  font-size: 1.563rem;
+  margin: 1.563rem 0;
+  font-weight: 400;
+}
+
+p {
+ font-size: 1rem;
+ margin: 1rem 0;
+} */

@@ -1,6 +1,6 @@
 export const links = {
   home: '/',
-  docs: 'https://www.communeai.org/docs/introduction',
+  docs: '/docs/getting-started/intro',
   whitepaper: 'https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf',
   github: 'https://github.com/commune-ai',
   discord:'https://discord.com/invite/A8JGkZ9Dmm',
