@@ -9,7 +9,7 @@ import { validatorsFeatures } from './validators-features'
 export const sections = [
   {
     sectionName: 'networking',
-    title: 'Networking & Wrapping Over Everything 🌎',
+    title: 'Networking & Wrapping Over Everything',
     subtitle: 'Everything you need',
     color: 'bg-blue-400/[0.03]',
     features: networkingFeatures,
@@ -17,7 +17,7 @@ export const sections = [
   },
   {
     sectionName: 'reusability',
-    title: 'Reusability 🔄',
+    title: 'Reusability',
     subtitle: 'Effortless Code Reuse',
     color: 'bg-green-400/[0.03]',
     gradientColor: gradientSectionColors.green,
@@ -25,7 +25,7 @@ export const sections = [
   },
   {
     sectionName: 'scalability',
-    title: 'Scalability ⚖️',
+    title: 'Scalability',
     subtitle: 'Unleash Limitless Growth',
     color: 'bg-yellow-400/[0.03]',
     gradientColor: gradientSectionColors.yellow,
@@ -33,7 +33,7 @@ export const sections = [
   },
   {
     sectionName: 'namespaces',
-    title: 'Module Namespaces 🖥️',
+    title: 'Module Namespaces',
     subtitle: 'Simplify Connectivity',
     color: 'bg-red-400/[0.03]',
     gradientColor: gradientSectionColors.red,
@@ -41,7 +41,7 @@ export const sections = [
   },
   {
     sectionName: 'tokenomics',
-    title: 'Tokenomics 🪙',
+    title: 'Tokenomics',
     subtitle: 'Empowering Honest and Unbiased Voting',
     color: 'bg-pink-400/[0.03]',
     gradientColor: gradientSectionColors.pink,
@@ -49,7 +49,7 @@ export const sections = [
   },
   {
     sectionName: 'validators',
-    title: 'Application Validators ✅',
+    title: 'Application Validators',
     subtitle: 'Rewarding Peak-Performing Modules',
     color: 'bg-cyan-400/[0.03]',
     gradientColor: gradientSectionColors.cyan,

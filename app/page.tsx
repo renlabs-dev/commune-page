@@ -2,9 +2,9 @@ import { Suspense } from 'react'
 import {
   GenericSection,
   HeroSection,
+  CallToActionSection,
   FrequentQuestions,
 } from './components'
-import { CallToActionSection } from './components/Sections/CallToAction'
 import Loading from './loading'
 import { sections } from './utils'
 
