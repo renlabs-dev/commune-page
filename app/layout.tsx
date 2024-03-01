@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from './components'
+import { Footer } from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Commune AI',
   description:
     'Commune AI: Revolutionizing software development with seamless connectivity, effortless code reuse, limitless scalability, and honest, unbiased voting. Join us!',
+  robots: 'all'
 }
 
 export default function RootLayout({
@@ -21,6 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-gray-900`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

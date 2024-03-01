@@ -22,7 +22,7 @@ section {
 
 @keyframes fadeAndSlideBottomRight {
   from {
-    transform: translate(-10%, -8%);
+    transform: translate(-5%, -8%);
 
     opacity: 0;
   }
@@ -34,7 +34,7 @@ section {
 
 @keyframes fadeAndSlideBottomLeft {
   from {
-    transform: translate(10%, -8%);
+    transform: translate(5%, -8%);
     opacity: 0;
   }
   to {

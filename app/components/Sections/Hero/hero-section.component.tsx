@@ -5,10 +5,10 @@ export const HeroSection = () => {
   return (
     <div
       id='hero'
-      className='relative isolate flex h-screen items-center justify-center overflow-hidden bg-gray-900 px-10 lg:pt-0'
+      className='relative isolate flex h-[75vh] items-center justify-center overflow-hidden bg-gray-900 px-10 lg:pt-0'
     >
       <GridLines />
-      <GradientLayer gradientColor='from-sky-400 to-sky-200' />
+      <GradientLayer gradientColor='from-sky-400 to-sky-200 scale-75' wrapperOverwriteStyle='md:top-[calc(55%-30rem)] top-[calc(60%-30rem)]' />
 
       <div className='max-w-7xl py-0 lg:px-8 lg:py-40'>
         <div className='mx-auto flex max-w-2xl flex-shrink-0 flex-col items-center justify-center lg:mx-0 lg:max-w-xl '>
@@ -17,7 +17,7 @@ export const HeroSection = () => {
               commune ai
             </h1>
           </div>
-          <p className='mt-6 text-center text-xl animate-scale-down-md  font-extralight leading-relaxed tracking-tight text-gray-100 lg:text-center'>
+          <p className='mt-6 text-center text-xl animate-scale-down-md font-extralight leading-relaxed tracking-tight text-gray-100 lg:text-center'>
             Renovating the way we build software.
           </p>
           <div className='z-10 mt-10 flex animate-scale-down-md items-center gap-x-6'>
