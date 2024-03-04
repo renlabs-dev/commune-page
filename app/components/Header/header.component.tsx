@@ -44,9 +44,9 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className={`fixed z-50 w-full ${mobileMenuOpen && 'h-screen'} animate-fade-slide-down`}>
+    <header className={`z-50 ${mobileMenuOpen && 'h-screen'} sticky top-0 px-6 p-4 w-full flex backdrop-blur flex-none transition-colors duration-500 border-b border-gray-50/[0.06]`}>
       <nav
-        className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10 p-6 backdrop-blur-sm lg:px-[5%]`}
+        className={`${mobileMenuOpen && 'hidden'} mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between`}
         aria-label='Global'
       >
         <Link
@@ -56,10 +56,10 @@ export const Header = () => {
           <span className='sr-only'>Commune AI</span>
           <Image
             src={'/commune-logo.svg'}
-            width={32}
-            height={32}
+            width={25}
+            height={25}
             alt='commune logo'
-            className='mr-[3px] h-8'
+            className='mr-[3px]'
             priority
           />
         </Link>
@@ -79,14 +79,14 @@ export const Header = () => {
           <HeaderLink
             href={links.github}
             target='_blank'
-            icon='./github-icon-white.svg'
+            icon='/github-icon-white.svg'
             alt="Commune's Github Link"
             className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
           <HeaderLink
             href={links.discord}
             target='_blank'
-            icon='./discord-icon-white.svg'
+            icon='/discord-icon-white.svg'
             alt="Commune's Discord Link"
             className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
@@ -105,7 +105,7 @@ export const Header = () => {
 
       <nav className={`lg:hidden ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className='fixed inset-0 z-10' />
-        <div className='fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-gray-900/50 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
+        <div className='fixed inset-y-0 right-0 z-10 w-full px-6 p-4 overflow-y-auto bg-gray-900/50 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
           <div className='flex items-center justify-between'>
             <Link
               href='/'
@@ -113,11 +113,11 @@ export const Header = () => {
             >
               <span className='sr-only'>Commune</span>
               <Image
-                src={'./commune-v2.svg'}
-                width={32}
-                height={32}
+                src={'/commune-logo.svg'}
+                width={25}
+                height={25}
                 alt='commune logo'
-                className='mr-[3px] h-8'
+                className='mr-[3px]'
               />
             </Link>
             <button
@@ -147,14 +147,14 @@ export const Header = () => {
                 <HeaderLink
                   href={links.github}
                   target='_blank'
-                  icon='./github-icon-white.svg'
+                  icon='/github-icon-white.svg'
                   alt="Commune's Github Link"
                   className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
                 />
                 <HeaderLink
                   href={links.discord}
                   target='_blank'
-                  icon='./discord-icon-white.svg'
+                  icon='/discord-icon-white.svg'
                   alt="Commune's Discord Link"
                   className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
                 />
