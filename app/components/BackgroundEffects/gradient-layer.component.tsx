@@ -21,7 +21,7 @@ export const GradientLayer: React.FC<TGradientLayerProps> = ({
         className={`
           aspect-[1108/632] w-[69.25rem] 
           bg-gradient-to-r
-          opacity-30
+          opacity-50
           ${gradientColor}
         `}
       />

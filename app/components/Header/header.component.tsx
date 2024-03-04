@@ -55,7 +55,7 @@ export const Header = () => {
         >
           <span className='sr-only'>Commune AI</span>
           <Image
-            src={'./commune-v2.svg'}
+            src={'/commune-logo.svg'}
             width={32}
             height={32}
             alt='commune logo'
