@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { tutorials } from "./tutorials";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/20/solid";
-import { DocHeader } from "@/app/components/DocHeader";
 
 export default async function Docs({ params }: { params: { slug: string } }) {
   const prefix = `/docs`
@@ -30,14 +29,13 @@ export default async function Docs({ params }: { params: { slug: string } }) {
   const nextContent = getNextContent()
   return (
     <>
-      <DocHeader />
-      <section className={`h-screen w-full mx-auto`}>
+      <section className={`w-full mx-auto`}>
         <div className="relative w-full overflow-hidden">
           <div
-            className="fixed hidden md:w-[17rem] border-r border-gray-700 min-w-max lg:block"
+            className="fixed hidden md:w-[17rem] border-r border-gray-50/[0.06] min-w-max lg:block"
             aria-label='Global'
           >
-            <div className="h-[calc(100vh-50px)] p-8 w-full mx-auto overflow-y-scroll">
+            <div className="h-[calc(100vh-81px)] p-8 w-full mx-auto overflow-y-scroll">
               {tutorials.map((tutorial, index) => {
                 return (
                   <div key={index}>
@@ -46,9 +44,9 @@ export default async function Docs({ params }: { params: { slug: string } }) {
                       {tutorial.contents.map((content, index) => {
                         return (
                           <Link key={index} href={`${prefix}/${tutorial.tutorialId}/${content.href}`}
-                            className={`p-3 flex border-l items-center relative mt-0 border-gray-600 ${(params.slug[1] === content.href && params.slug[0] === tutorial.tutorialId) ? 'text-gray-100' : 'text-gray-500  hover:text-gray-300'}`}
+                            className={`p-3 flex border-l items-center relative mt-0 border-gray-600/70 ${(params.slug[1] === content.href && params.slug[0] === tutorial.tutorialId) ? 'text-gray-200' : 'text-gray-500  hover:text-gray-300'}`}
                           >
-                            {(params.slug[1] === content.href && params.slug[0] === tutorial.tutorialId) && <div className="absolute w-2 h-2 bg-gray-100 rounded-full -left-1" />}
+                            {(params.slug[1] === content.href && params.slug[0] === tutorial.tutorialId) && <div className="absolute w-2 h-2 bg-gray-200 rounded-full -left-1" />}
                             <span>{content.name}</span>
                           </Link>
                         )
@@ -60,7 +58,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <div className="lg:pl-[19.5rem] flex flex-col items-center w-auto bg-gray-900 ">
-            <div id="teste" className="h-[calc(100vh-50px)] pt-8 w-full items-center flex flex-col overflow-y-scroll">
+            <div id="teste" className="h-[calc(100vh-81px)] pt-8 w-full items-center flex flex-col overflow-y-scroll">
               <div className="flex flex-col w-full max-w-[70%] prose prose-invert">
                 {!!tutorials[activeTutorial].contents[activeContent] && tutorials[activeTutorial].contents[activeContent].component}
               </div>
