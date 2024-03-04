@@ -33,7 +33,7 @@ export default async function Home() {
         })}
         <FrequentQuestions />
       </div>
-      <Footer></Footer>
+      <Footer />
     </Suspense>
   )
 }

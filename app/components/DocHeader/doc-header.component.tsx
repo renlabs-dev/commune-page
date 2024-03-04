@@ -1,7 +1,6 @@
-'use client'
 import Image from 'next/image'
-import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+// import { useState } from 'react'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 
@@ -41,14 +40,14 @@ const navigation = [
 ]
 
 export const DocHeader = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className={`sticky top-0 w-full ${mobileMenuOpen && 'h-screen'} flex
+    <header className={`sticky top-0 p-4 px-8  w-full  flex
  backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75
     `}>
       <nav
-        className={`mx-auto ${mobileMenuOpen && 'hidden'} grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10  backdrop-blur-sm`}
+        className={`mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between bg-gray-900/10  backdrop-blur-sm`}
         aria-label='Global'
       >
         <Link
@@ -57,11 +56,11 @@ export const DocHeader = () => {
         >
           <span className='sr-only'>Commune AI</span>
           <Image
-            src={'./commune-v2.svg'}
-            width={32}
-            height={32}
+            src={'/commune-logo.svg'}
+            width={25}
+            height={25}
             alt='commune logo'
-            className='mr-[3px] h-8'
+            className='mr-[3px]'
             priority
           />
         </Link>
@@ -81,23 +80,23 @@ export const DocHeader = () => {
           <HeaderLink
             href={links.github}
             target='_blank'
-            icon='./github-icon-white.svg'
+            icon='/github-icon-white.svg'
             alt="Commune's Github Link"
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
+            className={`p-1.5  flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
           <HeaderLink
             href={links.discord}
             target='_blank'
-            icon='./discord-icon-white.svg'
+            icon='/discord-icon-white.svg'
             alt="Commune's Discord Link"
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
+            className={`p-1.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
           />
         </div>
         <div className='col-span-3 ml-auto lg:hidden'>
           <button
             type='button'
             className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
-            onClick={() => setMobileMenuOpen(true)}
+          // onClick={() => setMobileMenuOpen(true)}
           >
             <span className='sr-only'>Open main menu</span>
             <Bars3Icon className='w-6 h-6' aria-hidden='true' />
