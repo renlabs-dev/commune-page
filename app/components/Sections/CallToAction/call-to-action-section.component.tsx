@@ -7,18 +7,13 @@ type CTAWrapper = {
   gradientColor: string
 }
 
-const CtaWrapper = ({
-  children,
-  gradientColor,
-}: CTAWrapper) => {
+const CtaWrapper = ({ children, gradientColor }: CTAWrapper) => {
   return (
     <section
       id='discord'
       className='relative flex flex-col items-center justify-center overflow-hidden rounded-3xl bg-gray-800/40 p-12 text-center shadow-xl md:flex-row'
     >
-      <GradientLayer
-        gradientColor={gradientColor}
-      />
+      <GradientLayer gradientColor={gradientColor} />
       {children}
     </section>
   )

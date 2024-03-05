@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'fade': 'fadeOut 0.6s ease-in-out',
+        fade: 'fadeOut 0.6s ease-in-out',
         'close-accordion': 'closeAccordion 0.3s ease-in-out',
         'open-accordion': 'openAccordion 0.3s ease-in-out',
         'fade-slide-down': 'fadeAndSlideDown 0.2s ease-in-out both',
@@ -30,12 +30,12 @@ const config: Config = {
           to: { transform: 'rotate(0deg)' },
         },
         scaleUpSm: {
-          from: { scale: '1'},
+          from: { scale: '1' },
           to: { scale: '1.02' },
         },
         scaleDownMd: {
-          from: { scale: '0.96', transform: 'translateY(-5%)'},
-          to: { scale: '1', transform: 'translateY(0%)'},
+          from: { scale: '0.96', transform: 'translateY(-5%)' },
+          to: { scale: '1', transform: 'translateY(0%)' },
         },
         fadeAndSlideDown: {
           from: {
@@ -44,14 +44,12 @@ const config: Config = {
           },
           to: {
             transform: 'translateY(0%)',
-            scale: '1'
+            scale: '1',
           },
         },
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ]
+  plugins: [require('@tailwindcss/typography')],
 }
 export default config

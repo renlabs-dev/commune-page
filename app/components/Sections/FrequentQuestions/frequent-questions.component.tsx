@@ -14,7 +14,7 @@ export const FrequentQuestions = () => {
         wrapperOverwriteStyle='lg:top-'
       />
 
-      <div className='max-w-4xl mx-auto divide-y divide-white/10'>
+      <div className='mx-auto max-w-4xl divide-y divide-white/10'>
         <h2 className='text-2xl font-bold leading-10 tracking-tight text-white'>
           Frequently asked questions
         </h2>
@@ -24,11 +24,11 @@ export const FrequentQuestions = () => {
               {({ open }) => (
                 <>
                   <dt>
-                    <Disclosure.Button className='flex items-start justify-between w-full text-left text-white'>
+                    <Disclosure.Button className='flex w-full items-start justify-between text-left text-white'>
                       <span className='text-base font-semibold leading-7'>
                         {faq.question}
                       </span>
-                      <span className='flex items-center ml-6 h-7'>
+                      <span className='ml-6 flex h-7 items-center'>
                         <ChevronRightIcon
                           className={
                             open
@@ -41,7 +41,7 @@ export const FrequentQuestions = () => {
                   </dt>
                   <Disclosure.Panel
                     as='dd'
-                    className='pr-12 mt-2 animate-fade-slide-down text-pretty'
+                    className='mt-2 animate-fade-slide-down text-pretty pr-12'
                   >
                     <p className='text-base leading-7 text-gray-300'>
                       {faq.answer}

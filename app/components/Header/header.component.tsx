@@ -44,7 +44,9 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className={`z-50 ${mobileMenuOpen && 'h-screen'} sticky top-0 px-6 p-4 w-full flex backdrop-blur flex-none transition-colors duration-500 border-b border-gray-50/[0.06]`}>
+    <header
+      className={`z-50 ${mobileMenuOpen && 'h-screen'} sticky top-0 flex w-full flex-none border-b border-gray-50/[0.06] p-4 px-6 backdrop-blur transition-colors duration-500`}
+    >
       <nav
         className={`${mobileMenuOpen && 'hidden'} mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between`}
         aria-label='Global'
@@ -63,7 +65,7 @@ export const Header = () => {
             priority
           />
         </Link>
-        <div className='justify-center hidden lg:flex lg:gap-x-12'>
+        <div className='hidden justify-center lg:flex lg:gap-x-12'>
           {navigation.map((item) => (
             <Link
               target={item.external ? '_blank' : '_self'}
@@ -75,7 +77,7 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <div className='justify-end hidden lg:flex lg:gap-x-4'>
+        <div className='hidden justify-end lg:flex lg:gap-x-4'>
           <HeaderLink
             href={links.github}
             target='_blank'
@@ -98,14 +100,14 @@ export const Header = () => {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className='sr-only'>Open main menu</span>
-            <Bars3Icon className='w-6 h-6' aria-hidden='true' />
+            <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
       </nav>
 
       <nav className={`lg:hidden ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className='fixed inset-0 z-10' />
-        <div className='fixed inset-y-0 right-0 z-10 w-full px-6 p-4 overflow-y-auto bg-gray-900/50 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
+        <div className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900/50 p-4 px-6 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
           <div className='flex items-center justify-between'>
             <Link
               href='/'
@@ -126,18 +128,18 @@ export const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='w-6 h-6' aria-hidden='true' />
+              <XMarkIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
-          <div className='flow-root mt-6'>
+          <div className='mt-6 flow-root'>
             <div className='-my-6 divide-y divide-gray-400/20'>
-              <div className='py-6 mt-10 ml-2 space-y-2'>
+              <div className='ml-2 mt-10 space-y-2 py-6'>
                 {navigation.map((item) => (
                   <Link
                     target={item.external ? '_blank' : '_self'}
                     key={item.name}
                     href={item.href}
-                    className='block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-100 rounded-lg hover:bg-gray-400/10 hover:backdrop-blur-sm'
+                    className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-400/10 hover:backdrop-blur-sm'
                   >
                     {item.name}
                   </Link>
