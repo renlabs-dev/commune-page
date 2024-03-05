@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { DiscordWidget, GradientLayer } from '../..'
-import { links } from '@/app/utils'
+import { DiscordWidget, GradientLayer } from '@/app/components'
+import { links, gradientSectionColors } from '@/app/utils'
 
 type CTAWrapper = {
   children: React.ReactElement
@@ -9,7 +9,7 @@ type CTAWrapper = {
 
 const CtaWrapper = ({
   children,
-  gradientColor = 'blue',
+  gradientColor,
 }: CTAWrapper) => {
   return (
     <section
@@ -17,7 +17,7 @@ const CtaWrapper = ({
       className='relative flex flex-col items-center justify-center overflow-hidden rounded-3xl bg-gray-800/40 p-12 text-center shadow-xl md:flex-row'
     >
       <GradientLayer
-        gradientColor={`from-${gradientColor}-400 via-${gradientColor}-200`}
+        gradientColor={gradientColor}
       />
       {children}
     </section>
@@ -27,7 +27,7 @@ const CtaWrapper = ({
 export const CallToActionSection = () => {
   return (
     <div className='m-6 flex w-11/12 max-w-screen-xl flex-col gap-12 lg:flex-row'>
-      <CtaWrapper gradientColor='blue'>
+      <CtaWrapper gradientColor={gradientSectionColors.pink}>
         <div>
           <div className='px-12'>
             <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
@@ -45,7 +45,7 @@ export const CallToActionSection = () => {
         </div>
       </CtaWrapper>
 
-      <CtaWrapper gradientColor='red'>
+      <CtaWrapper gradientColor={gradientSectionColors.red}>
         <div>
           <div className='px-12'>
             <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
