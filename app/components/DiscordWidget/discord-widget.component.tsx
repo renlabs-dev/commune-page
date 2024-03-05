@@ -1,4 +1,6 @@
+import { links } from '@/app/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const serverId = '941362322000203776'
 const uri = `https://discord.com/api/guilds/${serverId}/widget.json`
@@ -42,9 +44,9 @@ export const DiscordWidget = async () => {
           </div>
         </div>
 
-        <a
+        <Link
           className='relative hover:animate-scale-up-sm'
-          href={data.instant_invite}
+          href={data.instant_invite || links.discord}
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -53,7 +55,7 @@ export const DiscordWidget = async () => {
           <button className='mt-3 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-800 px-4 py-3 text-sm font-medium text-white hover:from-indigo-500 hover:to-blue-900 md:mt-0 lg:mt-3 xl:mt-0'>
             Join
           </button>
-        </a>
+        </Link>
       </div>
     )
 }
