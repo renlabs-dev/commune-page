@@ -1,3 +1,4 @@
+export const runtime = 'edge'
 import Link from "next/link";
 import { tutorials } from "./tutorials";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/20/solid";
