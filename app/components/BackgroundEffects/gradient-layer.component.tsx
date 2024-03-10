@@ -13,7 +13,7 @@ export const GradientLayer: React.FC<TGradientLayerProps> = ({
 
   return (
     <div
-      className={`absolute top-10 lg:top-[calc(60%-30rem)] -z-10 transform-gpu blur-3xl ${wrapperOverwriteStyle}`}
+      className={`absolute top-10 -z-10 transform-gpu blur-3xl lg:top-[calc(60%-30rem)] ${wrapperOverwriteStyle}`}
       aria-hidden='true'
     >
       <div
@@ -21,7 +21,7 @@ export const GradientLayer: React.FC<TGradientLayerProps> = ({
         className={`
           aspect-[1108/632] w-[69.25rem] 
           bg-gradient-to-r
-          opacity-30
+          opacity-50
           ${gradientColor}
         `}
       />
