@@ -34,39 +34,39 @@ export const tutorials = [
     title: 'Basics',
     tutorialId: 'basics',
   },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
-  {
-    contents: [...basicsSection, ...gettingStartedSection],
-    title: 'Mock',
-    tutorialId: 'mocked',
-  },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
+  // {
+  //   contents: [...basicsSection, ...gettingStartedSection],
+  //   title: 'Mock',
+  //   tutorialId: 'mocked',
+  // },
 ]
