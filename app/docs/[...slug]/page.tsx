@@ -4,6 +4,8 @@ import { tutorials } from './tutorials'
 import {
   ArrowLongLeftIcon,
   ArrowLongRightIcon,
+  Bars3Icon,
+  ChevronRightIcon,
 } from '@heroicons/react/20/solid'
 
 export default async function Docs({ params }: { params: { slug: string } }) {
@@ -51,7 +53,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
   const nextContent = getNextContent()
   return (
     <>
-      <section className={`mx-auto w-full`}>
+      <section className={`mx-auto w-full h-max`}>
         <div className='relative w-full overflow-hidden'>
           <div
             className='fixed hidden min-w-max border-r border-gray-50/[0.06] md:w-[17rem] lg:block'
@@ -86,44 +88,54 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               })}
             </div>
           </div>
-          <div className='flex w-auto flex-col items-center bg-gray-900 lg:pl-[19.5rem] '>
-            <div
-              className='flex h-[calc(100vh-81px)] w-full flex-col items-center overflow-y-scroll pt-8'
-            >
-              <div className='prose prose-invert flex w-full max-w-[70%] flex-col'>
-                {!!tutorials[activeTutorial].contents[activeContent] &&
-                  tutorials[activeTutorial].contents[activeContent].component}
-              </div>
-              <div className='mb-10 mt-20  flex w-full max-w-[70%] justify-between text-base'>
-                {!!previousContent && (
-                  <Link
-                    className='flex flex-col items-start rounded-2xl p-2 text-left text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
-                    href={`${prefix}/${previousContent.id}/${previousContent.content.href}`}
-                  >
-                    <span className='text-gray-300'>
-                      {previousContent.content.name}
-                    </span>
-                    <span className='flex text-xs'>
-                      <ArrowLongLeftIcon width={14} className='mr-2' />
-                      Previous
-                    </span>
-                  </Link>
-                )}
-                {!!nextContent && (
-                  <Link
-                    className='ml-auto flex flex-col items-end rounded-2xl p-2 text-end text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
-                    href={`${prefix}/${nextContent.id}/${nextContent.content.href}`}
-                  >
-                    <span className='text-gray-300'>
-                      {nextContent.content.name}
-                    </span>
-                    <span className='flex text-xs'>
-                      Next
-                      <ArrowLongRightIcon width={14} className='ml-2' />
-                    </span>
-                  </Link>
-                )}
-              </div>
+          <div className='lg:hidden w-full sticky top-0 z-[100] text-gray-400 text-sm flex items-center pl-6 h-12 bg-transparent border-b border-gray-50/[0.06]'>
+            <div className='mr-6 flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100/10 text-white p-1.5 hover:bg-gray-100/[0.15]'>
+              <Bars3Icon width={16} />
+            </div>
+            <span className='font-light mr-2'>
+              {tutorials[activeTutorial].title}
+            </span>
+            <ChevronRightIcon width={16} />
+            <span className='font-semibold ml-2 text-white'>
+              {tutorials[activeTutorial].contents[activeContent].name}
+            </span>
+          </div>
+          <div
+            className='flex h-[calc(100svh-129px)] w-full flex-col items-center overflow-y-scroll lg:pl-[19.5rem] pt-12'
+          >
+            <div className='prose prose-invert flex w-full max-w-[70%] flex-col'>
+              {!!tutorials[activeTutorial].contents[activeContent] &&
+                tutorials[activeTutorial].contents[activeContent].component}
+            </div>
+            <div className='mb-10 mt-20  flex w-full max-w-[70%] justify-between text-base'>
+              {!!previousContent && (
+                <Link
+                  className='flex flex-col items-start rounded-2xl p-2 text-left text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
+                  href={`${prefix}/${previousContent.id}/${previousContent.content.href}`}
+                >
+                  <span className='text-gray-300'>
+                    {previousContent.content.name}
+                  </span>
+                  <span className='flex text-xs'>
+                    <ArrowLongLeftIcon width={14} className='mr-2' />
+                    Previous
+                  </span>
+                </Link>
+              )}
+              {!!nextContent && (
+                <Link
+                  className='ml-auto flex flex-col items-end rounded-2xl p-2 text-end text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
+                  href={`${prefix}/${nextContent.id}/${nextContent.content.href}`}
+                >
+                  <span className='text-gray-300'>
+                    {nextContent.content.name}
+                  </span>
+                  <span className='flex text-xs'>
+                    Next
+                    <ArrowLongRightIcon width={14} className='ml-2' />
+                  </span>
+                </Link>
+              )}
             </div>
           </div>
         </div>

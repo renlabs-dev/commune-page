@@ -1,9 +1,10 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
+import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 
 type THeaderLinkProps = {
   href: string
@@ -41,7 +42,7 @@ export const Header = () => {
       <div className={`h-full w-full backdrop-blur-sm absolute z-50 ${mobileMenuOpen ? 'visible' : 'hidden'} lg:hidden animate-menu-fade`} onClick={toggleMobileMenu} >
         <nav className={`h-full w-full fixed z-50`}>
           <div className='bg-gray-800 h-auto min-w-1/4 w-[70%] sm:w-[40%] sticky top-3 right-3 ml-auto z-[50] p-5 rounded-lg'>
-            <button type='button' className={`${commonButtonClass} h-8 w-8 rounded-[8px] absolute right-0 top-0 m-5`} onClick={toggleMobileMenu}>
+            <button type='button' className={`${commonButtonClass} h-8 w-8 rounded-lg absolute right-0 top-0 m-5`} onClick={toggleMobileMenu}>
               <span className='sr-only'>Close menu</span>
               <XMarkIcon className='h-6 w-6' aria-hidden='true' />
             </button>
@@ -84,7 +85,7 @@ export const Header = () => {
           <div className='col-span-3 ml-auto lg:hidden '>
             <button type='button' className={`${commonButtonClass} -m-2.5`} onClick={toggleMobileMenu}>
               <span className='sr-only'>Open main menu</span>
-              <Bars3Icon className='h-6 w-6' aria-hidden='true' />
+              <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
         </nav>
