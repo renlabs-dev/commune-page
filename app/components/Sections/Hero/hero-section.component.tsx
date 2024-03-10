@@ -9,7 +9,7 @@ export const HeroSection = () => {
     >
       <GridLines />
       <GradientLayer
-        gradientColor='from-sky-400 to-sky-200 scale-75'
+        gradientColor='from-sky-400 to-sky-200 scale-50 sm:scale-[65%] md:scale-75'
         wrapperOverwriteStyle='md:top-[calc(55%-30rem)] top-[calc(60%-30rem)]'
       />
 

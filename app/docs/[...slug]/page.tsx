@@ -88,7 +88,6 @@ export default async function Docs({ params }: { params: { slug: string } }) {
           </div>
           <div className='flex w-auto flex-col items-center bg-gray-900 lg:pl-[19.5rem] '>
             <div
-              id='teste'
               className='flex h-[calc(100vh-81px)] w-full flex-col items-center overflow-y-scroll pt-8'
             >
               <div className='prose prose-invert flex w-full max-w-[70%] flex-col'>
