@@ -14,7 +14,6 @@ export default async function Home() {
     <Suspense fallback={<Loading />}>
       <div className='flex flex-col items-center'>
         <HeroSection />
-
         <CallToActionSection />
         {sections.map((section, index) => {
           return (

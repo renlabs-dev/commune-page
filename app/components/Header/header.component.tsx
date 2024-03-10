@@ -7,10 +7,10 @@ import { links } from '@/app/utils'
 
 type THeaderLinkProps = {
   href: string
-  target: string
+  target?: string
   icon: string
   alt: string
-  className: string
+  className?: string
 }
 
 const HeaderLink = ({
@@ -18,153 +18,77 @@ const HeaderLink = ({
   target = '_blank',
   icon,
   alt,
-  className,
-}: THeaderLinkProps) => {
-  return (
-    <Link href={href} target={target} className={className}>
-      <Image src={icon} width={32} height={32} alt={alt} />
-    </Link>
-  )
-}
+  className = '',
+}: THeaderLinkProps) => (
+  <Link href={href} target={target} className={className}>
+    <Image src={icon} width={25} height={25} alt={alt} />
+  </Link>
+)
 
 const navigation = [
-  {
-    name: 'Docs',
-    href: links.docs,
-    external: false,
-  },
-  {
-    name: 'Whitepaper',
-    href: links.whitepaper,
-    external: true,
-  },
+  { name: 'Docs', href: links.docs, external: false },
+  { name: 'Whitepaper', href: links.whitepaper, external: true },
 ]
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
+
+  const commonButtonClass = 'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-white p-1.5 hover:bg-gray-100/[0.15]'
 
   return (
-    <header
-      className={`z-50 ${mobileMenuOpen && 'h-screen'} sticky top-0 flex w-full flex-none border-b border-gray-50/[0.06] p-4 px-6 backdrop-blur transition-colors duration-500`}
-    >
-      <nav
-        className={`${mobileMenuOpen && 'hidden'} mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between`}
-        aria-label='Global'
-      >
-        <Link
-          href={links.home}
-          className={`col-span-1 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
-        >
-          <span className='sr-only'>Commune AI</span>
-          <Image
-            src={'/commune-logo.svg'}
-            width={25}
-            height={25}
-            alt='commune logo'
-            className='mr-[3px]'
-            priority
-          />
-        </Link>
-        <div className='hidden justify-center lg:flex lg:gap-x-12'>
-          {navigation.map((item) => (
-            <Link
-              target={item.external ? '_blank' : '_self'}
-              key={item.name}
-              href={item.href}
-              className='text-sm font-semibold leading-6 text-gray-100 hover:text-gray-400'
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-        <div className='hidden justify-end lg:flex lg:gap-x-4'>
-          <HeaderLink
-            href={links.github}
-            target='_blank'
-            icon='/github-icon-white.svg'
-            alt="Commune's Github Link"
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
-          />
-          <HeaderLink
-            href={links.discord}
-            target='_blank'
-            icon='/discord-icon-white.svg'
-            alt="Commune's Discord Link"
-            className={`p-1.5 ${mobileMenuOpen && 'opacity-0'} flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 hover:bg-gray-100/[0.15]`}
-          />
-        </div>
-        <div className='col-span-3 ml-auto lg:hidden'>
-          <button
-            type='button'
-            className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className='sr-only'>Open main menu</span>
-            <Bars3Icon className='h-6 w-6' aria-hidden='true' />
-          </button>
-        </div>
-      </nav>
-
-      <nav className={`lg:hidden ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
-        <div className='fixed inset-0 z-10' />
-        <div className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900/50 p-4 px-6 backdrop-blur-sm sm:ring-1 sm:ring-white/10'>
-          <div className='flex items-center justify-between'>
-            <Link
-              href='/'
-              className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
-            >
-              <span className='sr-only'>Commune</span>
-              <Image
-                src={'/commune-logo.svg'}
-                width={25}
-                height={25}
-                alt='commune logo'
-                className='mr-[3px]'
-              />
-            </Link>
-            <button
-              type='button'
-              className='-m-2.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 text-gray-100 hover:bg-gray-100/[0.15]'
-              onClick={() => setMobileMenuOpen(false)}
-            >
+    <>
+      <div className={`h-full w-full backdrop-blur-sm absolute z-50 ${mobileMenuOpen ? 'visible' : 'hidden'} lg:hidden animate-menu-fade`} onClick={toggleMobileMenu} >
+        <nav className={`h-full w-full fixed z-50`}>
+          <div className='bg-gray-800 h-auto min-w-1/4 w-[70%] sm:w-[40%] sticky top-3 right-3 ml-auto z-[50] p-5 rounded-lg'>
+            <button type='button' className={`${commonButtonClass} h-8 w-8 rounded-[8px] absolute right-0 top-0 m-5`} onClick={toggleMobileMenu}>
               <span className='sr-only'>Close menu</span>
               <XMarkIcon className='h-6 w-6' aria-hidden='true' />
             </button>
-          </div>
-          <div className='mt-6 flow-root'>
-            <div className='-my-6 divide-y divide-gray-400/20'>
-              <div className='ml-2 mt-10 space-y-2 py-6'>
-                {navigation.map((item) => (
-                  <Link
-                    target={item.external ? '_blank' : '_self'}
-                    key={item.name}
-                    href={item.href}
-                    className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-400/10 hover:backdrop-blur-sm'
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              <div className='py-6'>
-                <HeaderLink
-                  href={links.github}
-                  target='_blank'
-                  icon='/github-icon-white.svg'
-                  alt="Commune's Github Link"
-                  className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]`}
-                />
-                <HeaderLink
-                  href={links.discord}
-                  target='_blank'
-                  icon='/discord-icon-white.svg'
-                  alt="Commune's Discord Link"
-                  className='flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 p-1.5 hover:bg-gray-100/[0.15]'
-                />
+            <div className='flow-root'>
+              <div className='-my-6 divide-y space-y-4 divide-gray-400/20'>
+                <div className='ml-2 mt-6 space-y-2'>
+                  {navigation.map(({ name, href, external }) => (
+                    <Link key={name} href={href} target={external ? '_blank' : '_self'} className='-mx-3 block rounded-lg px-3 py-1 text-base font-semibold leading-7 text-gray-100 w-[90%] hover:bg-gray-400/10 hover:backdrop-blur-sm'>
+                      {name}
+                    </Link>
+                  ))}
+                </div>
+                <div className='py-6 flex space-x-3'>
+                  <HeaderLink href={links.github} icon='/github-icon-white.svg' alt="Commune's Github Link" className={`${commonButtonClass} mb-4`} />
+                  <HeaderLink href={links.discord} icon='/discord-icon-white.svg' alt="Commune's Discord Link" className={commonButtonClass} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </div>
+
+      <header className={`z-40 sticky top-0 flex flex-none w-full border-b border-gray-50/[0.06] backdrop-blur transition-colors duration-500`}>
+        <nav className={`p-4 px-6 mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between`} aria-label='Global'>
+          <Link href={links.home} className={`col-span-1 ${commonButtonClass}`}>
+            <span className='sr-only'>Commune AI</span>
+            <Image src={'/commune-logo.svg'} width={25} height={25} alt='commune logo' priority className='mr-[3px]' />
+          </Link>
+          <div className='hidden justify-center lg:flex lg:gap-x-12'>
+            {navigation.map(({ name, href, external }) => (
+              <Link key={name} href={href} target={external ? '_blank' : '_self'} className='text-sm font-semibold leading-6 text-gray-100 hover:text-gray-400'>
+                {name}
+              </Link>
+            ))}
+          </div>
+          <div className='hidden justify-end lg:flex lg:gap-x-4'>
+            <HeaderLink href={links.github} icon='/github-icon-white.svg' alt="Commune's Github Link" className={commonButtonClass} />
+            <HeaderLink href={links.discord} icon='/discord-icon-white.svg' alt="Commune's Discord Link" className={commonButtonClass} />
+          </div>
+          <div className='col-span-3 ml-auto lg:hidden '>
+            <button type='button' className={`${commonButtonClass} -m-2.5`} onClick={toggleMobileMenu}>
+              <span className='sr-only'>Open main menu</span>
+              <Bars3Icon className='h-6 w-6' aria-hidden='true' />
+            </button>
+          </div>
+        </nav>
+      </header>
+    </>
   )
 }

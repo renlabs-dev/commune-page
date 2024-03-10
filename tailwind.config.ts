@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       animation: {
         fade: 'fadeOut 0.6s ease-in-out',
+        'menu-fade': 'fadeOut 0.1s ease-in-out',
         'close-accordion': 'closeAccordion 0.3s ease-in-out',
         'open-accordion': 'openAccordion 0.3s ease-in-out',
         'fade-slide-down': 'fadeAndSlideDown 0.2s ease-in-out both',
