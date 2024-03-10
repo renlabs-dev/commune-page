@@ -7,7 +7,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid'
 export const FrequentQuestions = () => {
   return (
     <section
-      className={` relative m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-600/20 px-10 py-16 text-left shadow-2xl md:p-12 lg:m-8 lg:p-24`}
+      className={`relative m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-600/20 px-10 py-16 text-left shadow-2xl md:p-12 lg:m-8 lg:p-24`}
     >
       <GradientLayer
         gradientColor='from-blue-400 via-blue-200'

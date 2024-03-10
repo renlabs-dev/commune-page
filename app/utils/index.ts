@@ -1,2 +1,2 @@
-export { sections } from './sections-mock'
+export { sections, gradientSectionColors } from './sections-mock'
 export { links } from './links'
