@@ -2,16 +2,16 @@ export const faqData = [
   {
     question: 'What is Commune and its philosophy?',
     answer:
-      'Commune is a protocol that connects all developer tools into one network, fostering a shareable, reusable, and open economy. It follows an inclusive design philosophy that emphasizes collaboration over isolation, aiming for synergy by enabling developers to leverage Commune alongside their existing projects. This philosophy is maximally unopinionated, granting developers the freedom to incorporate additional tools that they find valuable.',
+      'Commune is a peer to peer protocol leveraging cryptoeconomic incentives to make digital commodities available to Stakeholders.',
   },
   {
-    question: 'Are there any similar projects?',
-    answer: 'Yes, Commune is a highly adapted fork of Bittensor (TAO).',
+    question: 'Who is founder of CommuneAI?',
+    answer: 'CommuneAI follows a zero bureaucracy only code, zero founders only devs philosophy and is community driven at its heart. That being said, originator and core developer is Sal Vivona, a physicist and machine learning engineer who quit big tech 3 years ago to fultime focus on Commune. He discovered Bittensor and joined the OpenTensor foundation as a developer until he eventually quit to pursue Commune fully again.',
   },
   {
-    question: 'Who is founder of communeai?',
+    question: 'How to buy $COMAI?',
     answer:
-      'Sal Vivona, a physicist and machine learning engineer who quit big tech 3 years ago to fulltime focus on Commune. He discovered bittensor and joined the OpenTensor foundation as a developer until he eventually quit to pursue Commune fully again.',
+      'currently you can buy COMAI on uniswap (WCOMAI) and Comswap. Visit https://comswap.io/ for more information.',
   },
   {
     question: 'How to buy $COM?',
@@ -24,9 +24,9 @@ export const faqData = [
       "To set up a wallet, join our Discord server and navigate to Tutorials > Setup menu for PC. Install Commune and create your wallet directly on your machine. Don't forget to record the mnemonic. Additionally, you can use the web wallet at https://comwallet.io/ (Third-party, use at your own risk). For module setup and deployment, refer to https://commune-t.pages.dev/docs/next/create-commune and https://commune-t.pages.dev/docs/next/deploy-module respectively.",
   },
   {
-    question: 'What is the emission schedule for $COM?',
+    question: 'What is the emission schedule for $COMAI?',
     answer:
-      'The current emission schedule for $COM is similar to Bitcoin but proportional to 1B total supply and 25% lower inflation rate, with 250k token rewards a day.',
+      'The current emission schedule for $COMAI is similar to Bitcoin but proportional to 1B total supply and 25% lower inflation rate, with 250k token rewards a day.',
   },
   {
     question: 'What is the total supply of COM tokens?',
