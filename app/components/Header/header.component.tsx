@@ -58,6 +58,7 @@ export const Header = () => {
                 <div className='py-6 flex space-x-3'>
                   <HeaderLink href={links.github} icon='/github-icon-white.svg' alt="Commune's Github Link" className={`${commonButtonClass} mb-4`} />
                   <HeaderLink href={links.discord} icon='/discord-icon-white.svg' alt="Commune's Discord Link" className={commonButtonClass} />
+                  <HeaderLink href={links.telegram} icon='/telegram-icon-white.svg' alt="Commune's Telegram Link" className={`${commonButtonClass} pr-2`} />
                 </div>
               </div>
             </div>
@@ -81,6 +82,7 @@ export const Header = () => {
           <div className='hidden justify-end lg:flex lg:gap-x-4'>
             <HeaderLink href={links.github} icon='/github-icon-white.svg' alt="Commune's Github Link" className={commonButtonClass} />
             <HeaderLink href={links.discord} icon='/discord-icon-white.svg' alt="Commune's Discord Link" className={commonButtonClass} />
+            <HeaderLink href={links.telegram} icon='/telegram-icon-white.svg' alt="Commune's Telegram Link" className={`${commonButtonClass} pr-2`} />
           </div>
           <div className='col-span-3 ml-auto lg:hidden '>
             <button type='button' className={`${commonButtonClass} -m-2.5`} onClick={toggleMobileMenu}>
