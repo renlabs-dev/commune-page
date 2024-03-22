@@ -15,28 +15,53 @@ const navigation = {
       name: 'Discord',
       href: links.discord,
       icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image {...props} src={'/discord-icon-white.svg'} alt="Commune's Discord link" width={24} height={24} />
+        <Image
+          {...props}
+          src={'/discord-icon-white.svg'}
+          alt="Commune's Discord link"
+          width={24}
+          height={24}
+        />
       ),
     },
     {
       name: 'X',
       href: links.x,
       icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image {...props} src={'/x-icon-white.svg'} alt="Commune's X link" width={24} height={24} className='h-5 w-5 mx-auto' />
+        <Image
+          {...props}
+          src={'/x-icon-white.svg'}
+          alt="Commune's X link"
+          width={24}
+          height={24}
+          className='mx-auto h-5 w-5'
+        />
       ),
     },
     {
       name: 'GitHub',
       href: links.github,
       icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image {...props} src={'/github-icon-white.svg'} alt="Commune's Github link" width={24} height={24} />
+        <Image
+          {...props}
+          src={'/github-icon-white.svg'}
+          alt="Commune's Github link"
+          width={24}
+          height={24}
+        />
       ),
     },
     {
       name: 'Telegram',
       href: links.telegram,
       icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image {...props} src={'/telegram-icon-white.svg'} alt="Commune's Github link" width={24} height={24} />
+        <Image
+          {...props}
+          src={'/telegram-icon-white.svg'}
+          alt="Commune's Github link"
+          width={24}
+          height={24}
+        />
       ),
     },
   ],
@@ -61,12 +86,12 @@ export const Footer = () => {
             </div>
           ))}
         </nav>
-        <div className='mt-10 flex justify-center align-center space-x-10'>
+        <div className='align-center mt-10 flex justify-center space-x-10'>
           {navigation.social.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className='text-gray-200 flex items-center'
+              className='flex items-center text-gray-200'
             >
               <span className='sr-only'>{item.name}</span>
               <item.icon className='h-6 w-6' aria-hidden='true' />

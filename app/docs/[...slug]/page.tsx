@@ -48,15 +48,19 @@ export default async function Docs({ params }: { params: { slug: string } }) {
     return false
   }
 
-
   const previousContent = getPreviousContent()
   const nextContent = getNextContent()
   return (
     <>
-      <section className={`mx-auto w-full h-max`}>
-        <DocSidebar params={params} activeTutorial={activeTutorial} activeContent={activeContent} prefix={prefix} />
+      <section className={`mx-auto h-max w-full`}>
+        <DocSidebar
+          params={params}
+          activeTutorial={activeTutorial}
+          activeContent={activeContent}
+          prefix={prefix}
+        />
 
-        <div className='flex h-[calc(100svh-129px)] w-full flex-col items-center overflow-y-scroll lg:pl-[19.5rem] pt-12'>
+        <div className='flex h-[calc(100svh-129px)] w-full flex-col items-center overflow-y-scroll pt-12 lg:pl-[19.5rem]'>
           <div className='prose prose-invert flex w-full max-w-[70%] flex-col'>
             {!!tutorials[activeTutorial].contents[activeContent] &&
               tutorials[activeTutorial].contents[activeContent].component}
@@ -92,7 +96,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             )}
           </div>
         </div>
-      </section >
+      </section>
     </>
   )
 }
