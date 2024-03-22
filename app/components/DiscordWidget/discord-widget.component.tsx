@@ -1,4 +1,6 @@
+import { links } from '@/app/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const serverId = '941362322000203776'
 const uri = `https://discord.com/api/guilds/${serverId}/widget.json`
@@ -19,9 +21,9 @@ export const DiscordWidget = async () => {
     return (
       <div className='lg:max-w-11/12 mt-8 flex w-8/12 flex-col items-center justify-between rounded-2xl bg-gradient-to-br from-blue-600 to-gray-400 p-6 shadow-xl md:flex-row md:items-center lg:flex-col lg:items-center lg:px-6 xl:flex-row'>
         <div className='flex flex-col items-center justify-center md:flex-row lg:flex-col xl:flex-row'>
-          <div className='mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-900/40 p-1.5 shadow-xl md:mb-0 md:mr-3 lg:mb-2 lg:mr-0 xl:mb-0 xl:mr-3'>
+          <div className='mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900/70 to-gray-900/50 p-1.5 shadow-xl md:mb-0 md:mr-3 lg:mb-2 lg:mr-0 xl:mb-0 xl:mr-3'>
             <Image
-              src='/commune-v2.svg'
+              src='/commune-logo.svg'
               priority
               width={25}
               height={25}
@@ -42,9 +44,9 @@ export const DiscordWidget = async () => {
           </div>
         </div>
 
-        <a
+        <Link
           className='relative hover:animate-scale-up-sm'
-          href={data.instant_invite}
+          href={data.instant_invite || links.discord}
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -53,7 +55,7 @@ export const DiscordWidget = async () => {
           <button className='mt-3 rounded-3xl bg-gradient-to-br from-indigo-500 to-blue-800 px-4 py-3 text-sm font-medium text-white hover:from-indigo-500 hover:to-blue-900 md:mt-0 lg:mt-3 xl:mt-0'>
             Join
           </button>
-        </a>
+        </Link>
       </div>
     )
 }
