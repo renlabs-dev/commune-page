@@ -1,5 +1,4 @@
 import { gradientSectionColors } from './gradientSectionColors'
-import { namespacesFeatures } from './namespaces-features'
 import { networkingFeatures } from './networking-features'
 import { reusabilityFeatures } from './reusability-features'
 import { scalabilityFeatures } from './scalability-features'
@@ -9,7 +8,7 @@ import { validatorsFeatures } from './validators-features'
 export const sections = [
   {
     sectionName: 'networking',
-    title: 'Networking & Wrapping Over Everything',
+    title: 'Networking & Wrapping',
     subtitle: 'Everything you need',
     color: 'bg-blue-400/[0.03]',
     features: networkingFeatures,
@@ -30,14 +29,6 @@ export const sections = [
     color: 'bg-yellow-400/[0.03]',
     gradientColor: gradientSectionColors.yellow,
     features: scalabilityFeatures,
-  },
-  {
-    sectionName: 'namespaces',
-    title: 'Module Namespaces',
-    subtitle: 'Simplify Connectivity',
-    color: 'bg-red-400/[0.03]',
-    gradientColor: gradientSectionColors.red,
-    features: namespacesFeatures,
   },
   {
     sectionName: 'tokenomics',

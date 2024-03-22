@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, SunIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -95,54 +95,59 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-50/[0.06] backdrop-blur transition-colors duration-500`}
+        className={`sticky top-0 z-40 flex w-full flex-none backdrop-blur transition-colors duration-500`}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-3 items-center justify-between p-4 px-6`}
+          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
           aria-label='Global'
         >
-          <Link href={links.home} className={`col-span-1 ${commonButtonClass}`}>
-            <span className='sr-only'>Commune AI</span>
+          <Link href={links.home} className={`col-span-1 flex items-center`}>
             <Image
               src={'/commune-logo.svg'}
-              width={25}
-              height={25}
+              width={37}
+              height={45}
               alt='commune logo'
               priority
               className='mr-[3px]'
             />
+            <span className='ml-2 text-2xl font-medium'>commune</span>
           </Link>
-          <div className='hidden justify-center lg:flex lg:gap-x-12'>
+          <div className='hidden items-center justify-end lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='text-sm font-semibold leading-6 text-gray-100 hover:text-gray-400'
+                className='text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400'
               >
                 {name}
               </Link>
             ))}
-          </div>
-          <div className='hidden justify-end lg:flex lg:gap-x-4'>
-            <HeaderLink
-              href={links.github}
-              icon='/github-icon-white.svg'
-              alt="Commune's Github Link"
-              className={commonButtonClass}
-            />
-            <HeaderLink
-              href={links.discord}
-              icon='/discord-icon-white.svg'
-              alt="Commune's Discord Link"
-              className={commonButtonClass}
-            />
-            <HeaderLink
-              href={links.telegram}
-              icon='/telegram-icon-white.svg'
-              alt="Commune's Telegram Link"
-              className={`${commonButtonClass} pr-2`}
-            />
+            <Link
+              href='#'
+              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
+            >
+              <span
+                aria-label='Get started with Commune AI'
+                className='text-header-links'
+              >
+                Get Started
+              </span>
+            </Link>
+            <Link
+              href='#'
+              className='rounded-xl border-2 border-title bg-[#FF6C6C] px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
+            >
+              <span
+                aria-label='Get started with Commune AI'
+                className='text-white'
+              >
+                Join Community <span className='text-xs'>▼</span>
+              </span>
+            </Link>
+            <button className='mt-1'>
+              <SunIcon width={22} />
+            </button>
           </div>
           <div className='col-span-3 ml-auto lg:hidden '>
             <button

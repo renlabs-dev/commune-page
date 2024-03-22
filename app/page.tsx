@@ -8,13 +8,16 @@ import {
 } from './components'
 import Loading from './loading'
 import { sections } from './utils'
+import { WelcomeSection } from './components/Sections'
 
 export default async function Home() {
   return (
     <Suspense fallback={<Loading />}>
-      <div className='flex flex-col items-center'>
-        <HeroSection />
-        <CallToActionSection />
+      <HeroSection />
+      <WelcomeSection />
+      <CallToActionSection />
+      {/* <div className='flex flex-col items-center'> */}
+      {/* <CallToActionSection />
         {sections.map((section, index) => {
           return (
             <GenericSection
@@ -30,7 +33,7 @@ export default async function Home() {
         })}
         <FrequentQuestions />
       </div>
-      <Footer />
+      <Footer /> */}
     </Suspense>
   )
 }
