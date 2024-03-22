@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from './components'
-
-const inter = Inter({ subsets: ['latin'] })
+import { inter } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Commune AI',
@@ -18,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body className={`${inter.className} relative h-full bg-gray-900`}>
+    <html lang='en' className={`${inter.className}`}>
+      <body className='relative h-full bg-white'>
         <Header />
         {children}
       </body>
