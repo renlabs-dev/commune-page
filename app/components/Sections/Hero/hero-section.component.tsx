@@ -6,23 +6,23 @@ export const HeroSection = () => {
   return (
     <div
       id='hero'
-      className='relative isolate flex h-auto min-h-[50vh] w-full items-center justify-center overflow-hidden bg-white px-10 lg:pt-0'
+      className='flex h-auto min-h-[50vh] w-full flex-col lg:flex-row items-center justify-center overflow-hidden bg-white p-10 py-12'
     >
       <Image
         src='/commune-logo.svg'
         width={417}
         height={481}
         alt={`Commune's logo`}
-        className='mr-28'
+        className='w-2/3 pb-10 lg:pb-0 lg:w-auto lg:mr-28'
       />
-      <div className='flex h-full flex-col items-start justify-center'>
-        <h1 className='text-7xl font-bold tracking-tight text-title'>
+      <div className='flex flex-col items-center justify-center w-full h-full lg:w-auto lg:items-start'>
+        <h1 className='pb-16 text-5xl font-bold text-center lg:text-7xl text-title lg:pb-0 lg:text-left'>
           commune ai
         </h1>
-        <h2 className='text-xl font-medium leading-relaxed tracking-tight text-subtitle'>
+        <h2 className='text-base font-medium text-center text-subtitle lg:text-left'>
           Renovating the way we build software for{' '}
           <span
-            className={`${covered_by_your_grace.className} text-3xl font-normal text-[#62ABFF]`}
+            className={`${covered_by_your_grace.className} text-lg font-normal text-[#62ABFF]`}
           >
             everyone
           </span>
@@ -30,7 +30,7 @@ export const HeroSection = () => {
         </h2>
         <Link
           href='#discord'
-          className='mt-10 rounded-xl border-2 border-title bg-[#FF6C6C] px-16 py-6 text-center text-sm font-bold text-white shadow-custom'
+          className='mt-10 w-full lg:w-auto rounded-xl border-2 border-title bg-[#FF6C6C] px-16 py-6 text-center text-sm font-bold text-white shadow-custom'
         >
           <span aria-label='Get started with Commune AI' className='text-white'>
             GET STARTED NOW
