@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <div
       id='hero'
-      className='relative isolate flex h-[50vh] w-full items-center justify-center overflow-hidden bg-white px-10 lg:pt-0'
+      className='relative isolate flex h-auto min-h-[50vh] w-full items-center justify-center overflow-hidden bg-white px-10 lg:pt-0'
     >
       <Image
         src='/commune-logo.svg'

@@ -7,7 +7,7 @@ export const WelcomeSection = () => {
   return (
     <div
       id='welcome'
-      className='relative isolate flex h-[50vh] w-full flex-col items-center overflow-hidden bg-[#F9EFE4] py-28'
+      className='relative isolate flex h-auto w-full flex-col items-center overflow-hidden bg-[#F9EFE4] py-28'
     >
       <Image
         src={'/dotted-background.svg'}
