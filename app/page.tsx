@@ -32,7 +32,7 @@ export default async function Home() {
         )
       })}
       <FrequentQuestions />
-      {/* <Footer /> */}
+      <Footer />
     </Suspense>
   )
 }
