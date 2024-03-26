@@ -16,24 +16,23 @@ export default async function Home() {
       <HeroSection />
       <WelcomeSection />
       <CallToActionSection />
-      {/* <div className='flex flex-col items-center'> */}
-      {/* <CallToActionSection />
-        {sections.map((section, index) => {
-          return (
-            <GenericSection
-              key={index}
-              sectionName={section.sectionName}
-              title={section.title}
-              subtitle={section.subtitle}
-              color={section.color}
-              features={section.features}
-              gradientColor={section.gradientColor}
-            />
-          )
-        })}
-        <FrequentQuestions />
-      </div>
-      <Footer /> */}
+      {sections.map((section, index) => {
+        return (
+          <GenericSection
+            key={index}
+            index={index}
+            sectionName={section.sectionName}
+            title={section.title}
+            subtitle={section.subtitle}
+            bgColor={section.bgColor}
+            color={section.color}
+            features={section.features}
+            iconSrc={section.iconSrc}
+          />
+        )
+      })}
+      {/* <FrequentQuestions /> */}
+      {/* <Footer /> */}
     </Suspense>
   )
 }

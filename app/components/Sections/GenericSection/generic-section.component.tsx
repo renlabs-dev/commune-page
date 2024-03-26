@@ -1,5 +1,5 @@
+import Image from 'next/image'
 import { ForwardRefExoticComponent, SVGProps } from 'react'
-import { GridLines, GradientLayer } from '../..'
 
 type Feature = {
   description: string
@@ -11,9 +11,10 @@ type GenericSectionProps = {
   subtitle: string
   sectionName: string
   features: Feature[]
+  bgColor: string
+  index: number
   color: string
-  gradientColor?: string
-  gradientStyle?: string
+  iconSrc: string
 }
 
 export const GenericSection = ({
@@ -21,43 +22,46 @@ export const GenericSection = ({
   subtitle,
   sectionName,
   features,
+  bgColor,
+  index,
   color,
-  gradientColor,
-  gradientStyle,
+  iconSrc
 }: GenericSectionProps) => {
+
   return (
     <section
       id={sectionName}
-      className={`relative m-6 w-11/12 max-w-screen-xl overflow-hidden rounded-3xl bg-gray-800/40 ${color} px-6 py-16 text-center shadow-2xl md:p-12 lg:m-8 lg:p-24 `}
+      className={`${index % 2 === 1 ? bgColor : ''} w-full h-full p-4 py-6 lg:p-9 flex items-center justify-center`}
     >
-      <GridLines />
-      <GradientLayer
-        gradientColor={gradientColor}
-        gradientStyle={gradientStyle}
-      />
-
-      <div className='mx-auto flex max-w-7xl flex-col items-center justify-center text-left'>
-        <div className='mx-auto max-w-2xl'>
-          <h2 className='text-center text-base font-semibold leading-7 text-indigo-400'>
-            {subtitle}
-          </h2>
-          <p className='mt-2 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-            {title}
-          </p>
-        </div>
-        <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16'>
-          {features.map((feature, index) => (
-            <div key={index} className='relative pl-9'>
-              <dt className='inline font-semibold text-white'>
-                <feature.icon
-                  className='absolute left-1 top-1 h-5 w-5 text-indigo-500'
-                  aria-hidden='true'
-                />
-              </dt>
-              <dd className='inline'>{feature.description}</dd>
+      <div className={`bg-white rounded-xl max-w-screen-sm lg:max-w-screen-2xl w-full ${index % 2 === 1 ? 'shadow-custom border-2 border-title' : ''} px-4 py-10 lg:py-24 lg:px-14`}>
+        <div className='relative flex flex-col text-left bg-clip-border'>
+          <div className='flex items-center'>
+            <div className={`mr-6 ${bgColor} rounded-full`}>
+              <Image src={iconSrc} width={70} height={70} alt={sectionName} className='lg:h-[110px] lg:w-[110px] min-h-[80px] min-w-[80px]' />
             </div>
-          ))}
-        </dl>
+            <div className='flex flex-col justify-center'>
+              <p className='mt-2 text-2xl font-bold tracking-tight text-left lg:text-6xl text-title sm:text-4xl'>
+                {title}
+              </p>
+              <h2 className={`text-base lg:text-3xl font-medium text-left ${color}`}>
+                {subtitle}
+              </h2>
+            </div>
+          </div>
+          <dl className='grid grid-cols-1 gap-8 mx-auto mt-16 text-base leading-7 text-subtitle sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16'>
+            {features.map((feature, index) => (
+              <div key={index} className='relative pl-9'>
+                <dt className='inline font-semibold text-white'>
+                  <feature.icon
+                    className='absolute w-5 h-5 text-subtitle left-1 top-1'
+                    aria-hidden='true'
+                  />
+                </dt>
+                <dd className='inline'>{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   )
