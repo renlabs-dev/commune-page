@@ -1,7 +1,8 @@
+import { cairo } from '@/app/fonts'
 import { links } from '@/app/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { HTMLAttributes } from 'react'
+import React from 'react'
 
 const navigation = {
   main: [
@@ -14,93 +15,73 @@ const navigation = {
     {
       name: 'Discord',
       href: links.discord,
-      icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image
-          {...props}
-          src={'/discord-icon-white.svg'}
-          alt="Commune's Discord link"
-          width={24}
-          height={24}
-        />
-      ),
     },
     {
       name: 'X',
       href: links.x,
-      icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image
-          {...props}
-          src={'/x-icon-white.svg'}
-          alt="Commune's X link"
-          width={24}
-          height={24}
-          className='mx-auto h-5 w-5'
-        />
-      ),
     },
     {
       name: 'GitHub',
       href: links.github,
-      icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image
-          {...props}
-          src={'/github-icon-white.svg'}
-          alt="Commune's Github link"
-          width={24}
-          height={24}
-        />
-      ),
     },
     {
       name: 'Telegram',
       href: links.telegram,
-      icon: (props: HTMLAttributes<HTMLElement>) => (
-        <Image
-          {...props}
-          src={'/telegram-icon-white.svg'}
-          alt="Commune's Github link"
-          width={24}
-          height={24}
-        />
-      ),
     },
   ],
 }
 
 export const Footer = () => {
   return (
-    <footer className='mt-8 bg-gray-800/90'>
-      <div className='mx-auto flex max-w-7xl flex-col items-center overflow-hidden px-6 py-12 lg:px-8'>
-        <nav
-          className='-mb-6 columns-3 text-center sm:flex sm:justify-center sm:space-x-12'
-          aria-label='Footer'
-        >
-          {navigation.main.map((item) => (
-            <div key={item.name} className='pb-6'>
+    <footer className="bg-white bg-[url('/footer-background.svg')] bg-cover">
+      <div className='mx-auto flex max-w-7xl flex-col items-center gap-12 overflow-hidden px-6 py-12 pt-32 lg:px-8'>
+        <Link href={links.home} className={`col-span-1 flex items-center`}>
+          <Image
+            src={'/commune-logo.svg'}
+            width={37}
+            height={45}
+            alt='commune logo'
+            priority
+            className='mr-[3px]'
+          />
+          <span className={`${cairo.className} ml-2 text-2xl font-semibold`}>
+            Commune Ai
+          </span>
+        </Link>
+        <div className='flex flex-col gap-6 text-center md:flex-row md:gap-12'>
+          <nav className='flex flex-row gap-3' aria-label='Footer'>
+            <p className='font-semibold text-title'>Resources:</p>
+            {navigation.main.map((item) => (
               <Link
+                key={item.name}
                 href={item.href}
-                className='text-sm leading-6 text-gray-200 hover:text-gray-400'
+                className='text-md leading-6 text-subtitle hover:text-gray-800 hover:underline'
               >
                 {item.name}
               </Link>
-            </div>
-          ))}
-        </nav>
-        <div className='align-center mt-10 flex justify-center space-x-10'>
-          {navigation.social.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className='flex items-center text-gray-200'
-            >
-              <span className='sr-only'>{item.name}</span>
-              <item.icon className='h-6 w-6' aria-hidden='true' />
-            </Link>
-          ))}
+            ))}
+          </nav>
+          <nav className='flex flex-row gap-3' aria-label='Footer'>
+            <p className='font-semibold text-title'>Links:</p>
+            {navigation.social.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className='text-md leading-6 text-subtitle hover:text-gray-800 hover:underline'
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <p className='mt-10 text-center text-xs leading-5 text-gray-300'>
-          &copy; 2024 Commune, Inc. All rights reserved.
-        </p>
+        <div className='flex w-full justify-center border-t-2 border-black md:justify-between'>
+          <p className='mt-3 hidden text-right text-xs leading-5 text-title md:block'>
+            Renovating the way we build software for everyone.
+          </p>
+          <p className='mt-3 text-center text-xs leading-5 text-title'>
+            &copy; 2024 Commune, Inc. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   )
