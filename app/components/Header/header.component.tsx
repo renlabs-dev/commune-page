@@ -139,12 +139,9 @@ export const Header = () => {
             </Link>
             <Link
               href='#'
-              className='rounded-xl border-2 border-title bg-[#FF6C6C] px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
+              className='rounded-xl border-2 border-title bg-[#FF6C6C] px-6 py-3 text-center text-sm font-medium text-title shadow-custom'
             >
-              <span
-                aria-label='Get started with Commune AI'
-                className='text-white'
-              >
+              <span aria-label='Get started with Commune AI'>
                 Join Community <span className='text-xs'>▼</span>
               </span>
             </Link>

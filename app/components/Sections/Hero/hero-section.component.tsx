@@ -17,14 +17,14 @@ export const HeroSection = () => {
       />
       <div className='flex h-full w-full flex-col items-center justify-center lg:w-auto lg:items-start'>
         <h1
-          className={`${cairo.className} pb-16 text-center text-5xl font-bold text-title lg:pb-0 lg:text-left lg:text-7xl`}
+          className={`${cairo.className} pb-16 text-center text-5xl font-bold text-title lg:pb-0 lg:text-left lg:text-6xl`}
         >
           Commune Ai
         </h1>
-        <h2 className='text-center text-base font-medium text-subtitle lg:text-left'>
+        <h2 className='text-center text-xl font-medium text-subtitle lg:text-left'>
           Renovating the way we build software for{' '}
           <span
-            className={`${covered_by_your_grace.className} text-lg font-normal text-[#62ABFF]`}
+            className={`${covered_by_your_grace.className} text-2xl font-normal text-[#62ABFF]`}
           >
             everyone
           </span>
@@ -32,11 +32,9 @@ export const HeroSection = () => {
         </h2>
         <Link
           href='#discord'
-          className='mt-10 w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-16 py-6 text-center text-sm font-bold text-white shadow-custom lg:w-auto'
+          className='mt-8 w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-12 py-6 text-center text-sm font-bold text-title shadow-custom lg:w-auto'
         >
-          <span aria-label='Get started with Commune AI' className='text-white'>
-            GET STARTED NOW
-          </span>
+          <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
         </Link>
       </div>
     </div>

@@ -11,6 +11,7 @@ type GenericSectionProps = {
   subtitle: string
   sectionName: string
   features: Feature[]
+  lightColor: string
   bgColor: string
   index: number
   color: string
@@ -22,6 +23,7 @@ export const GenericSection = ({
   subtitle,
   sectionName,
   features,
+  lightColor,
   bgColor,
   index,
   color,
@@ -30,10 +32,10 @@ export const GenericSection = ({
   return (
     <section
       id={sectionName}
-      className={`${index % 2 === 1 ? bgColor : ''} flex h-full w-full items-center justify-center p-4 py-6 lg:p-9`}
+      className={`${index % 2 === 1 ? `${lightColor}` : ''} flex h-full w-full items-center justify-center p-4 lg:p-6`}
     >
       <div
-        className={`w-full max-w-screen-sm rounded-xl bg-white lg:max-w-screen-2xl ${index % 2 === 1 ? 'border-2 border-title shadow-custom' : ''} px-4 py-10 lg:px-14 lg:py-24`}
+        className={`w-full max-w-screen-sm rounded-xl bg-white lg:max-w-screen-xl ${index % 2 === 1 ? 'border-2 border-title shadow-custom' : ''} p-5 lg:px-16 lg:py-16`}
       >
         <div className='relative flex flex-col bg-clip-border text-left'>
           <div className='flex items-center'>
@@ -47,11 +49,11 @@ export const GenericSection = ({
               />
             </div>
             <div className='flex flex-col justify-center'>
-              <p className='mt-2 text-left text-2xl font-bold tracking-tight text-title sm:text-4xl lg:text-6xl'>
+              <p className='mt-2 text-left text-2xl font-bold tracking-tight text-title sm:text-4xl lg:text-5xl'>
                 {title}
               </p>
               <h2
-                className={`text-left text-base font-medium lg:text-3xl ${color}`}
+                className={`text-left text-base font-medium lg:text-2xl ${color}`}
               >
                 {subtitle}
               </h2>
