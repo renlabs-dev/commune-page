@@ -47,7 +47,7 @@ export const WelcomeSection = () => {
         </h4>
       </div>
 
-      <div className='flex flex-col justify-center w-full space-y-10 lg:space-x-5 xl:space-x-8 lg:space-y-0 lg:flex-row'>
+      <div className='flex flex-col justify-center w-full max-w-screen-sm space-y-10 lg:max-w-none lg:space-x-5 xl:space-x-8 lg:space-y-0 lg:flex-row'>
         {sections.map((section) => {
           return (
             <Link
@@ -56,7 +56,7 @@ export const WelcomeSection = () => {
               className='flex flex-row-reverse items-center justify-end p-5 bg-white border-2 lg:w-1/5 lg:max-w-[200px] lg:flex-col lg:justify-between rounded-xl border-title lg:py-8 shadow-custom'
             >
               <h5 className='w-2/3 text-xl font-medium text-left lg:w-full lg:text-center lg:mb-10'>{section.title}</h5>
-              <span className={`mr-5 lg:mr-0 ${section.color} rounded-full`}>
+              <span className={`mr-5 lg:mr-0 ${section.bgColor} rounded-full`}>
                 <Image src={section.iconSrc} width={70} height={70} alt={section.sectionName} className='lg:h-[100px] lg:w-[100px]' />
               </span>
             </Link>

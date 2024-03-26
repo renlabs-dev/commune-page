@@ -6,7 +6,7 @@
   scroll-behavior: smooth;
 }
 
-section:nth-child(even) {
+/* section:nth-child(even) {
   animation: fadeAndSlideBottomLeft 3s linear both;
   animation-timeline: view();
   animation-duration: 1ms;
@@ -41,4 +41,4 @@ section {
     opacity: 1;
     transform: translate(0, 0);
   }
-}
+} */
