@@ -5,6 +5,7 @@ import { XMarkIcon, SunIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
+import { cairo } from '@/app/fonts'
 
 type THeaderLinkProps = {
   href: string
@@ -52,11 +53,11 @@ export const Header = () => {
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='w-6 h-6' aria-hidden='true' />
+              <XMarkIcon className='h-6 w-6' aria-hidden='true' />
             </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
-                <div className='mt-6 ml-2 space-y-2'>
+                <div className='ml-2 mt-6 space-y-2'>
                   {navigation.map(({ name, href, external }) => (
                     <Link
                       key={name}
@@ -68,7 +69,7 @@ export const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <div className='flex py-6 space-x-3'>
+                <div className='flex space-x-3 py-6'>
                   <HeaderLink
                     href={links.github}
                     icon='/github-icon-white.svg'
@@ -110,9 +111,11 @@ export const Header = () => {
               priority
               className='mr-[3px]'
             />
-            <span className='ml-2 text-2xl font-medium'>commune</span>
+            <span className={`${cairo.className} ml-2 text-2xl font-semibold`}>
+              Commune Ai
+            </span>
           </Link>
-          <div className='items-center justify-end hidden lg:flex lg:gap-x-6'>
+          <div className='hidden items-center justify-end lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
@@ -125,7 +128,7 @@ export const Header = () => {
             ))}
             <Link
               href='#'
-              className='px-6 py-3 text-sm font-medium text-center text-white bg-white border-2 rounded-xl border-title shadow-custom'
+              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
             >
               <span
                 aria-label='Get started with Commune AI'
@@ -149,14 +152,14 @@ export const Header = () => {
               <SunIcon width={22} />
             </button>
           </div>
-          <div className='ml-auto col-span-3 lg:hidden '>
+          <div className='col-span-3 ml-auto lg:hidden '>
             <button
               type='button'
               className={`${commonButtonClass} -m-2.5`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Open main menu</span>
-              <EllipsisVerticalIcon className='w-6 h-6' aria-hidden='true' />
+              <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
         </nav>
