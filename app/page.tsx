@@ -31,7 +31,7 @@ export default async function Home() {
           />
         )
       })}
-      {/* <FrequentQuestions /> */}
+      <FrequentQuestions />
       {/* <Footer /> */}
     </Suspense>
   )
