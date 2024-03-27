@@ -1,68 +1,67 @@
 import Link from 'next/link'
-import { DiscordWidget, GradientLayer } from '@/app/components'
-import { links, gradientSectionColors } from '@/app/utils'
+import { links } from '@/app/utils'
+import Image from 'next/image'
+import { covered_by_your_grace } from '@/app/fonts'
 
-type CTAWrapper = {
-  children: React.ReactElement
-  gradientColor: string
-}
-
-const CtaWrapper = ({ children, gradientColor }: CTAWrapper) => {
+export const CallToActionSection = async () => {
   return (
-    <section
-      id='discord'
-      className='relative flex flex-col items-center justify-center overflow-hidden rounded-3xl bg-gray-800/40 p-12 text-center shadow-xl md:flex-row'
-    >
-      <GradientLayer gradientColor={gradientColor} />
-      {children}
-    </section>
-  )
-}
-
-export const CallToActionSection = () => {
-  return (
-    <div className='m-6 flex w-11/12 max-w-screen-xl flex-col gap-12 lg:flex-row'>
-      <CtaWrapper gradientColor={gradientSectionColors.pink}>
-        <div>
-          <div className='px-12'>
-            <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-              Commune Hub
-            </h2>
-            <p className='mt-4 text-base leading-7 text-gray-300'>
-              Join Commune&apos;s Discord. Code, connect, innovate – Shape the
-              future together!
-            </p>
-          </div>
-
-          <div className='mt-6 flex items-center justify-center'>
-            <DiscordWidget />
-          </div>
+    <div id='communehub' className='flex flex-col items-center justify-center w-full h-auto px-10 py-12 mx-auto space-y-4 border-b-2 border-black border-dashed lg:flex-row lg:space-x-12 lg:space-y-0'>
+      <div className='w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] lg:w-1/2'>
+        <div className='flex flex-row items-center justify-start p-4 bg-white border-b-2 border-black border-dashed rounded-tr-xl lg:p-8'>
+          <span className='p-4 mr-6 border-2 border-black rounded-full'>
+            <Image
+              src={'/discord-icon.svg'}
+              width={32}
+              height={32}
+              alt=''
+            />
+          </span>
+          <span className='text-2xl font-medium text-title lg:text-4xl'>
+            Commune Hub
+          </span>
         </div>
-      </CtaWrapper>
-
-      <CtaWrapper gradientColor={gradientSectionColors.red}>
-        <div>
-          <div className='px-12'>
-            <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
-              Commune Docs
-            </h2>
-            <p className='mt-4 text-base leading-7 text-gray-300'>
-              Get started on Commune&apos;s environment – Create, and deploy
-              your modules!
-            </p>
-          </div>
-
-          <div className='mt-6 flex items-center justify-center'>
-            <Link
-              href={links.docs}
-              target='_blank'
-              className='text-md font-base mt-8 flex items-center justify-center p-6 leading-6 text-blue-300 hover:animate-scale-up-sm hover:text-blue-400 '
-            >
-              <span>Go to Docs →</span>
-            </Link>
-          </div>
+        <div className='flex flex-col items-start justify-between w-full p-8 py-10 bg-white rounded-br-xl lg:flex-row lg:items-center'>
+          <Link
+            href={links.discord}
+            className='mb-5 text-3xl font-normal lg:mb-0 lg:mr-10 lg:min-w-40'
+            target='_blank'
+          >
+            Join <br />
+            Discord →
+          </Link>
+          <span className='w-full text-base font-normal max-w-72 lg:w-full'>
+            Join Commune&apos;s Discord. Code, connect, innovate – Shape the
+            future together!
+          </span>
         </div>
-      </CtaWrapper>
+      </div>
+
+      <div className=' relative w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] lg:w-1/2'>
+        <div className='absolute flex items-center justify-center w-full h-full rounded-xl text-white bg-white/[0.94]'>
+          <span className={`${covered_by_your_grace.className}  text-5xl lg:text-6xl text-section-info`}>Coming soon</span>
+        </div>
+        <div className='flex flex-row items-center justify-start p-4 bg-white border-b-2 border-black border-dashed rounded-tr-xl lg:p-8'>
+          <span className='p-5 py-4 mr-6 border-2 border-black rounded-full'>
+            <Image src={'/docs-icon.svg'} width={25} height={25} alt='' />
+          </span>
+          <span className='text-2xl font-medium text-title lg:text-4xl'>
+            Commune Docs
+          </span>
+        </div>
+        <div className='flex flex-col items-start justify-between w-full p-8 py-10 bg-white rounded-br-xl lg:flex-row lg:items-center'>
+          <Link
+            // href={links.docs}
+            href={'https://rb.gy/3u89fy'}
+            className='mb-5 text-3xl font-normal lg:mb-0 lg:mr-10 lg:min-w-40'
+          >
+            Go to <br /> Docs →
+          </Link>
+          <span className='w-full text-base font-normal max-w-72 lg:w-full'>
+            Get started on Commune&apos;s environment – Create, and deploy your
+            modules!
+          </span>
+        </div>
+      </div>
     </div>
   )
 }
