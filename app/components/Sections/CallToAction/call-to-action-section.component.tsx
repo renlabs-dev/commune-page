@@ -9,7 +9,7 @@ export const CallToActionSection = async () => {
         <div className='flex flex-row items-center justify-start p-4 bg-white border-b-2 border-black border-dashed rounded-tr-xl lg:p-8'>
           <span className='p-4 mr-6 border-2 border-black rounded-full'>
             <Image
-              src={'/discord-icon-black.svg'}
+              src={'/discord-icon.svg'}
               width={32}
               height={32}
               alt=''
@@ -38,7 +38,7 @@ export const CallToActionSection = async () => {
       <div className='w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] lg:w-1/2'>
         <div className='flex flex-row items-center justify-start p-4 bg-white border-b-2 border-black border-dashed rounded-tr-xl lg:p-8'>
           <span className='p-5 py-4 mr-6 border-2 border-black rounded-full'>
-            <Image src={'/docs-icon-black.svg'} width={25} height={25} alt='' />
+            <Image src={'/docs-icon.svg'} width={25} height={25} alt='' />
           </span>
           <span className='text-2xl font-medium text-title lg:text-4xl'>
             Commune Docs
