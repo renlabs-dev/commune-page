@@ -8,28 +8,31 @@ import {
 } from './components'
 import Loading from './loading'
 import { sections } from './utils'
+import { WelcomeSection } from './components/Sections'
 
 export default async function Home() {
   return (
     <Suspense fallback={<Loading />}>
-      <div className='flex flex-col items-center'>
-        <HeroSection />
-        <CallToActionSection />
-        {sections.map((section, index) => {
-          return (
-            <GenericSection
-              key={index}
-              sectionName={section.sectionName}
-              title={section.title}
-              subtitle={section.subtitle}
-              color={section.color}
-              features={section.features}
-              gradientColor={section.gradientColor}
-            />
-          )
-        })}
-        <FrequentQuestions />
-      </div>
+      <HeroSection />
+      <WelcomeSection />
+      <CallToActionSection />
+      {sections.map((section, index) => {
+        return (
+          <GenericSection
+            key={index}
+            index={index}
+            sectionName={section.sectionName}
+            title={section.title}
+            subtitle={section.subtitle}
+            lightColor={section.lightColor}
+            bgColor={section.bgColor}
+            color={section.color}
+            features={section.features}
+            iconSrc={section.iconSrc}
+          />
+        )
+      })}
+      <FrequentQuestions />
       <Footer />
     </Suspense>
   )
