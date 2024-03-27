@@ -1,7 +1,10 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import { XMarkIcon, SunIcon } from '@heroicons/react/24/outline'
+import {
+  XMarkIcon,
+  // SunIcon 
+} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -36,6 +39,11 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
+  // const handleColorTheme = () => {
+  //   const currentTheme = localStorage.getItem('theme')
+  //   return localStorage.setItem('theme', currentTheme === 'light' ? 'dark' : 'light')
+  // }
+
   const commonButtonClass =
     'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-title p-1.5 hover:bg-gray-100/[0.15]'
 
@@ -53,11 +61,11 @@ export const Header = () => {
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='h-6 w-6 text-title' aria-hidden='true' />
+              <XMarkIcon className='w-6 h-6 text-title' aria-hidden='true' />
             </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
-                <div className='ml-2 mt-6 space-y-2'>
+                <div className='mt-6 ml-2 space-y-2'>
                   {navigation.map(({ name, href, external }) => (
                     <Link
                       key={name}
@@ -69,24 +77,30 @@ export const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <div className='flex space-x-3 py-6'>
-                  <HeaderLink
-                    href={links.github}
-                    icon='/github-icon-white.svg'
-                    alt="Commune's Github Link"
-                    className={`${commonButtonClass} mb-4`}
-                  />
+                <div className='flex py-6 space-x-3'>
                   <HeaderLink
                     href={links.discord}
-                    icon='/discord-icon-white.svg'
+                    icon='/discord-icon.svg'
                     alt="Commune's Discord Link"
                     className={commonButtonClass}
                   />
                   <HeaderLink
+                    href={links.github}
+                    icon='/github-icon.svg'
+                    alt="Commune's Github Link"
+                    className={`${commonButtonClass} mb-4`}
+                  />
+                  <HeaderLink
                     href={links.telegram}
-                    icon='/telegram-icon-white.svg'
+                    icon='/telegram-icon.svg'
                     alt="Commune's Telegram Link"
                     className={`${commonButtonClass} pr-2`}
+                  />
+                  <HeaderLink
+                    href={links.x}
+                    icon='/x-icon.svg'
+                    alt="Commune's X Link"
+                    className={`${commonButtonClass} p-3.5`}
                   />
                 </div>
               </div>
@@ -96,7 +110,7 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none bg-white bg-opacity-90 backdrop-blur transition-colors duration-500`}
+        className={`sticky top-0 z-40 flex w-full flex-none bg-white bg-opacity-90  border-b border-gray-900/[0.06] backdrop-blur transition-colors duration-500`}
       >
         <nav
           className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
@@ -115,7 +129,7 @@ export const Header = () => {
               Commune Ai
             </span>
           </Link>
-          <div className='hidden items-center justify-end lg:flex lg:gap-x-6'>
+          <div className='items-center justify-end hidden lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
@@ -127,8 +141,8 @@ export const Header = () => {
               </Link>
             ))}
             <Link
-              href='#'
-              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
+              href='#welcome'
+              className='px-6 py-3 text-sm font-medium text-center text-white bg-white border-2 rounded-xl border-title shadow-custom'
             >
               <span
                 aria-label='Get started with Commune AI'
@@ -145,18 +159,18 @@ export const Header = () => {
                 Join Community <span className='text-xs'>▼</span>
               </span>
             </Link>
-            <button className='mt-1'>
+            {/* <button className='mt-1' onClick={handleColorTheme}>
               <SunIcon width={22} />
-            </button>
+            </button> */}
           </div>
-          <div className='col-span-3 ml-auto lg:hidden '>
+          <div className='self-center col-span-3 ml-auto lg:hidden '>
             <button
               type='button'
               className={`${commonButtonClass} -m-2.5`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Open main menu</span>
-              <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
+              <EllipsisVerticalIcon className='w-6 h-6' aria-hidden='true' />
             </button>
           </div>
         </nav>

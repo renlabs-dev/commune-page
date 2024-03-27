@@ -26,18 +26,18 @@ export const DocSidebar = (props: TDocSidebarProps) => {
   return (
     <>
       <div
-        className={`fixed z-[70] h-[calc(100svh-81px)] w-full animate-menu-fade backdrop-blur-sm lg:w-[17rem] lg:backdrop-blur-none ${mobileMenuOpen ? 'visible' : 'hidden'} lg:block`}
+        className={`fixed z-10 h-[calc(100svh-81px)] w-full animate-menu-fade backdrop-blur-sm lg:w-[17rem] lg:backdrop-blur-none ${mobileMenuOpen ? 'visible' : 'hidden'} lg:block`}
         onClick={toggleMobileMenu}
         aria-label='Global'
       >
-        <div className='sm:min-w-2/6 relative h-full w-4/6 overflow-y-scroll border-r border-gray-50/[0.06] bg-white p-8 sm:w-3/6 md:w-2/6 lg:mx-auto lg:w-full'>
+        <div className='sm:min-w-2/6 relative h-full w-4/6 overflow-y-scroll border-r border-gray-900/[0.06] bg-white p-8 sm:w-3/6 md:w-2/6 lg:mx-auto lg:w-full'>
           <button
             type='button'
             className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg lg:hidden`}
             onClick={toggleMobileMenu}
           >
             <span className='sr-only'>Close menu</span>
-            <ChevronLeftIcon className='h-6 w-6' aria-hidden='true' />
+            <ChevronLeftIcon className='w-6 h-6' aria-hidden='true' />
           </button>
           {tutorials.map((tutorial, index) => {
             return (
@@ -53,7 +53,7 @@ export const DocSidebar = (props: TDocSidebarProps) => {
                       >
                         {params.slug[1] === content.href &&
                           params.slug[0] === tutorial.tutorialId && (
-                            <div className='absolute -left-1 h-2 w-2 rounded-full bg-red-500' />
+                            <div className='absolute w-2 h-2 bg-red-500 rounded-full -left-1' />
                           )}
                         <span>{content.name}</span>
                       </Link>
@@ -67,7 +67,7 @@ export const DocSidebar = (props: TDocSidebarProps) => {
       </div>
 
       <div className='relative w-full overflow-hidden'>
-        <div className='sticky top-0 z-[60] flex h-12 w-full items-center border-b border-gray-50/[0.06] bg-transparent pl-6 text-sm text-gray-400 lg:hidden'>
+        <div className='sticky top-0 z-0 flex h-12 w-full items-center border-b border-gray-50/[0.06] bg-transparent pl-6 text-sm text-gray-400 lg:hidden'>
           <button
             className={`${commonButtonClass} mr-6 h-8 w-8 rounded-lg`}
             onClick={toggleMobileMenu}
