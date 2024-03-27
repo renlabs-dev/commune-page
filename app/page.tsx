@@ -25,6 +25,7 @@ export default async function Home() {
             title={section.title}
             subtitle={section.subtitle}
             lightColor={section.lightColor}
+            darkColor={section.darkColor}
             bgColor={section.bgColor}
             color={section.color}
             features={section.features}
