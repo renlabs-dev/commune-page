@@ -54,7 +54,7 @@ export const Header = () => {
         onClick={toggleMobileMenu}
       >
         <nav className={`fixed z-50 h-full w-full`}>
-          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-lg bg-white p-5 sm:w-[40%] dark:bg-[#131B2A]'>
+          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-lg bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
             <button
               type='button'
               className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg`}
@@ -146,11 +146,11 @@ export const Header = () => {
             <Link
               href={links.discord}
               target='_blank'
-              className='dark:shadow-customDark hover:animate-squeeze dark:border-titleDark rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom dark:bg-transparent '
+              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom hover:animate-squeeze dark:border-titleDark dark:bg-transparent dark:shadow-customDark '
             >
               <span
                 aria-label='Get started with Commune AI'
-                className='dark:text-titleDark text-header-links'
+                className='text-header-links dark:text-titleDark'
               >
                 {/* Get Started */}
                 Join community
