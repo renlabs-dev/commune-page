@@ -1,14 +1,14 @@
 import {
-  ExclamationTriangleIcon,
-  BuildingOffice2Icon,
   CodeBracketSquareIcon,
+  CurrencyDollarIcon,
+  SparklesIcon,
 } from '@heroicons/react/20/solid'
 
 export const networkingFeatures = [
   {
     description:
       'Our current economic landscape is characterized by fragmentation, with various sectors and industries operating independently.',
-    icon: BuildingOffice2Icon,
+    icon: CurrencyDollarIcon,
   },
   {
     description:
@@ -18,6 +18,6 @@ export const networkingFeatures = [
   {
     description:
       'Commune is a revolutionary protocol that connects developer tools, fostering collaboration, interoperability, and innovation within the development community.',
-    icon: ExclamationTriangleIcon,
+    icon: SparklesIcon,
   },
 ]
