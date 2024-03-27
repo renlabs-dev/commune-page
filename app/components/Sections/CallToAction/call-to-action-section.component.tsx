@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import Image from 'next/image'
+import { covered_by_your_grace } from '@/app/fonts'
 
 export const CallToActionSection = async () => {
   return (
@@ -35,7 +36,10 @@ export const CallToActionSection = async () => {
         </div>
       </div>
 
-      <div className='w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] lg:w-1/2'>
+      <div className=' relative w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] lg:w-1/2'>
+        <div className='absolute flex items-center justify-center w-full h-full rounded-xl text-white bg-white/[0.94]'>
+          <span className={`${covered_by_your_grace.className}  text-5xl lg:text-6xl text-section-info`}>Coming soon</span>
+        </div>
         <div className='flex flex-row items-center justify-start p-4 bg-white border-b-2 border-black border-dashed rounded-tr-xl lg:p-8'>
           <span className='p-5 py-4 mr-6 border-2 border-black rounded-full'>
             <Image src={'/docs-icon.svg'} width={25} height={25} alt='' />
@@ -46,7 +50,8 @@ export const CallToActionSection = async () => {
         </div>
         <div className='flex flex-col items-start justify-between w-full p-8 py-10 bg-white rounded-br-xl lg:flex-row lg:items-center'>
           <Link
-            href={links.docs}
+            // href={links.docs}
+            href={'https://rb.gy/3u89fy'}
             className='mb-5 text-3xl font-normal lg:mb-0 lg:mr-10 lg:min-w-40'
           >
             Go to <br /> Docs →
