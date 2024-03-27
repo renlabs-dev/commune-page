@@ -31,18 +31,13 @@ const HeaderLink = ({
 )
 
 const navigation = [
-  { name: 'Docs', href: links.docs, external: false },
+  // { name: 'Docs', href: links.docs, external: false },
   { name: 'Whitepaper', href: links.whitepaper, external: true },
 ]
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
-
-  // const handleColorTheme = () => {
-  //   const currentTheme = localStorage.getItem('theme')
-  //   return localStorage.setItem('theme', currentTheme === 'light' ? 'dark' : 'light')
-  // }
 
   const commonButtonClass =
     'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-title p-1.5 hover:bg-gray-100/[0.15]'
@@ -129,36 +124,38 @@ export const Header = () => {
               Commune Ai
             </span>
           </Link>
-          <div className='items-center justify-end hidden lg:flex lg:gap-x-6'>
+          <div className='relative items-center justify-end hidden lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400'
+                className='text-sm font-semibold flex items-center flex-col leading-6 text-[#222222] hover:text-gray-400'
               >
                 {name}
               </Link>
             ))}
             <Link
-              href='#welcome'
+              href={links.discord}
+              target='_blank'
               className='px-6 py-3 text-sm font-medium text-center text-white bg-white border-2 rounded-xl border-title shadow-custom'
             >
               <span
                 aria-label='Get started with Commune AI'
                 className='text-header-links'
               >
-                Get Started
+                {/* Get Started */}
+                Join community
               </span>
             </Link>
-            <Link
-              href='#'
+            {/* <Link
+              href={links.discord}
               className='rounded-xl border-2 border-title bg-[#FF6C6C] px-6 py-3 text-center text-sm font-medium text-title shadow-custom'
             >
               <span aria-label='Get started with Commune AI'>
                 Join Community <span className='text-xs'>▼</span>
               </span>
-            </Link>
+            </Link> */}
             {/* <button className='mt-1' onClick={handleColorTheme}>
               <SunIcon width={22} />
             </button> */}
