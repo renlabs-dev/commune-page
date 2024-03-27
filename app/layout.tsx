@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${inter.className}`}>
+      <header>
+        <link rel="icon" href="/commune-logo.svg" sizes="any" />
+      </header>
       <body className='relative h-full bg-white'>
         <Header />
         {children}
