@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        title: '#2E2F35',
+        subtitle: '#58595D',
+        'section-info': '#141414',
+        'header-links': '#222222',
+      },
+      boxShadow: {
+        custom: '3px 3px 0 0 rgba(46,47,53,1)',
+      },
       animation: {
         fade: 'fadeOut 0.6s ease-in-out',
         'menu-fade': 'fadeOut 0.1s ease-in-out',
