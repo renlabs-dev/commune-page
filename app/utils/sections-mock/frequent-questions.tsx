@@ -51,7 +51,7 @@ export const faqData = [
   {
     question: 'How to buy $COMAI?',
     answer:
-      <span>Currently you can buy COMAI on <Hyperlink href="https://app.uniswap.org/explore/tokens/ethereum/0xc78b628b060258300218740b1a7a5b3c82b3bd9f">uniswap (WCOMAI)</Hyperlink>, <Hyperlink href="https://comswap.io/">Comswap</Hyperlink>, and <Hyperlink href="https://www.mexc.com/price/COMAI?calculatorTab=trade">MEXC</Hyperlink></span>,
+      <span>Currently you can buy COMAI on <Hyperlink href="https://app.uniswap.org/explore/tokens/ethereum/0xc78b628b060258300218740b1a7a5b3c82b3bd9f">uniswap (WCOMAI)</Hyperlink>, <Hyperlink href="https://comswap.io/">Comswap</Hyperlink>, and <Hyperlink href="https://www.mexc.com/price/COMAI?calculatorTab=trade">MEXC</Hyperlink>.</span>,
   },
   {
     question: 'How to set up a wallet, stake and unstake COM Tokens?',
