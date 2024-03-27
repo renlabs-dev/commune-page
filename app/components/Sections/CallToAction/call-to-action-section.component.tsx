@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { links } from '@/app/utils'
 import Image from 'next/image'
 import { covered_by_your_grace } from '@/app/fonts'
+import { DiscordWidget } from '../..'
 
 export const CallToActionSection = async () => {
   return (
@@ -14,14 +15,17 @@ export const CallToActionSection = async () => {
           <span className='mr-6 rounded-full border-2 border-black p-4'>
             <Image src={'/discord-icon.svg'} width={32} height={32} alt='' />
           </span>
-          <span className='text-2xl font-medium text-title lg:text-4xl'>
-            Commune Hub
-          </span>
+          <div>
+            <span className='text-2xl font-medium text-title lg:text-4xl'>
+              Commune Hub
+            </span>
+            <DiscordWidget />
+          </div>
         </div>
         <div className='flex w-full flex-col items-start justify-between rounded-br-xl bg-white p-8 py-10 lg:flex-row lg:items-center'>
           <Link
             href={links.discord}
-            className='mb-5 text-3xl font-normal lg:mb-0 lg:mr-10 lg:min-w-40'
+            className='mb-5 text-3xl font-normal hover:underline lg:mb-0 lg:mr-10 lg:min-w-40'
             target='_blank'
           >
             Join <br />
