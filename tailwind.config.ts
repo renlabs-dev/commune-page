@@ -16,6 +16,7 @@ const config: Config = {
       },
       boxShadow: {
         custom: '3px 3px 0 0 rgba(46,47,53,1)',
+        customHover: '1px 1px 0 0 rgba(46,47,53,1)',
       },
       animation: {
         fade: 'fadeOut 0.6s ease-in-out',
@@ -25,6 +26,9 @@ const config: Config = {
         'fade-slide-down': 'fadeAndSlideDown 0.2s ease-in-out both',
         'scale-up-sm': 'scaleUpSm 0.03s ease-in-out both',
         'scale-down-md': 'scaleDownMd 0.2s ease-in-out both',
+        'fade-in-up': 'fade-in-up 0.6s ease-in-out',
+        squeeze: 'squeeze 0.6s ease-in-out',
+        tada: 'tada 1s ease-in-out',
       },
       keyframes: {
         fadeOut: {
@@ -55,6 +59,59 @@ const config: Config = {
           to: {
             transform: 'translateY(0%)',
             scale: '1',
+          },
+        },
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        squeeze: {
+          '0%, 100%': {
+            transform: 'scale(1, 1)',
+          },
+          '50%': {
+            transform: 'scale(1.02, 0.95)',
+          },
+        },
+        tada: {
+          '0%': {
+            transform: 'scale(1)',
+          },
+          '10%': {
+            transform: 'scale(0.9) rotate(-3deg)',
+          },
+          '20%': {
+            transform: 'scale(0.9) rotate(-3deg)',
+          },
+          '30%': {
+            transform: 'scale(1.1) rotate(3deg)',
+          },
+          '40%': {
+            transform: 'scale(1.1) rotate(-3deg)',
+          },
+          '50%': {
+            transform: 'scale(1.1) rotate(3deg)',
+          },
+          '60%': {
+            transform: 'scale(1.1) rotate(-3deg)',
+          },
+          '70%': {
+            transform: 'scale(1.1) rotate(3deg)',
+          },
+          '80%': {
+            transform: 'scale(1.1) rotate(-3deg)',
+          },
+          '90%': {
+            transform: 'scale(1.1) rotate(3deg)',
+          },
+          '100%': {
+            transform: 'scale(1) rotate(0)',
           },
         },
       },

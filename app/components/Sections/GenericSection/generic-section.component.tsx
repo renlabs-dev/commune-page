@@ -45,7 +45,7 @@ export const GenericSection = ({
                 width={70}
                 height={70}
                 alt={sectionName}
-                className='min-h-[80px] min-w-[80px] lg:h-[110px] lg:w-[110px]'
+                className='hover:animate-tada min-h-[80px] min-w-[80px] lg:h-[110px] lg:w-[110px]'
               />
             </div>
             <div className='flex flex-col justify-center'>

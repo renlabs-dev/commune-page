@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import {
   XMarkIcon,
-  // SunIcon 
+  // SunIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
@@ -56,11 +56,11 @@ export const Header = () => {
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='w-6 h-6 text-title' aria-hidden='true' />
+              <XMarkIcon className='h-6 w-6 text-title' aria-hidden='true' />
             </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
-                <div className='mt-6 ml-2 space-y-2'>
+                <div className='ml-2 mt-6 space-y-2'>
                   {navigation.map(({ name, href, external }) => (
                     <Link
                       key={name}
@@ -72,7 +72,7 @@ export const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <div className='flex py-6 space-x-3'>
+                <div className='flex space-x-3 py-6'>
                   <HeaderLink
                     href={links.discord}
                     icon='/discord-icon.svg'
@@ -105,7 +105,7 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none bg-white bg-opacity-90  border-b border-gray-900/[0.06] backdrop-blur transition-colors duration-500`}
+        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06]  bg-white bg-opacity-90 backdrop-blur transition-colors duration-500`}
       >
         <nav
           className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
@@ -124,13 +124,13 @@ export const Header = () => {
               Commune Ai
             </span>
           </Link>
-          <div className='relative items-center justify-end hidden lg:flex lg:gap-x-6'>
+          <div className='relative hidden items-center justify-end lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='text-sm font-semibold flex items-center flex-col leading-6 text-[#222222] hover:text-gray-400'
+                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400'
               >
                 {name}
               </Link>
@@ -138,7 +138,7 @@ export const Header = () => {
             <Link
               href={links.discord}
               target='_blank'
-              className='px-6 py-3 text-sm font-medium text-center text-white bg-white border-2 rounded-xl border-title shadow-custom'
+              className='hover:animate-squeeze rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom'
             >
               <span
                 aria-label='Get started with Commune AI'
@@ -160,14 +160,14 @@ export const Header = () => {
               <SunIcon width={22} />
             </button> */}
           </div>
-          <div className='self-center col-span-3 ml-auto lg:hidden '>
+          <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
               type='button'
               className={`${commonButtonClass} -m-2.5`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Open main menu</span>
-              <EllipsisVerticalIcon className='w-6 h-6' aria-hidden='true' />
+              <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
         </nav>

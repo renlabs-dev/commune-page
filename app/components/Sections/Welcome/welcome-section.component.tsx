@@ -23,7 +23,7 @@ export const WelcomeSection = () => {
         alt=''
         className='absolute bottom-[8%] right-5 -z-10 hidden lg:block'
       />
-      <div className='flex flex-col items-center mb-6 text-center lg:mb-16'>
+      <div className='mb-6 flex flex-col items-center text-center lg:mb-16'>
         <h3 className='mb-10 text-4xl font-bold text-title lg:mb-0 lg:text-5xl'>
           Welcome to the
           <span
@@ -46,15 +46,15 @@ export const WelcomeSection = () => {
         </h4>
       </div>
 
-      <div className='flex flex-col justify-center w-full max-w-screen-sm space-y-10 lg:max-w-none lg:flex-row lg:space-x-5 lg:space-y-0 xl:space-x-8'>
+      <div className='flex w-full max-w-screen-sm flex-col justify-center space-y-10 lg:max-w-none lg:flex-row lg:space-x-5 lg:space-y-0 xl:space-x-8'>
         {sections.map((section) => {
           return (
             <Link
               href={`#${section.sectionName}`}
               key={section.sectionName}
-              className='flex flex-row-reverse items-center justify-end rounded-xl border-2 border-title bg-white p-5 shadow-custom lg:w-1/5 lg:max-w-[200px] lg:flex-col lg:justify-between lg:py-8'
+              className='hover:shadow-customHover flex flex-row-reverse items-center justify-end rounded-xl border-2 border-title bg-white p-5 shadow-custom transition duration-300 hover:scale-105 lg:w-1/5 lg:max-w-[200px] lg:flex-col lg:justify-between lg:py-8'
             >
-              <h5 className='w-2/3 text-xl font-medium text-left lg:mb-10 lg:w-full lg:text-center'>
+              <h5 className='w-2/3 text-left text-xl font-medium lg:mb-10 lg:w-full lg:text-center'>
                 {section.title}
               </h5>
               <span className={`mr-5 lg:mr-0 ${section.bgColor} rounded-full`}>
