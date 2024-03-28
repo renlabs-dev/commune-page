@@ -66,6 +66,12 @@ export const Header = () => {
                 aria-hidden='true'
               />
             </button>
+            <button
+              className={`${commonButtonClass} absolute right-10 top-0 m-5 h-8 w-8 rounded-lg`}
+              onClick={handleColorTheme}
+            >
+              <SunIcon width={22} />
+            </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
                 <div className='ml-2 mt-6 space-y-2'>
