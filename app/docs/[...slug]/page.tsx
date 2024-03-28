@@ -66,7 +66,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               <Link
                 target='_blank'
                 href={`https://github.com/agicommies/commune-page/blob/main/app/docs/%5B...slug%5D/tutorials/${params.slug[1]}.mdx`}
-                className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-title no-underline shadow-custom hover:animate-squeeze'
+                className='dark:border-titleDark dark:shadow-customDark dark:text-titleDark rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-title no-underline shadow-custom hover:animate-squeeze dark:bg-transparent'
               >
                 <span>Edit</span>
               </Link>
