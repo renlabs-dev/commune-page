@@ -59,8 +59,18 @@ export default async function Docs({ params }: { params: { slug: string } }) {
           activeContent={activeContent}
           prefix={prefix}
         />
+
         <div className='flex h-[calc(100svh-129px)] w-full flex-col items-center overflow-y-scroll pt-12 lg:h-[calc(100svh-81px)] lg:pl-[19.5rem]'>
           <div className='prose flex w-full max-w-[100%] flex-col px-8 text-subtitle sm:max-w-[80%] xl:max-w-[70%] 2xl:max-w-6xl'>
+            <div className='relative top-10 flex w-full justify-end'>
+              <Link
+                target='_blank'
+                href={`https://github.com/agicommies/commune-page/blob/main/app/docs/%5B...slug%5D/tutorials/${params.slug[1]}.mdx`}
+                className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-title no-underline shadow-custom hover:animate-squeeze'
+              >
+                <span>Edit</span>
+              </Link>
+            </div>
             {!!tutorials[activeTutorial].contents[activeContent] &&
               tutorials[activeTutorial].contents[activeContent].component}
           </div>
