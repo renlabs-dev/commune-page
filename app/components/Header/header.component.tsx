@@ -113,7 +113,7 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06] bg-white bg-opacity-90 backdrop-blur transition-colors duration-500 dark:bg-[#131B2A] dark:text-white`}
+        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06] bg-white bg-opacity-90 backdrop-blur transition-colors duration-500 dark:bg-[#131B2A] dark:text-white dark:shadow-lg`}
       >
         <nav
           className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
