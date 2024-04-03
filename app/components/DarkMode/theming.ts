@@ -39,14 +39,11 @@ export function setTheme(theme: TThemes | null) {
     if (isDarkSystemTheme()) {
       root.classList.add(DARK_THEME_CLASSNAME)
     }
-    return
   }
 
   const setThemeCookieDark = () => {
     root.classList.add(DARK_THEME_CLASSNAME)
-
     setThemeCookie(DARK_THEME_CLASSNAME)
-    return
   }
 
   const changeTheme = (theme: TThemes | null) => {
