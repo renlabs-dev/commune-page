@@ -4,6 +4,7 @@ import {
   DARK_THEME_CLASSNAME,
   LIGHT_THEME_CLASSNAME,
   SYSTEM_THEME_CLASSNAME,
+  TThemes,
   getStoredTheme,
   isDarkSystemTheme,
   setTheme,
@@ -17,10 +18,10 @@ import {
 
 interface ThemeOptionProps {
   text: string
-  theme: string
-  currentTheme: string
+  theme: TThemes
+  currentTheme: TThemes
   icon: React.ReactNode
-  handleThemeChange: (theme: string) => void
+  handleThemeChange: (theme: TThemes) => void
 }
 
 const ThemeOption = ({
@@ -45,7 +46,7 @@ const ThemeOption = ({
 export const DarkModeToggle = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const defaultTheme = useMemo(getStoredTheme, [])
-  const [currentTheme, setCurrentTheme] = useState<string>(defaultTheme)
+  const [currentTheme, setCurrentTheme] = useState<TThemes>(defaultTheme)
 
   const isDarkTheme = currentTheme === DARK_THEME_CLASSNAME
   const isSystemTheme = currentTheme === SYSTEM_THEME_CLASSNAME
@@ -60,7 +61,7 @@ export const DarkModeToggle = () => {
     return <SunIcon className={'h-6 dark:fill-title md:dark:fill-white'} />
   }, [isSystemTheme, isDarkTheme])
 
-  const handleThemeChange = (theme: string) => {
+  const handleThemeChange = (theme: TThemes) => {
     setCurrentTheme(theme)
     setIsDropdownOpen(false)
   }
@@ -108,7 +109,7 @@ export const DarkModeToggle = () => {
               <ThemeOption
                 key={theme.text}
                 text={theme.text}
-                theme={theme.theme}
+                theme={theme.theme as TThemes}
                 icon={theme.icon}
                 currentTheme={currentTheme}
                 handleThemeChange={handleThemeChange}
