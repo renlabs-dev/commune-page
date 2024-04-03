@@ -11,7 +11,7 @@ export const DARK_THEME_CLASSNAME = 'dark'
 export const LIGHT_THEME_CLASSNAME = 'light'
 export const SYSTEM_THEME_CLASSNAME = 'system'
 
-type TThemes = typeof DARK_THEME_CLASSNAME| typeof LIGHT_THEME_CLASSNAME | typeof SYSTEM_THEME_CLASSNAME
+export type TThemes = typeof DARK_THEME_CLASSNAME| typeof LIGHT_THEME_CLASSNAME | typeof SYSTEM_THEME_CLASSNAME
 
 export function getStoredTheme() {
   try {
@@ -21,7 +21,7 @@ export function getStoredTheme() {
   }
 }
 
-export function setTheme(theme: TThemes | null) {
+export function setTheme(theme: TThemes) {
   const root = getHtml()
 
   const setThemeCookie = (value: string) => {
@@ -46,7 +46,7 @@ export function setTheme(theme: TThemes | null) {
     setThemeCookie(DARK_THEME_CLASSNAME)
   }
 
-  const changeTheme = (theme: TThemes | null) => {
+  const changeTheme = (theme: TThemes) => {
     const themeList = {
       'system': () => setThemeCookieSystem(),
       'dark': () => setThemeCookieDark(),
