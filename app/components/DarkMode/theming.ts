@@ -1,16 +1,17 @@
 import { getCookie, setCookie } from "@/app/utils"
 
-
 enum Themes {
   Light = 'light',
   Dark = 'dark',
 }
 
-const THEME_KEY = `theme`
+const THEME_KEY = 'theme'
 const DEFAULT_THEME = Themes.Light
-export const DARK_THEME_CLASSNAME = `dark`
-export const LIGHT_THEME_CLASSNAME = `light`
+export const DARK_THEME_CLASSNAME = 'dark'
+export const LIGHT_THEME_CLASSNAME = 'light'
 export const SYSTEM_THEME_CLASSNAME = 'system'
+
+type TThemes = typeof DARK_THEME_CLASSNAME| typeof LIGHT_THEME_CLASSNAME | typeof SYSTEM_THEME_CLASSNAME
 
 export function getStoredTheme() {
   try {
@@ -20,7 +21,7 @@ export function getStoredTheme() {
   }
 }
 
-export function setTheme(theme: string | null) {
+export function setTheme(theme: TThemes | null) {
   const root = getHtml()
 
   const setThemeCookie = (value: string) => {
@@ -32,28 +33,33 @@ export function setTheme(theme: string | null) {
   root.classList.remove(DARK_THEME_CLASSNAME)
   root.classList.remove(LIGHT_THEME_CLASSNAME)
 
-  switch (theme) {
-    case SYSTEM_THEME_CLASSNAME:
-      setThemeCookie(SYSTEM_THEME_CLASSNAME)
+  const setThemeCookieSystem = () => {
+    setThemeCookie(SYSTEM_THEME_CLASSNAME)
 
-      if (isDarkSystemTheme()) {
-        root.classList.add(DARK_THEME_CLASSNAME)
-      }
-
-      return
-
-    case DARK_THEME_CLASSNAME:
+    if (isDarkSystemTheme()) {
       root.classList.add(DARK_THEME_CLASSNAME)
-
-      setThemeCookie(DARK_THEME_CLASSNAME)
-
-      return
-
-    case LIGHT_THEME_CLASSNAME:
-      setThemeCookie(LIGHT_THEME_CLASSNAME)
-
-      return
+    }
+    return
   }
+
+  const setThemeCookieDark = () => {
+    root.classList.add(DARK_THEME_CLASSNAME)
+
+    setThemeCookie(DARK_THEME_CLASSNAME)
+    return
+  }
+
+  const changeTheme = (theme: TThemes | null) => {
+    const themeList = {
+      'system': () => setThemeCookieSystem(),
+      'dark': () => setThemeCookieDark(),
+      'light': () => setThemeCookie(LIGHT_THEME_CLASSNAME)
+    } 
+
+    return themeList[theme || 'light']
+  }
+
+  changeTheme(theme)()
 }
 
 function getHtml() {
