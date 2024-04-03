@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 import {
   XMarkIcon,
-  // SunIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
-import { EllipsisVerticalIcon, SunIcon } from '@heroicons/react/20/solid'
+import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 import { cairo } from '@/app/fonts'
+import { DarkModeToggle } from '../DarkMode'
 
 type THeaderLinkProps = {
   href: string
@@ -39,11 +39,6 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
-  const handleColorTheme = () => {
-    const root = document.getElementsByTagName('html')[0]
-    root.classList.toggle('dark')
-  }
-
   const commonButtonClass =
     'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-title p-1.5 hover:bg-gray-100/[0.15] dark:bg-titleDark'
 
@@ -51,10 +46,14 @@ export const Header = () => {
     <>
       <div
         className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden`}
-        onClick={toggleMobileMenu}
       >
-        <nav className={`fixed z-50 h-full w-full`}>
+        <nav className={`fixed z-40 h-full w-full`}>
           <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-lg bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
+            <div
+              className={`${commonButtonClass} absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-lg`}
+            >
+              <DarkModeToggle />
+            </div>
             <button
               type='button'
               className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg`}
@@ -62,15 +61,9 @@ export const Header = () => {
             >
               <span className='sr-only'>Close menu</span>
               <XMarkIcon
-                className='dark:text- h-6 w-6 text-title '
+                className='dark:text- h-6 w-6 text-title'
                 aria-hidden='true'
               />
-            </button>
-            <button
-              className={`${commonButtonClass} absolute right-10 top-0 m-5 h-8 w-8 rounded-lg`}
-              onClick={handleColorTheme}
-            >
-              <SunIcon width={22} />
             </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
@@ -79,6 +72,7 @@ export const Header = () => {
                     <Link
                       key={name}
                       href={href}
+                      onClick={toggleMobileMenu}
                       target={external ? '_blank' : '_self'}
                       className='-mx-3 block w-[90%] rounded-lg px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
                     >
@@ -170,9 +164,9 @@ export const Header = () => {
                 Join Community <span className='text-xs'>▼</span>
               </span>
             </Link> */}
-            <button className='mt-1' onClick={handleColorTheme}>
-              <SunIcon width={22} />
-            </button>
+            <div className='mt-2'>
+              <DarkModeToggle />
+            </div>
           </div>
           <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
