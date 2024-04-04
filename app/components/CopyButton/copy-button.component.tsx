@@ -14,7 +14,6 @@ export const CopyButton = (props: TCodeComponentProps) => {
     setTimeout(() => {
       setCopied(false)
     }, 1000)
-
     if ('clipboard' in navigator) {
       return await navigator.clipboard.writeText(text)
     } else {
@@ -24,11 +23,11 @@ export const CopyButton = (props: TCodeComponentProps) => {
 
   return (
     <button
-      className={`ml-auto h-8 rounded-md border-[1px] border-gray-700 px-2 text-xs text-gray-500 ${copied ? 'border-green-700 text-green-700' : 'hover:border-gray-400 hover:text-gray-200'}`}
+      className={`h-8 rounded-md border-[1px] border-gray-700 px-2 text-xs text-gray-500 ${copied ? 'border-green-700 text-green-700' : 'hover:border-gray-400 hover:text-gray-200'}`}
       onClick={() => copyTextToClipboard(code)}
     >
-      {!copied && <DocumentDuplicateIcon height={18} />}
-      {copied && <span className='text-green-600'>Copied</span>}
+      {!copied && <DocumentDuplicateIcon height={16} />}
+      {copied && <DocumentDuplicateIcon height={16} color='text-green-500' />}
     </button>
   )
 }

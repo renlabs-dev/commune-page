@@ -19,7 +19,10 @@
     "@types/mdx": "^2.0.11",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "rehype-pretty-code": "^0.13.1",
+    "shiki": "^1.2.3",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

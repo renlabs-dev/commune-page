@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${inter.className}`}>
-      <body className='animate-fade-in-up relative h-full bg-white'>
+      <body className='relative h-full animate-fade-in-up bg-white'>
         <header>
           <link rel='icon' href='/commune-logo.svg' sizes='any' />
         </header>

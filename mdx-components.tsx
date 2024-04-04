@@ -1,28 +1,20 @@
 import type { MDXComponents } from 'mdx/types'
 import { CopyButton } from './app/components/CopyButton'
+import { ClassAttributes, HTMLAttributes } from 'react'
+
+type TMDXProps = ClassAttributes<HTMLPreElement> & HTMLAttributes<HTMLPreElement> & { raw?: string }
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    code: (props) => (
-      //   <div style={{ display: 'inline-block', borderRadius: 10, minWidth: '100%' }}>
-      //     <div style={{ display: 'flex', padding: '16px', backgroundColor: '#0D0F14', borderRadius: '0px 10px 0px 0px' }}>
-      //       <div style={{ width: '0.8rem', height: '0.8rem', backgroundColor: '#FF5F56', borderRadius: '100%', marginRight: 8 }} />
-      //       <div style={{ width: '0.8rem', height: '0.8rem', backgroundColor: '#FFBD2D', borderRadius: '100%', marginRight: 8 }} />
-      //       <div style={{ width: '0.8rem', height: '0.8rem', backgroundColor: '#26C940', borderRadius: '100%', marginRight: 8 }} />
-      //     </div>
-      //     <div
-      //       style={{ width: '100%', backgroundColor: '#22212C', display: 'inline-flex', padding: '16px', borderRadius: '0px 0px 10px 0px' }}
-      //     >
-      <div className='flex items-center'>
-        <div className='ml-20'>
-          <code {...props}>{props.children}</code>
+    pre: (props: TMDXProps) => (
+      <pre {...props} style={{ padding: 0, border: '2px solid #2E2F35', boxShadow: '3px 3px 0 0 #2E2F35' }} className='flex'>
+        <div style={{ padding: '0.75rem', overflow: 'auto', width: '100%' }}>
+          {props.children}
         </div>
-        <CopyButton code={props.children as string} />
-      </div>
-
-      //     </div>
-      //   </div>
-      // </div>
+        <div style={{ padding: '0.5rem', width: 'auto' }}>
+          <CopyButton code={props.raw as string} />
+        </div>
+      </pre>
     ),
     ...components,
   }
