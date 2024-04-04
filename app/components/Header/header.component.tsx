@@ -79,7 +79,7 @@ export const Header = () => {
                       href={href}
                       onClick={toggleMobileMenu}
                       target={external ? '_blank' : '_self'}
-                      className='-mx-3 block w-[90%] rounded-lg px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
+                      className='-mx-3 block w-[70%] rounded-lg px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
                     >
                       {name}
                     </Link>
