@@ -42,3 +42,26 @@ section {
     transform: translate(0, 0);
   }
 } */
+
+
+
+pre {
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+ 
+pre [data-line] {
+  padding: 0 1rem;
+}
+
+code{
+	counter-reset: line;
+}
+
+span[data-line]::before{
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	margin-right: 1.5rem;
+	opacity: 0.25;
+}
