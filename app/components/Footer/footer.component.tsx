@@ -52,7 +52,7 @@ export const Footer = () => {
         </Link>
         <div className='flex flex-col gap-6 text-center md:flex-row md:gap-12'>
           <nav className='flex flex-row gap-3' aria-label='Footer'>
-            <p className='dark:text-titleDark font-semibold text-title'>
+            <p className='font-semibold text-title dark:text-titleDark'>
               Resources:
             </p>
             {navigation.main.map((item) => (
@@ -66,7 +66,7 @@ export const Footer = () => {
             ))}
           </nav>
           <nav className='flex flex-row gap-3' aria-label='Footer'>
-            <p className='dark:text-titleDark font-semibold text-title'>
+            <p className='font-semibold text-title dark:text-titleDark'>
               Links:
             </p>
             {navigation.social.map((item) => (
@@ -80,8 +80,8 @@ export const Footer = () => {
             ))}
           </nav>
         </div>
-        <div className='dark:border-titleDark flex w-full justify-center border-t-2 border-black md:justify-between'>
-          <p className='mt-3 hidden text-right text-xs leading-5 text-title md:block dark:text-white'>
+        <div className='flex w-full justify-center border-t-2 border-black dark:border-titleDark md:justify-between'>
+          <p className='mt-3 hidden text-right text-xs leading-5 text-title dark:text-white md:block'>
             Renovating the way we build software for everyone.
           </p>
           <p className='mt-3 text-center text-xs leading-5 text-title dark:text-white'>
