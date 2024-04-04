@@ -14,7 +14,6 @@ export const CopyButton = (props: TCodeComponentProps) => {
     setTimeout(() => {
       setCopied(false)
     }, 1000)
-    console.log(code)
     if ('clipboard' in navigator) {
       return await navigator.clipboard.writeText(text)
     } else {
