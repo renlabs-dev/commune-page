@@ -1,9 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import {
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -38,11 +36,6 @@ const navigation = [
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
-
-  const handleColorTheme = () => {
-    const root = document.getElementsByTagName('html')[0]
-    root.classList.toggle('dark')
-  }
 
   const commonButtonClass =
     'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-title p-1.5 hover:bg-gray-100/[0.15] dark:bg-titleDark'
