@@ -33,6 +33,7 @@ const HeaderLink = ({
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Governance', href: links.governance, external: true },
 ]
 
 export const Header = () => {
@@ -161,14 +162,14 @@ export const Header = () => {
                 Join community
               </span>
             </Link>
-            <Link
+            {/* <Link
               href={links.governance}
               className='rounded-xl border-2 border-title bg-[#FF6C6C] dark:text-titleDark hover:animate-squeeze dark:bg-transparent px-6 py-3 text-center text-sm font-medium text-title shadow-custom dark:shadow-customDark dark:border-titleDark'
             >
               <span aria-label='Get started with Commune AI'>
                 Governance
               </span>
-            </Link>
+            </Link> */}
             <div className='mt-2'>
               <DarkModeToggle />
             </div>
