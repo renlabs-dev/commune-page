@@ -6,4 +6,5 @@ export const links = {
   discord: 'https://discord.com/invite/A8JGkZ9Dmm',
   x: 'https://twitter.com/communeaidotorg',
   telegram: 'https://t.me/communecommunity',
+  governance: 'https://governance.communeai.org/',
 }
