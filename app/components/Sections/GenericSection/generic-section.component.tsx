@@ -35,7 +35,7 @@ export const GenericSection = ({
       className={`${index % 2 === 1 ? `dark:bg-[#0C1320] ${lightColor}` : 'dark:bg-[#131B2A]'} flex h-full w-full items-center justify-center p-4 lg:p-6`}
     >
       <div
-        className={`w-full max-w-screen-sm rounded-xl bg-white dark:bg-[#131B2A] lg:max-w-screen-xl ${index % 2 === 1 ? "border-2 border-title bg-[url('/section-background-squares.svg')] bg-cover shadow-custom" : "bg-[url('/section-background-dots.svg')] bg-cover"} p-5 lg:px-16 lg:py-16`}
+        className={`w-full max-w-screen-sm rounded-3xl bg-white dark:bg-[#131B2A] lg:max-w-screen-xl ${index % 2 === 1 ? "dark:shadow-custom-dark border-2 border-title bg-[url('/section-background-squares.svg')] bg-cover shadow-custom dark:border-white" : "bg-[url('/section-background-dots.svg')] bg-cover"} p-5 lg:px-16 lg:py-16`}
       >
         <div className='relative flex flex-col bg-clip-border text-left'>
           <div className='flex items-center'>
