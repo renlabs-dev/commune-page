@@ -1,9 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import {
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -32,8 +30,9 @@ const HeaderLink = ({
 
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
   { name: 'Governance', href: links.governance, external: true },
+  { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Join Community', href: links.discord, external: true },
 ]
 
 export const Header = () => {
@@ -129,7 +128,9 @@ export const Header = () => {
               priority
               className='mr-[3px]'
             />
-            <span className={`${cairo.className} ml-2 text-2xl font-semibold`}>
+            <span
+              className={`${cairo.className} ml-2 text-2xl font-semibold text-title`}
+            >
               Commune Ai
             </span>
           </Link>
@@ -139,32 +140,12 @@ export const Header = () => {
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400 dark:text-white'
+                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-600 active:animate-squeeze dark:text-white'
               >
                 {name}
               </Link>
             ))}
-            <Link
-              href={links.discord}
-              target='_blank'
-              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom hover:animate-squeeze dark:border-titleDark dark:bg-transparent dark:shadow-customDark '
-            >
-              <span
-                aria-label='Get started with Commune AI'
-                className='text-header-links dark:text-titleDark'
-              >
-                {/* Get Started */}
-                Join community
-              </span>
-            </Link>
-            {/* <Link
-              href={links.governance}
-              className='rounded-xl border-2 border-title bg-[#FF6C6C] dark:text-titleDark hover:animate-squeeze dark:bg-transparent px-6 py-3 text-center text-sm font-medium text-title shadow-custom dark:shadow-customDark dark:border-titleDark'
-            >
-              <span aria-label='Get started with Commune AI'>
-                Governance
-              </span>
-            </Link> */}
+
             <div className='mt-2'>
               <DarkModeToggle />
             </div>
