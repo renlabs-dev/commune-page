@@ -15,7 +15,7 @@ export type TThemes = typeof DARK_THEME_CLASSNAME| typeof LIGHT_THEME_CLASSNAME 
 
 export function getStoredTheme() {
   try {
-    return getCookie(THEME_KEY) ?? DEFAULT_THEME
+    return getCookie(THEME_KEY)
   } catch (e) {
     return DEFAULT_THEME
   }
@@ -65,8 +65,4 @@ function getHtml() {
 
 export function isDarkSystemTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches
-}
-
-export function loadSelectedTheme() {
-  setTheme(getStoredTheme())
 }
