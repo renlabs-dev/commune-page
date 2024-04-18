@@ -34,19 +34,18 @@ export const HeroSection = () => {
         <div className='flex gap-4 mt-8 flex-col w-full lg:flex-row items-center'>
           <Link
             href='#welcome'
-            className=' w-full max-w-screen-sm rounded-xl border-2 border-title bg-white px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-[#F15B5B] dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-customDark lg:w-auto'
+            className=' w-full max-w-screen-sm rounded-xl border-2 border-title bg-white px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-gray-200 dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-custom-dark-active lg:w-auto'
           >
             <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
           </Link>
           <Link
             href={links.discord}
             target='_blank'
-            className='w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-[#F15B5B] dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-customDark lg:w-auto'
-
+            className='w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-red-500 dark:border-blue-500 dark:bg-[#131B2A] dark:shadow-custom-blue lg:w-auto'
           >
             <span
               aria-label='Get started with Commune AI'
-              className='text-header-links dark:text-titleDark'
+              className='text-header-links dark:text-blue-500'
             >
               JOIN COMMUNITY
             </span>
