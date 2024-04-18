@@ -1,7 +1,9 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import {
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -31,6 +33,7 @@ const HeaderLink = ({
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Governance', href: links.governance, external: true },
 ]
 
 export const Header = () => {
@@ -155,11 +158,11 @@ export const Header = () => {
               </span>
             </Link>
             {/* <Link
-              href={links.discord}
-              className='rounded-xl border-2 border-title bg-[#FF6C6C] px-6 py-3 text-center text-sm font-medium text-title shadow-custom'
+              href={links.governance}
+              className='rounded-xl border-2 border-title bg-[#FF6C6C] dark:text-titleDark hover:animate-squeeze dark:bg-transparent px-6 py-3 text-center text-sm font-medium text-title shadow-custom dark:shadow-customDark dark:border-titleDark'
             >
               <span aria-label='Get started with Commune AI'>
-                Join Community <span className='text-xs'>▼</span>
+                Governance
               </span>
             </Link> */}
             <div className='mt-2'>
