@@ -31,7 +31,8 @@ const HeaderLink = ({
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
-  { name: 'Join community', href: links.discord, external: true },
+  { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Join Community', href: links.discord, external: true },
 ]
 
 export const Header = () => {
