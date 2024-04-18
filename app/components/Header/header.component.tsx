@@ -31,8 +31,7 @@ const HeaderLink = ({
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
-  { name: 'Join Community', href: links.discord, external: true },
+  { name: 'Join community', href: links.discord, external: true },
 ]
 
 export const Header = () => {
@@ -116,7 +115,7 @@ export const Header = () => {
         className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06] bg-white bg-opacity-90 backdrop-blur transition-colors duration-500 dark:bg-[#131B2A] dark:text-white dark:shadow-lg`}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
+          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 max-w-screen-xl `}
           aria-label='Global'
         >
           <Link href={links.home} className={`col-span-1 flex items-center`}>
@@ -145,11 +144,10 @@ export const Header = () => {
                 {name}
               </Link>
             ))}
-
             <div className='mt-2'>
               <DarkModeToggle />
             </div>
-          </div>
+          </div >
           <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
               type='button'
@@ -160,8 +158,8 @@ export const Header = () => {
               <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
-        </nav>
-      </header>
+        </nav >
+      </header >
     </>
   )
 }
