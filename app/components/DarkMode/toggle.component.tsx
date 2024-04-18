@@ -33,8 +33,9 @@ const ThemeOption = ({
 }: ThemeOptionProps) => {
   return (
     <div
-      className={`${currentTheme === theme ? 'bg-gray-100 dark:bg-[#131B2A]' : ''
-        } flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-title hover:bg-gray-200 hover:text-gray-900 dark:text-titleDark dark:hover:bg-blue-900`}
+      className={`${
+        currentTheme === theme ? 'bg-gray-100 dark:bg-[#131B2A]' : ''
+      } flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-title hover:bg-gray-200 hover:text-gray-900 dark:text-titleDark dark:hover:bg-blue-900`}
       onClick={() => handleThemeChange(theme)}
     >
       <span>{icon}</span>
@@ -92,13 +93,13 @@ export const DarkModeToggle = () => {
     <>
       <button
         type='button'
-        className='inline-flex items-center justify-center rounded-md p-1 hover:bg-gray-100 focus:ring-1 focus:ring-gray-200 focus:ring-offset-2 dark:fill-title dark:ring-offset-transparent dark:hover:bg-[#0C1320] dark:focus:ring-titleDark'
+        className='inline-flex items-center justify-center rounded-xl p-1 hover:bg-gray-100 focus:ring-1 focus:ring-gray-200 focus:ring-offset-2 dark:fill-title dark:ring-offset-transparent dark:hover:bg-[#0C1320] dark:focus:ring-titleDark'
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {Icon}
       </button>
       {isDropdownOpen && (
-        <div className='absolute right-0 top-10 w-fit origin-top-right rounded-md border-2 border-black bg-white shadow-custom dark:border-titleDark dark:bg-[#0C1320] dark:shadow-customDark md:right-0 md:top-12 md:mt-4'>
+        <div className='dark:shadow-custom-dark absolute right-0 top-10 w-fit origin-top-right rounded-xl border-2 border-black bg-white shadow-custom dark:border-titleDark dark:bg-[#0C1320] md:right-0 md:top-12 md:mt-4'>
           <div
             role='menu'
             className='py-1'

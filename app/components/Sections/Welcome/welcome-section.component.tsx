@@ -27,7 +27,7 @@ export const WelcomeSection = () => {
         <h3 className='mb-10 text-4xl font-bold text-title dark:text-white lg:mb-0 lg:text-5xl'>
           Welcome to the
           <span
-            className={`${covered_by_your_grace.className} -ml-3 text-5xl font-normal text-[#FF6C6C] dark:text-titleDark lg:text-6xl`}
+            className={`${covered_by_your_grace.className} -ml-3 text-5xl font-normal text-[#FF6C6C] dark:text-blue-500 lg:text-6xl`}
           >
             {' '}
             commune
@@ -37,7 +37,7 @@ export const WelcomeSection = () => {
         <h4 className='text-xl font-medium text-subtitle dark:text-gray-200'>
           A place for
           <span
-            className={`${covered_by_your_grace.className} -mx-1 text-2xl font-normal text-[#62ABFF] dark:text-titleDark lg:text-3xl`}
+            className={`${covered_by_your_grace.className} -mx-1 text-2xl font-normal text-blue-500 lg:text-3xl`}
           >
             {' '}
             everyone{' '}
@@ -52,7 +52,7 @@ export const WelcomeSection = () => {
             <Link
               href={`#${section.sectionName}`}
               key={section.sectionName}
-              className='flex flex-row-reverse items-center justify-end rounded-xl border-2 border-title bg-white p-5 shadow-custom transition duration-300 hover:scale-105 dark:border-titleDark dark:bg-[#131B2A] dark:text-white dark:shadow-customDark lg:w-1/5 lg:max-w-[200px] lg:flex-col lg:justify-between lg:py-8'
+              className='dark:shadow-custom-dark flex flex-row-reverse items-center justify-end rounded-xl border-2 border-title bg-white p-5 shadow-custom transition duration-300 hover:scale-105 dark:border-titleDark dark:bg-[#131B2A] dark:text-white lg:w-1/5 lg:max-w-[200px] lg:flex-col lg:justify-between lg:py-8'
             >
               <h5 className='w-2/3 text-left text-xl font-medium lg:mb-10 lg:w-full lg:text-center'>
                 {section.title}

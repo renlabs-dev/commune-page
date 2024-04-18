@@ -10,14 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         title: '#2E2F35',
-        titleDark: '#3B96FF',
+        titleDark: '#FFFFFF',
         subtitle: '#58595D',
         'section-info': '#141414',
         'header-links': '#222222',
       },
       boxShadow: {
         custom: '3px 3px 0 0 rgba(46,47,53,1)',
-        customDark: '3px 3px 0 0 rgba(59,150,255,1)',
+        'custom-active': '2px 2px 0 0 rgba(46,47,53,1)',
+        'custom-dark': '3px 3px 0 0 rgba(255,255,255,1)',
+        'custom-dark-active': '2px 2px 0 0 rgba(255,255,255,1)',
+        'custom-blue': '3px 3px 0 0 rgba(59,130,246,1)',
+        'custom-blue-active': '2px 2px 0 0 rgba(59,130,246,1)',
       },
       animation: {
         fade: 'fadeOut 0.6s ease-in-out',
