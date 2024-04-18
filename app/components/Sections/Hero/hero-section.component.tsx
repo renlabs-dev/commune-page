@@ -48,7 +48,6 @@ export const HeroSection = () => {
               aria-label='Get started with Commune AI'
               className='text-header-links dark:text-titleDark'
             >
-              {/* Get Started */}
               JOIN COMMUNITY
             </span>
           </Link>

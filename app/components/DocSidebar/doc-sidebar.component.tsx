@@ -33,7 +33,7 @@ export const DocSidebar = (props: TDocSidebarProps) => {
         <div className='sm:min-w-2/6 relative h-full w-4/6 overflow-y-scroll border-r border-gray-900/[0.06] bg-white p-8 dark:bg-[#0C1320] sm:w-3/6 md:w-2/6 lg:mx-auto lg:w-full'>
           <button
             type='button'
-            className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg lg:hidden`}
+            className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-xl lg:hidden`}
             onClick={toggleMobileMenu}
           >
             <span className='sr-only'>Close menu</span>
@@ -71,7 +71,7 @@ export const DocSidebar = (props: TDocSidebarProps) => {
       <div className='relative w-full overflow-hidden'>
         <div className='sticky top-0 z-0 flex h-12 w-full items-center border-b border-gray-50/[0.06] bg-transparent pl-6 text-sm text-gray-400 lg:hidden'>
           <button
-            className={`${commonButtonClass} mr-6 h-8 w-8 rounded-lg`}
+            className={`${commonButtonClass} mr-6 h-8 w-8 rounded-xl`}
             onClick={toggleMobileMenu}
           >
             <Bars3Icon width={16} />
