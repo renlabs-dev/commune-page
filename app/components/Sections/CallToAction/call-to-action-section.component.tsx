@@ -10,7 +10,7 @@ export const CallToActionSection = async () => {
       id='communehub'
       className='mx-auto flex h-auto w-full flex-col items-center justify-center space-y-4 border-b-2 border-dashed border-black px-10 py-12 dark:border-titleDark dark:bg-[#131B2A] lg:flex-row lg:space-x-12 lg:space-y-0'
     >
-      <div className='w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] transition duration-300 hover:scale-105 dark:border-titleDark dark:shadow-[-17px_0_0_0_rgba(255,255,255,1)] lg:w-1/2'>
+      <div className='w-full max-w-xl rounded-xl border-2 border-black shadow-cta-white-active transition duration-300 hover:scale-105 dark:border-titleDark dark:shadow-cta-dark-active lg:w-1/2'>
         <div className='flex flex-row items-center justify-start rounded-tr-xl border-b-2 border-dashed border-black bg-white p-4 dark:border-titleDark dark:bg-transparent lg:p-8'>
           <span className='mr-6 rounded-full border-2 border-black p-4 dark:border-titleDark dark:bg-titleDark'>
             <Image src={'/discord-icon.svg'} width={32} height={32} alt='' />
@@ -38,7 +38,7 @@ export const CallToActionSection = async () => {
         </div>
       </div>
 
-      <div className='relative w-full max-w-xl rounded-xl border-2 border-black shadow-[-17px_0_0_0_rgba(0,0,0,1)] transition duration-300 hover:scale-105 dark:border-titleDark dark:shadow-[-17px_0_0_0_rgba(255,255,255,1)] lg:w-1/2'>
+      <div className='relative w-full max-w-xl rounded-xl border-2 border-black shadow-cta-white-active transition duration-300 hover:scale-105 dark:border-titleDark dark:shadow-cta-dark-active lg:w-1/2'>
         <div className='absolute flex h-full w-full items-center justify-center rounded-xl bg-white/[0.94] text-white dark:bg-[#131B2A]/[0.90]'>
           <span
             className={`${covered_by_your_grace.className}  text-5xl text-section-info dark:text-white lg:text-6xl`}

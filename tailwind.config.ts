@@ -22,6 +22,8 @@ const config: Config = {
         'custom-dark-active': '2px 2px 0 0 rgba(255,255,255,1)',
         'custom-blue': '3px 3px 0 0 rgba(59,130,246,1)',
         'custom-blue-active': '2px 2px 0 0 rgba(59,130,246,1)',
+        'cta-white-active': '-17px 0 0 0 rgba(0,0,0,1)',
+        'cta-dark-active': '-17px 0 0 0 rgba(255,255,255,1)'
       },
       animation: {
         fade: 'fadeOut 0.6s ease-in-out',
