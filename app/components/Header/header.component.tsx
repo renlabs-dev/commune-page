@@ -1,9 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import {
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -32,10 +30,8 @@ const HeaderLink = ({
 
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
   { name: 'Governance', href: links.governance, external: true },
   { name: 'Join community', href: links.discord, external: true },
-
 ]
 
 export const Header = () => {
@@ -51,15 +47,15 @@ export const Header = () => {
         className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
-          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-lg bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
+          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-xl bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
             <div
-              className={`${commonButtonClass} absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-lg`}
+              className={`${commonButtonClass} absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-xl`}
             >
               <DarkModeToggle />
             </div>
             <button
               type='button'
-              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg`}
+              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-xl`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
@@ -77,7 +73,7 @@ export const Header = () => {
                       href={href}
                       onClick={toggleMobileMenu}
                       target={external ? '_blank' : '_self'}
-                      className='-mx-3 block w-[70%] rounded-lg px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
+                      className='-mx-3 block w-[70%] rounded-xl px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
                     >
                       {name}
                     </Link>
@@ -131,7 +127,9 @@ export const Header = () => {
               priority
               className='mr-[3px]'
             />
-            <span className={`${cairo.className} ml-2 text-2xl font-semibold`}>
+            <span
+              className={`${cairo.className} ml-2 text-2xl font-semibold text-title dark:text-white`}
+            >
               Commune Ai
             </span>
           </Link>
@@ -141,7 +139,7 @@ export const Header = () => {
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400 dark:text-white'
+                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-600 active:animate-squeeze dark:text-white'
               >
                 {name}
               </Link>
@@ -149,7 +147,7 @@ export const Header = () => {
             <div className='mt-2'>
               <DarkModeToggle />
             </div>
-          </div>
+          </div >
           <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
               type='button'
@@ -160,8 +158,8 @@ export const Header = () => {
               <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
-        </nav>
-      </header>
+        </nav >
+      </header >
     </>
   )
 }

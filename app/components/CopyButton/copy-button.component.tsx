@@ -23,7 +23,7 @@ export const CopyButton = (props: TCodeComponentProps) => {
 
   return (
     <button
-      className={`h-8 rounded-md border-[1px] border-gray-700 px-2 text-xs text-gray-500 ${copied ? 'border-green-700 text-green-700' : 'hover:border-gray-400 hover:text-gray-200'}`}
+      className={`h-8 rounded-xl border-[1px] border-gray-700 px-2 text-xs text-gray-500 ${copied ? 'border-green-700 text-green-700' : 'hover:border-gray-400 hover:text-gray-200'}`}
       onClick={() => copyTextToClipboard(code)}
     >
       {!copied && <DocumentDuplicateIcon height={16} />}
