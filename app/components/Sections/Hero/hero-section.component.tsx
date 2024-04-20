@@ -1,4 +1,5 @@
 import { covered_by_your_grace, cairo } from '@/app/fonts'
+import { links } from '@/app/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,7 +14,7 @@ export const HeroSection = () => {
         width={417}
         height={481}
         alt={`Commune's logo`}
-        className='w-2/3 max-w-sm pb-10 lg:mr-28 lg:w-auto lg:max-w-none lg:pb-0'
+        className='w-2/3 max-w-sm pb-10 lg:mr-24 lg:w-auto lg:max-w-none lg:pb-0'
       />
       <div className='flex h-full w-full flex-col items-center justify-center lg:w-auto lg:items-start'>
         <h1
@@ -30,12 +31,27 @@ export const HeroSection = () => {
           </span>
           .
         </h2>
-        <Link
-          href='#welcome'
-          className='mt-8 w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-12 py-6 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-[#F15B5B] dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-customDark lg:w-auto'
-        >
-          <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
-        </Link>
+        <div className='flex gap-4 mt-8 flex-col w-full lg:flex-row items-center'>
+          <Link
+            href='#welcome'
+            className=' w-full max-w-screen-sm rounded-xl border-2 border-title bg-white px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-gray-200 dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-custom-dark-active lg:w-auto'
+          >
+            <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
+          </Link>
+          <Link
+            href={links.discord}
+            target='_blank'
+            className='w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-red-500 dark:border-blue-500 dark:bg-[#131B2A] dark:shadow-custom-blue lg:w-auto'
+          >
+            <span
+              aria-label='Get started with Commune AI'
+              className='text-header-links dark:text-blue-500'
+            >
+              JOIN COMMUNITY
+            </span>
+          </Link>
+        </div>
+
       </div>
     </div>
   )

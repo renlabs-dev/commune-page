@@ -32,8 +32,9 @@ const HeaderLink = ({
 
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
   { name: 'Governance', href: links.governance, external: true },
+  { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Join Community', href: links.discord, external: true },
 ]
 
 export const Header = () => {
@@ -49,15 +50,15 @@ export const Header = () => {
         className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
-          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-lg bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
+          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-xl bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
             <div
-              className={`${commonButtonClass} absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-lg`}
+              className={`absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-xl bg-white`}
             >
               <DarkModeToggle />
             </div>
             <button
               type='button'
-              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-lg`}
+              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-xl`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
@@ -75,7 +76,7 @@ export const Header = () => {
                       href={href}
                       onClick={toggleMobileMenu}
                       target={external ? '_blank' : '_self'}
-                      className='-mx-3 block w-[70%] rounded-lg px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
+                      className='-mx-3 block w-[70%] rounded-xl px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
                     >
                       {name}
                     </Link>
@@ -117,7 +118,7 @@ export const Header = () => {
         className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06] bg-white bg-opacity-90 backdrop-blur transition-colors duration-500 dark:bg-[#131B2A] dark:text-white dark:shadow-lg`}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6`}
+          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 max-w-screen-xl `}
           aria-label='Global'
         >
           <Link href={links.home} className={`col-span-1 flex items-center`}>
@@ -129,7 +130,9 @@ export const Header = () => {
               priority
               className='mr-[3px]'
             />
-            <span className={`${cairo.className} ml-2 text-2xl font-semibold`}>
+            <span
+              className={`${cairo.className} ml-2 text-2xl font-semibold text-title dark:text-white`}
+            >
               Commune Ai
             </span>
           </Link>
@@ -139,36 +142,13 @@ export const Header = () => {
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-400 dark:text-white'
+                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-600 active:animate-squeeze dark:text-white'
               >
                 {name}
               </Link>
             ))}
-            <Link
-              href={links.discord}
-              target='_blank'
-              className='rounded-xl border-2 border-title bg-white px-6 py-3 text-center text-sm font-medium text-white shadow-custom hover:animate-squeeze dark:border-titleDark dark:bg-transparent dark:shadow-customDark '
-            >
-              <span
-                aria-label='Get started with Commune AI'
-                className='text-header-links dark:text-titleDark'
-              >
-                {/* Get Started */}
-                Join community
-              </span>
-            </Link>
-            {/* <Link
-              href={links.governance}
-              className='rounded-xl border-2 border-title bg-[#FF6C6C] dark:text-titleDark hover:animate-squeeze dark:bg-transparent px-6 py-3 text-center text-sm font-medium text-title shadow-custom dark:shadow-customDark dark:border-titleDark'
-            >
-              <span aria-label='Get started with Commune AI'>
-                Governance
-              </span>
-            </Link> */}
-            <div className='mt-2'>
-              <DarkModeToggle />
-            </div>
-          </div>
+            <DarkModeToggle />
+          </div >
           <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
               type='button'
@@ -179,8 +159,8 @@ export const Header = () => {
               <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
             </button>
           </div>
-        </nav>
-      </header>
+        </nav >
+      </header >
     </>
   )
 }
