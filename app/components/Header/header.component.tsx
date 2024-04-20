@@ -52,7 +52,7 @@ export const Header = () => {
         <nav className={`fixed z-40 h-full w-full`}>
           <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-xl bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
             <div
-              className={`${commonButtonClass} absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-xl`}
+              className={`absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-xl bg-white`}
             >
               <DarkModeToggle />
             </div>
@@ -147,9 +147,7 @@ export const Header = () => {
                 {name}
               </Link>
             ))}
-            <div className='mt-2'>
-              <DarkModeToggle />
-            </div>
+            <DarkModeToggle />
           </div >
           <div className='col-span-3 ml-auto self-center lg:hidden '>
             <button
