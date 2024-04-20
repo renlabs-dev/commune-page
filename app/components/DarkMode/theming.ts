@@ -15,7 +15,7 @@ export type TThemes = typeof DARK_THEME_CLASSNAME| typeof LIGHT_THEME_CLASSNAME 
 
 export function getStoredTheme() {
   try {
-    return getCookie(THEME_KEY)
+    return getCookie(THEME_KEY) ?? DEFAULT_THEME
   } catch (e) {
     return DEFAULT_THEME
   }
