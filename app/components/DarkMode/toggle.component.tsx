@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import {
   DARK_THEME_CLASSNAME,
@@ -45,26 +45,31 @@ const ThemeOption = ({
 
 export const DarkModeToggle = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const defaultTheme = useMemo(getStoredTheme, [isDropdownOpen])
-  const [currentTheme, setCurrentTheme] = useState<TThemes>(defaultTheme)
-
-  const isDarkTheme = currentTheme === DARK_THEME_CLASSNAME
-  const isSystemTheme = currentTheme === SYSTEM_THEME_CLASSNAME
-
-  const Icon = useMemo(() => {
-    const shouldUseSystemDarkTheme = isSystemTheme && isDarkSystemTheme()
-
-    if (isDarkTheme || shouldUseSystemDarkTheme) {
-      return <MoonIcon className={`h-6 dark:fill-title md:dark:fill-white`} />
-    }
-
-    return <SunIcon className={'h-6 dark:fill-title md:dark:fill-white'} />
-  }, [isSystemTheme, isDarkTheme])
+  const [currentTheme, setCurrentTheme] = useState<TThemes>(getStoredTheme())
+  const [icon, setIcon] = useState<React.ReactNode>(null)
 
   const handleThemeChange = (theme: TThemes) => {
     setCurrentTheme(theme)
     setIsDropdownOpen(false)
   }
+
+  useEffect(() => {
+    const handleIcon = () => {
+      const isDarkTheme = currentTheme === DARK_THEME_CLASSNAME
+      const isSystemTheme = currentTheme === SYSTEM_THEME_CLASSNAME
+
+      const shouldUseSystemDarkTheme = isSystemTheme && isDarkSystemTheme()
+
+      if (isDarkTheme || shouldUseSystemDarkTheme) {
+        return <MoonIcon className={`h-6 dark:fill-title md:dark:fill-white`} />
+      }
+
+      return <SunIcon className={'h-6 dark:fill-title md:dark:fill-white'} />
+    }
+
+    setIcon(handleIcon())
+  }, [currentTheme])
+
 
   useEffect(() => {
     setTheme(currentTheme)
@@ -95,7 +100,7 @@ export const DarkModeToggle = () => {
         className='inline-flex items-center justify-center rounded-xl p-1 hover:bg-gray-100 focus:ring-1 focus:ring-gray-200 focus:ring-offset-2 dark:fill-title dark:ring-offset-transparent md:dark:hover:bg-[#0C1320] dark:focus:ring-titleDark'
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        {Icon}
+        {icon}
       </button>
       {isDropdownOpen && (
         <div className='dark:shadow-custom-dark absolute right-0 top-10 w-fit origin-top-right rounded-xl border-2 border-black bg-white shadow-custom dark:border-titleDark dark:bg-[#0C1320] md:right-0 md:top-12 md:mt-4'>
