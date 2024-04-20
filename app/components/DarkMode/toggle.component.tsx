@@ -56,8 +56,8 @@ const Icon = (props: { isSystemTheme: boolean, isDarkTheme: boolean }) => {
 
 export const DarkModeToggle = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [currentTheme, setCurrentTheme] = useState<TThemes>(getStoredTheme())
-  setTheme(currentTheme)
+  const defaultTheme = getStoredTheme
+  const [currentTheme, setCurrentTheme] = useState<TThemes>(defaultTheme)
 
   const isDarkTheme = currentTheme === DARK_THEME_CLASSNAME
   const isSystemTheme = currentTheme === SYSTEM_THEME_CLASSNAME
