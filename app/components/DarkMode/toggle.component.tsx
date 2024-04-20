@@ -61,7 +61,7 @@ export const DarkModeToggle = () => {
       const shouldUseSystemDarkTheme = isSystemTheme && isDarkSystemTheme()
 
       if (isDarkTheme || shouldUseSystemDarkTheme) {
-        return <MoonIcon className={`h-6 dark:fill-title md:dark:fill-white`} />
+        return <MoonIcon className={`h-6 dark:fill-title dark:fill-darkTitle lg:dark:fill-white`} />
       }
 
       return <SunIcon className={'h-6 dark:fill-title md:dark:fill-white'} />
@@ -97,7 +97,7 @@ export const DarkModeToggle = () => {
     <>
       <button
         type='button'
-        className='inline-flex items-center justify-center rounded-xl p-1 hover:bg-gray-100 focus:ring-1 focus:ring-gray-200 focus:ring-offset-2 dark:fill-title dark:ring-offset-transparent md:dark:hover:bg-[#0C1320] dark:focus:ring-titleDark'
+        className='inline-flex items-center justify-center rounded-xl p-1 hover:bg-gray-100 focus:ring-1 focus:ring-gray-200 focus:ring-offset-2 dark:fill-title dark:ring-offset-transparent dark:hover:bg-gray-200 lg:dark:hover:bg-[#0C1320] dark:focus:ring-titleDark'
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {icon}
