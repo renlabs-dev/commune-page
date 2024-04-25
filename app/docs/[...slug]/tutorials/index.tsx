@@ -12,7 +12,7 @@ import SetupWallet from './setup-wallet.mdx'
 
 // Modules
 import WhatIsModule from './what-is-a-module.mdx'
-import ModuleRequirments from './module-requirments.mdx'
+import Requirments from './requirments.mdx'
 import ModuleBasics from './module-basics.mdx'
 import ModuleCreate from './module-create.mdx'
 import ModuleDeploy from './module-deploy.mdx'
@@ -65,6 +65,11 @@ const conceptsSection = [
 
 const installationSection = [
   {
+    component: <Requirments />,
+    href: `requirments`,
+    name: 'Requirements',
+  },
+  {
     component: <SetupCommune />,
     href: `setup-commune`,
     name: 'Setup Commune',
@@ -81,11 +86,6 @@ const modulesSection = [
     component: <WhatIsModule />,
     href: `what-is-a-module`,
     name: 'What is a module',
-  },
-  {
-    component: <ModuleRequirments />,
-    href: `module-requirments`,
-    name: 'Module Requirements',
   },
   {
     component: <ModuleBasics />,
