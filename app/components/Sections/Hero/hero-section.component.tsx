@@ -1,7 +1,7 @@
-import { covered_by_your_grace, cairo } from '@/app/fonts'
 import { links } from '@/app/utils'
-import Image from 'next/image'
 import Link from 'next/link'
+import LogoLottie from '../../LogoLottie'
+import { covered_by_your_grace, cairo } from '@/app/fonts'
 
 export const HeroSection = () => {
   return (
@@ -9,13 +9,9 @@ export const HeroSection = () => {
       id='hero'
       className="flex h-auto min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white bg-[url('/hero-background.svg')] bg-cover p-10 py-12 dark:bg-[#131B2A] dark:bg-[url('/hero-background-dark-mode.svg')] lg:flex-row"
     >
-      <Image
-        src='/commune-logo.svg'
-        width={417}
-        height={481}
-        alt={`Commune's logo`}
-        className='w-2/3 max-w-sm pb-10 lg:mr-24 lg:w-auto lg:max-w-none lg:pb-0'
-      />
+      <div className='w-2/3 max-w-sm pb-10 lg:mr-28 lg:w-auto lg:max-w-none lg:pb-0'>
+        <LogoLottie />
+      </div>
       <div className='flex h-full w-full flex-col items-center justify-center lg:w-auto lg:items-start'>
         <h1
           className={`${cairo.className} pb-16 text-center text-5xl font-bold text-title dark:text-white lg:pb-0 lg:text-left lg:text-6xl`}
@@ -31,12 +27,14 @@ export const HeroSection = () => {
           </span>
           .
         </h2>
-        <div className='flex gap-4 mt-8 flex-col w-full lg:flex-row items-center'>
+        <div className='mt-8 flex w-full flex-col items-center gap-4 lg:flex-row'>
           <Link
             href='#welcome'
             className=' w-full max-w-screen-sm rounded-xl border-2 border-title bg-white px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-gray-200 dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-custom-dark-active lg:w-auto'
           >
-            <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
+            <span aria-label='Get started with Commune AI'>
+              GET STARTED NOW
+            </span>
           </Link>
           <Link
             href={links.discord}
@@ -51,7 +49,6 @@ export const HeroSection = () => {
             </span>
           </Link>
         </div>
-
       </div>
     </div>
   )

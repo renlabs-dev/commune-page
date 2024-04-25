@@ -17,6 +17,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.1.0",
     "@types/mdx": "^2.0.11",
+    "lottie-react": "^2.4.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
