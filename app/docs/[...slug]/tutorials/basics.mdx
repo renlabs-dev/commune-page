@@ -1,1 +1,38 @@
-# TODO
+# Basic Concepts
+
+### What is CommuneX
+
+CommuneX represents a significant advancement beyond the standard Commune codebase.
+It is a newer, more stable release designed to enhance both user and developer experiences. With its improved features and robust architecture, CommuneX offers a superior platform for community engagement and collaboration.
+
+### Blockchain Integration
+
+Commune's blockchain only tracks the economic information of the AI activity rather than the AI activity itself. The AI validation happens offchain and only its results are submitted to the chain. This separates the computation heavy elements from the chain.
+
+### Weight Based mechanism
+
+A weight-based mechanism is crucial for managing the distribution and validation of transactions and blocks within the network. This mechanism utilizes a weight function to assign a numerical value to each block or transaction, influencing its importance or priority within the blockchain.
+
+These are mathematical functions used to assign a weight to each block or transaction. The weight can be based on various factors such as the block's hash value, the amount of stake associated with the block's creator, or other relevant attributes.
+
+By prioritizing blocks and transactions based on weight, the network can optimize the processing of transactions, leading to improved efficiency and scalability.
+
+### Validators
+
+Validators have to evaluate miners at regular intervals, ensuring coverage of the entire network and updating for new projects.
+
+Miner's prioritize serving Validators based on Stake and consensus, the more Stake the more weight on incentives.
+
+Rewards are split 50% to miners (specialized APIs with off-chain architechtures) and 50% to validators, validating the legitimacy of the miners.
+
+### Stake
+
+"Stake" refers to the amount of cryptocurrency that participants lock up as a security deposit to become validators. This process is central to how transactions and blocks are validated within the network.
+
+Stake acts as both a security measure and a means of determining who gets to validate new blocks of transactions. Validators are chosen based on the amount of cryptocurrency they commit to the network, which discourages dishonest behavior by putting their funds at risk.
+
+Staking in CommuneX not only facilitates transaction validation but also plays a crucial role in maintaining the network's security and efficiency. By leveraging the stake-based mechanism, CommuneX ensures that validators are financially invested in the accuracy and reliability of the blockchain data they help to maintain.
+
+### Subnets
+
+A subnet is a sovereign network that operates under its own consensus rules and governance structures. It can be tailored for specific functionalities, such as running smart contracts, managing digital assets, or launching decentralized applications.
