@@ -1,17 +1,25 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLottie } from 'lottie-react'
 import logoAnimation from './logo-lottie.json'
 
 const LogoLottie = () => {
   const options = {
     loop: false,
-    autoplay: true,
+    autoplay: false,
     animationData: logoAnimation,
   }
 
-  const { View } = useLottie(options)
+  const { View, play } = useLottie(options)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      play()
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [play])
 
   return <div>{View}</div>
 }
