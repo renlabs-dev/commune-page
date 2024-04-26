@@ -32,7 +32,7 @@ import SubnetList from './subnet-list.mdx'
 import KeyBasics from './key-basics.mdx'
 import KeyManagement from './key-management.mdx'
 
-// Mining 
+// Mining
 import WhatIsMining from './what-is-mining.mdx'
 import CreateMiner from './create-miner.mdx'
 import RunMiner from './run-miner.mdx'
@@ -304,6 +304,11 @@ export const tutorials = [
     contents: modulesSection,
     title: 'Modules',
     tutorialId: 'modules',
+  },
+  { 
+    contents: subnetsSection, 
+    title: 'Subnets',
+    tutorialId: 'subnets' 
   },
   {
     contents: workingWithKeysSection,
