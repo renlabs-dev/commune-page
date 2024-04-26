@@ -1,0 +1,19 @@
+# Yuma Consensus
+
+Yuma Consensus, the core invention of Bittensor, is a widely applicable mechanism for neutralizing manipulation attempts from minority groups in a dynamically stable honest majority equilibrium. 
+
+It is a fuzzy consensus to determine a stable agreement in a network full of divergent opinions, using purely stake and the weights submitted by stake.
+
+The consensus weight is calculated by determining the highest weight supported by at least the stake majority, meaning the majority has submitted either equal or higher weight. 
+
+This is calculated using a weighted stake-based median over the cumulative stake-weight distribution.
+
+After the consensus weight is determined, there are 2 core mechanisms for neutralizing and penalizing manipulation attempts.
+
+1. clipping all excess weights set above the consensus weight down to the consensus weight.  (weights set below the consensus weight are ignored)
+note: weights set below the consensus weight are ignored in the nature of the median calculation
+
+2. slashing the bonds of Stake weight set above the consensus weight 
+note: setting weights below the consensus weigh means a lower bond in a higher value miner, in its nature leading to dividend penalty. However, higher bonds have to be corrected.
+
+talk on equilibrium and consensus reward strenghening it.

@@ -12,30 +12,42 @@ import SetupWallet from './setup-wallet.mdx'
 
 // Modules
 import WhatIsModule from './what-is-a-module.mdx'
-import Requirments from './requirments.mdx'
 import ModuleBasics from './module-basics.mdx'
 import ModuleCreate from './module-create.mdx'
 import ModuleDeploy from './module-deploy.mdx'
 import ModuleRegister from './module-register.mdx'
 import ModuleConnect from './module-connect.mdx'
 
+// Subnets
+import WhatIsSubnet from './what-is-a-subnet.mdx'
+import ParticipatingOnSubnet from './participating-on-a-subnet.mdx'
+import SubnetTemplate from './subnet-template.mdx'
+import DeployingSubnet from './deploying-a-subnet.mdx'
+import SubnetParameters from './subnet-parameters.mdx'
+import GeneralSubnetDao from './general-subnet-dao.mdx'
+import YumaSubnets from './yuma-subnets.mdx'
+import SubnetList from './subnet-list.mdx'
+
 // Working with Keys
 import KeyBasics from './key-basics.mdx'
+import KeyManagement from './key-management.mdx'
 
-// Mining and Validating
+// Mining 
 import WhatIsMining from './what-is-mining.mdx'
-import WhatIsValidating from './what-is-validating.mdx'
-import ParticipatingOnSubnet from './participating-on-a-subnet.mdx'
-import RunMiner from './run-miner.mdx'
-import RunValidator from './run-validator.mdx'
-import CreateValidator from './create-validator.mdx'
 import CreateMiner from './create-miner.mdx'
+import RunMiner from './run-miner.mdx'
+
+// Validating
+import WhatIsValidating from './what-is-validating.mdx'
+import CreateValidator from './create-validator.mdx'
+import RunValidator from './run-validator.mdx'
 
 // Subspace
-import SubspaceNodeList from './subspace-node-list.mdx'
 import RegistrationBurnMechanism from './registration-burn-mechanism.mdx'
 import GlobalParameters from './global-parameters.mdx'
 import RunningLocalNode from './running-local-node.mdx'
+import YumaConsensus from './yuma-consensus.mdx'
+import GeneralNetwork from './general-network.mdx'
 
 const gettingStartedSection = [
   {
@@ -64,11 +76,6 @@ const conceptsSection = [
 ]
 
 const installationSection = [
-  {
-    component: <Requirments />,
-    href: `requirments`,
-    name: 'Requirements',
-  },
   {
     component: <SetupCommune />,
     href: `setup-commune`,
@@ -114,49 +121,95 @@ const modulesSection = [
   },
 ]
 
+const subnetsSection = [
+  {
+    component: <WhatIsSubnet />,
+    href: `what-is-a-subnet`,
+    name: 'What is a subnet',
+  },
+  {
+    component: <ParticipatingOnSubnet />,
+    href: `participating-on-a-subnet`,
+    name: 'Participating on a subnet',
+  },
+  {
+    component: <SubnetTemplate />,
+    href: `subnet-template`,
+    name: 'Subnet Template',
+  },
+  {
+    component: <DeployingSubnet />,
+    href: `deploying-a-subnet`,
+    name: 'Deploying a subnet',
+  },
+  {
+    component: <SubnetParameters />,
+    href: `subnet-parameters`,
+    name: 'Subnet Parameters',
+  },
+  {
+    component: <GeneralSubnetDao />,
+    href: `general-subnet-dao`,
+    name: 'General Subnet DAO',
+  },
+  {
+    component: <YumaSubnets />,
+    href: `yuma-subnets`,
+    name: 'Yuma Subnets',
+  },
+  {
+    component: <SubnetList />,
+    href: `subnet-list`,
+    name: 'Subnet List',
+  },
+]
+
 const workingWithKeysSection = [
   {
     component: <KeyBasics />,
     href: `key-basics`,
     name: 'Key Basics',
   },
+  {
+    component: <KeyManagement />,
+    href: `key-management`,
+    name: 'Key Management',
+  },
 ]
 
-const miningAndValidatingSection = [
+const miningSection = [
   {
     component: <WhatIsMining />,
     href: `what-is-mining`,
     name: 'What is mining',
   },
   {
+    component: <CreateMiner />,
+    href: `create-miner`,
+    name: 'Create a miner',
+  },
+  {
+    component: <RunMiner />,
+    href: `run-miner`,
+    name: 'Run a miner',
+  },
+]
+
+const validatingSection = [
+  {
     component: <WhatIsValidating />,
     href: `what-is-validating`,
     name: 'What is validating',
   },
   {
-    component: <ParticipatingOnSubnet />,
-    href: `participating-on-a-subnet`,
-    name: 'Participating on a subnet as validator or miner',
-  },
-  {
-    component: <RunMiner />,
-    href: `run-miner`,
-    name: 'How to run a miner',
+    component: <CreateValidator />,
+    href: `create-validator`,
+    name: 'Create a validator',
   },
   {
     component: <RunValidator />,
     href: `run-validator`,
-    name: 'How to run a validator',
-  },
-  {
-    component: <CreateValidator />,
-    href: `create-validator`,
-    name: 'How to Create and Deploy a Validator',
-  },
-  {
-    component: <CreateMiner />,
-    href: `create-miner`,
-    name: 'How to Create and Deploy a Miner',
+    name: 'Run a validator',
   },
 ]
 
@@ -205,11 +258,6 @@ const miningAndValidatingSection = [
 
 const subspaceSection = [
   {
-    component: <SubspaceNodeList />,
-    href: `subspace-node-list`,
-    name: 'Subspace Node List',
-  },
-  {
     component: <RegistrationBurnMechanism />,
     href: `registration-burn-mechanism`,
     name: 'Registration Burn Mechanism',
@@ -223,6 +271,16 @@ const subspaceSection = [
     component: <RunningLocalNode />,
     href: `running-local-node`,
     name: 'Running a Local Node',
+  },
+  {
+    component: <YumaConsensus />,
+    href: `yuma-consensus`,
+    name: 'Yuma Consensus',
+  },
+  {
+    component: <GeneralNetwork />,
+    href: `general-network`,
+    name: 'General Network',
   },
 ]
 

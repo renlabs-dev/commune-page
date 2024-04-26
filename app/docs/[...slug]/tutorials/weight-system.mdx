@@ -1,9 +1,5 @@
 # Weight System
 
-### Weight Based mechanism
+Weights are the most fundamental concept in the economics of Commune. Stake collectively weights the distribution of rewards. Validator Stake submits weights periodically representing the proportion of rewards each Miner should have according to their evaluation of them. This allows to granularly define and adapt the distribution of rewards between miners, while seperating the computation involved in calculating the weights from the protocol. Allowing to create granular, adaptive, dynamic incentive landscapes.
 
-A weight-based mechanism is crucial for managing the distribution and validation of transactions and blocks within the network. This mechanism utilizes a weight function to assign a numerical value to each block or transaction, influencing its importance or priority within the blockchain.
-
-These are mathematical functions used to assign a weight to each block or transaction. The weight can be based on various factors such as the block's hash value, the amount of stake associated with the block's creator, or other relevant attributes.
-
-By prioritizing blocks and transactions based on weight, the network can optimize the processing of transactions, leading to improved efficiency and scalability.
+Since this basic mechanism alone is vulnerable to selfish dishonest actors, subnets run a consensus calculation between the transformation of local weights to global weights based on Stake.
