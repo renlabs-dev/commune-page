@@ -1,1 +1,72 @@
-# TODO
+# Timo todo
+
+
+You can also query for the global parameters using CLI:
+
+```bash
+comx network params 
+```
+
+The query will get resolved the as follows:
+
+```Python
+
+def get_global_params(c_client: CommuneClient) -> NetworkParams:
+    """
+    Returns global parameters of the whole commune ecosystem
+    """
+
+    query_all = c_client.query_batch({
+        "SubspaceModule": [
+            ("MaxAllowedSubnets", []),
+            ("MaxAllowedModules", []),
+            ("MaxRegistrationsPerBlock", []),
+            ("TargetRegistrationsInterval", []),
+            ("TargetRegistrationsPerInterval", []),
+            ("UnitEmission", []),
+            ("MaxNameLength", []),
+            ("BurnRate", []),
+            ("MinBurn", []),
+            ("MaxBurn", []),
+            ("MinStakeGlobal", []),
+            ("MinWeightStake", []),
+            ("AdjustmentAlpha", []),
+            ("FloorDelegationFee", []),
+            ("MaxAllowedWeightsGlobal", []),
+            ("Nominator", []),
+            ("ProposalCost", []),
+            ("ProposalExpiration", []),
+            ("ProposalParticipationThreshold", []),
+            ("Nominator", []),
+            ("SubnetStakeThreshold", []),
+            ("MinWeightStake", []),
+            ("MinNameLength", []),
+        ],
+    })
+
+    global_params: NetworkParams = {
+        "max_allowed_subnets": int(query_all["MaxAllowedSubnets"]),
+        "max_allowed_modules": int(query_all["MaxAllowedModules"]),
+        "max_registrations_per_block": int(query_all["MaxRegistrationsPerBlock"]),
+        "target_registrations_interval": int(query_all["TargetRegistrationsInterval"]),
+        "target_registrations_per_interval": int(query_all["TargetRegistrationsPerInterval"]),
+        "unit_emission": int(query_all["UnitEmission"]),
+        "max_name_length": int(query_all["MaxNameLength"]),
+        "burn_rate": int(query_all["BurnRate"]),
+        "min_burn": int(query_all["MinBurn"]),
+        "max_burn": int(query_all["MaxBurn"]),
+        "min_stake": int(query_all["MinStakeGlobal"]),
+        "min_weight_stake": int(query_all["MinWeightStake"]),
+        "adjustment_alpha": int(query_all["AdjustmentAlpha"]),
+        "floor_delegation_fee": int(query_all["FloorDelegationFee"]),
+        "max_allowed_weights": int(query_all["MaxAllowedWeightsGlobal"]),
+        "nominator": Ss58Address(query_all["Nominator"]),
+        "proposal_cost": int(query_all["ProposalCost"]),
+        "proposal_expiration": int(query_all["ProposalExpiration"]),
+        "proposal_participation_threshold": int(query_all["ProposalParticipationThreshold"]),
+        "subnet_stake_threshold": int(query_all["SubnetStakeThreshold"]),
+        "min_name_length": int(query_all["MinNameLength"]),
+    }
+
+    return global_params
+```
