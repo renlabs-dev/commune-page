@@ -311,9 +311,14 @@ export const tutorials = [
     tutorialId: 'working-with-keys',
   },
   {
-    contents: miningAndValidatingSection,
-    title: 'Mining and Validating',
-    tutorialId: 'mining-and-validating',
+    contents: miningSection,
+    title: 'Mining',
+    tutorialId: 'mining',
+  },
+  {
+    contents: validatingSection,
+    title: 'Validating',
+    tutorialId: 'validating',
   },
   // {
   //   contents: subnetsSection,
