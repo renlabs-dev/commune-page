@@ -3,51 +3,51 @@ import Intro from './intro.mdx' // done
 
 // Concepts
 import Basics from './basics.mdx' // TODO: timo refactor
-import WeightSystem from './weight-system.mdx' // TODO: timo refactor
-import Governance from './governance.mdx' // TODO: timo refactor
+import WeightSystem from './weight-system.mdx' // done
+import Governance from './governance.mdx' // done
 
 // Installation
-import SetupCommune from './setup-commune.mdx'
-import SetupWallet from './setup-wallet.mdx'
+import SetupCommune from './setup-commune.mdx' // done
+import SetupWallet from './setup-wallet.mdx' // done
 
 // Modules
-import WhatIsModule from './what-is-a-module.mdx'
-import ModuleBasics from './module-basics.mdx'
-import ModuleCreate from './module-create.mdx'
-import ModuleDeploy from './module-deploy.mdx'
-import ModuleRegister from './module-register.mdx'
-import ModuleConnect from './module-connect.mdx'
+import WhatIsModule from './what-is-a-module.mdx' // todo jairo refac
+import ModuleBasics from './module-basics.mdx' // jairo todo
+import ModuleCreate from './module-create.mdx' // jairo todo
+import ModuleDeploy from './module-deploy.mdx' // jairo todo
+import ModuleRegister from './module-register.mdx' // done
+import ModuleConnect from './module-connect.mdx' // jairo todo
 
 // Subnets
-import WhatIsSubnet from './what-is-a-subnet.mdx'
+import WhatIsSubnet from './what-is-a-subnet.mdx'  // done
 import ParticipatingOnSubnet from './participating-on-a-subnet.mdx'
-import SubnetTemplate from './subnet-template.mdx'
-import DeployingSubnet from './deploying-a-subnet.mdx'
-import SubnetParameters from './subnet-parameters.mdx'
-import GeneralSubnetDao from './general-subnet-dao.mdx'
-import YumaSubnets from './yuma-subnets.mdx'
-import SubnetList from './subnet-list.mdx'
+import SubnetTemplate from './subnet-template.mdx' // TODO: honza
+import DeployingSubnet from './deploying-a-subnet.mdx' // TODO: honza
+import SubnetParameters from './subnet-parameters.mdx' // TODO: timo
+import GeneralSubnetDao from './general-subnet-dao.mdx' // done
+import YumaSubnets from './yuma-subnets.mdx' // done
+import GeneralSubnet from './general-subnet.mdx' // done
+import SubnetList from './subnet-list.mdx' // TODO: honza 
 
 // Working with Keys
-import KeyBasics from './key-basics.mdx'
-import KeyManagement from './key-management.mdx'
+import KeyBasics from './key-basics.mdx' // done
 
 // Mining
-import WhatIsMining from './what-is-mining.mdx'
-import CreateMiner from './create-miner.mdx'
-import RunMiner from './run-miner.mdx'
+import WhatIsMining from './what-is-mining.mdx' // done
+import CreateMiner from './create-miner.mdx' // TODO: jairo 
+import RunMiner from './run-miner.mdx' // done
 
 // Validating
-import WhatIsValidating from './what-is-validating.mdx'
-import CreateValidator from './create-validator.mdx'
-import RunValidator from './run-validator.mdx'
+import WhatIsValidating from './what-is-validating.mdx' // done
+import CreateValidator from './create-validator.mdx' // TODO: jairo
+import RunValidator from './run-validator.mdx' // TOOD: jairo
 
 // Subspace
-import RegistrationBurnMechanism from './registration-burn-mechanism.mdx'
-import GlobalParameters from './global-parameters.mdx'
-import RunningLocalNode from './running-local-node.mdx'
-import YumaConsensus from './yuma-consensus.mdx'
-import GeneralNetwork from './general-network.mdx'
+import RegistrationBurnMechanism from './registration-burn-mechanism.mdx' // TODO: honza
+import GlobalParameters from './global-parameters.mdx' // TODO: timo
+import RunningLocalNode from './running-local-node.mdx' // TODO: honza
+import YumaConsensus from './yuma-consensus.mdx' // TODO: luiz add code examples
+import GeneralSubnetImplementation from './general-subnet-implementation.mdx' // TODO: luiz
 
 const gettingStartedSection = [
   {
@@ -158,6 +158,11 @@ const subnetsSection = [
     name: 'Yuma Subnets',
   },
   {
+    component: <GeneralSubnet />,
+    href: `general-subnet`,
+    name: 'General Subnet',
+  },
+  {
     component: <SubnetList />,
     href: `subnet-list`,
     name: 'Subnet List',
@@ -169,11 +174,6 @@ const workingWithKeysSection = [
     component: <KeyBasics />,
     href: `key-basics`,
     name: 'Key Basics',
-  },
-  {
-    component: <KeyManagement />,
-    href: `key-management`,
-    name: 'Key Management',
   },
 ]
 
@@ -278,7 +278,7 @@ const subspaceSection = [
     name: 'Yuma Consensus',
   },
   {
-    component: <GeneralNetwork />,
+    component: <GeneralSubnetImplementation />,
     href: `general-network`,
     name: 'General Network',
   },

@@ -36,6 +36,11 @@ export function StartCards() {
         description='Understand the basics of the network, weight system, governance, and more.'
         link='/docs/concepts/basics'
       />
+      <Card
+        title='Code Documentation'
+        description='Learn how to build on top of Commune AI'
+        link='https://docs.communex.ai/communex'
+        />
     </div>
   )
 }

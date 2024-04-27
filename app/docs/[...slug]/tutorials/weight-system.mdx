@@ -4,29 +4,56 @@ Weights are the most fundamental concept in the economics of Commune. Stake coll
 
 Since this basic mechanism alone is vulnerable to selfish dishonest actors, subnets run a consensus calculation between the transformation of local weights to global weights based on Stake.
 
+See [Yuma Consensus]
+
 ## Setting Weights 
 
 To set weights you will first need:
 - Wallet
 - Balance
 
-You first have to pick a subnet on which you will set the weights on.
 
-1. Register your validator the a subnet
+1. Register your validator on a subnet
 
-First step is to have a key registered on a subnet of your choice
+You will first have to pick a subnet on which you will set the weights on. This also means that you have to register your key there.
 
 ```bash
-comx module register <name-of-validator> <key-name>
+comx module register <name-of-validator> <key-name> [--netuid <id>]
 ```
 
-Validator doesn't need to have any exposed endpionts
-
+Since validator doesn't need to have any exposed endpoints, you can leave out ip and port specification.
 
 2. Stake your tokens to the desired subnet 
 
 ```bash
-comx balance stake <key-name> <amount> <your-validator-addresses> --netuid <subnet-id>
+comx balance stake <key-name> <amount> <your-validator-addresses> [--netuid <subnet-id>]
 ```
 
+3. Set the weights on set of uids 
 
+Python code example
+
+```py
+from communex.compat.key import classic_load_key
+from communex.client import CommuneClient
+
+# this is the id of the subnet, you want to set weights on, make sure your key is registered here
+netuid = 3
+# the ids of miners you want to set weights on
+uids = [1, 2, 3, 4, 5]
+# the weight you put on each miner
+weights = [1, 2, 3, 4, 5]
+
+# load your key, make sure it's registered on the `netuid` and has a stake on it
+key = classic_load_key("foo")
+
+client = CommuneClient("wss://example-node.com")
+
+result = client.vote(key=key, uids=uids, weights=weights, netuid=3)
+```
+
+Important consideration is also a subnet consensus.
+- [yuma subnets](/docs/subnets/yuma-subnets)
+- [general subnet](/docs/subnets/general-subnet)
+
+That means that it might not be a profitable strategy to set scoring outside of the subnetwork intend.
