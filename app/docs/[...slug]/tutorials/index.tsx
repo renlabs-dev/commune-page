@@ -1,10 +1,10 @@
 // Getting Started
-import Intro from './intro.mdx'
+import Intro from './intro.mdx' // done
 
 // Concepts
-import Basics from './basics.mdx'
-import WeightSystem from './weight-system.mdx'
-import Governance from './governance.mdx'
+import Basics from './basics.mdx' // TODO: timo refactor
+import WeightSystem from './weight-system.mdx' // TODO: timo refactor
+import Governance from './governance.mdx' // TODO: timo refactor
 
 // Installation
 import SetupCommune from './setup-commune.mdx'

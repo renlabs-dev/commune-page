@@ -2,18 +2,40 @@
 
 Yuma Consensus, the core invention of Bittensor, is a widely applicable mechanism for neutralizing manipulation attempts from minority groups in a dynamically stable honest majority equilibrium. 
 
-It is a fuzzy consensus to determine a stable agreement in a network full of divergent opinions, using purely stake and the weights submitted by stake.
+It is a fuzzy consensus to determine a robust agreement in a network full of divergent opinions, using stake and its submitted weights.
 
-The consensus weight is calculated by determining the highest weight supported by at least the stake majority, meaning the majority has submitted either equal or higher weight. 
+The consensus weight is calculated by determining the highest weight supported by at least the stake majority, meaning the majority has submitted either equal or higher weight. The majority level is adjustable through the k parameter.
 
-This is calculated using a weighted stake-based median over the cumulative stake-weight distribution.
+This is calculated using a weighted (k) stake-based median over the cumulative stake-weight distribution. 
+
+# bonds
+
+Stake setting weights on miners is 'bonding' to them. Bonds are Stake-weight proportional ownership over the share of emissions accrued by the miner, paid out as dividends every epoch. The concept of the bond allows to modulate the incentives of validators. This is a vital component to Yuma Consensus, ensuring the robustness of the honest majority equilibrium.
 
 After the consensus weight is determined, there are 2 core mechanisms for neutralizing and penalizing manipulation attempts.
 
-1. clipping all excess weights set above the consensus weight down to the consensus weight.  (weights set below the consensus weight are ignored)
+1. clipping all excess weights set above the consensus weight down to the consensus weight. 
+
 note: weights set below the consensus weight are ignored in the nature of the median calculation
 
-2. slashing the bonds of Stake weight set above the consensus weight 
-note: setting weights below the consensus weigh means a lower bond in a higher value miner, in its nature leading to dividend penalty. However, higher bonds have to be corrected.
+2. slashing the bonds of Stake weight set above the consensus weight, reducing stake dividends. (based on β parameter)
 
-talk on equilibrium and consensus reward strenghening it.
+note: setting weights below the consensus weight means a lower bond in a higher value miner, in its nature leading to dividend penalty. However, higher bonds have to be corrected.
+
+This translates to a consensus based reward for weights. The deeper in-consensus validator weights are, the higher the stake dividends. The weaker consensus, the higher the reward for strengthening consensus, while out‐of‐consensus weights come at increasing cost.
+
+This creates a robust honest majority equilibrium difficult to break once stabilized.
+
+Parameters:
+
+- k-majority
+     - higher value = more robust and conservative consensus with lower resolution
+     - lower value = more vulnerable consensus with higher resolution
+- β bond penalty
+    - higher value = more dividend loss from deviating from consensus, hence more incentive to stick closely to consensus
+    - lower value = less dividend loss from deviating from consensus, more tolerance for slight deviations that may be caused by unmalicious reasons
+
+Yuma Consensus parameters can be adjusted on the fly to optimize its forces as necessary.
+
+For more information and robustness proofs look [here](https://github.com/opentensor/subtensor/blob/development/docs/consensus.md).
+
