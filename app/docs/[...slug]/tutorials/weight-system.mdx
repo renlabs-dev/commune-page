@@ -1,5 +1,32 @@
 # Weight System
 
-Weights are the most fundamental concept in the economics of Commune. Stake collectively weights the distribution of rewards. Validator Stake submits weights periodically representing the proportion of rewards each Miner should have according to their evaluation of them. This allows to granularly define and adapt the distribution of rewards between miners, while seperating the computation involved in calculating the weights from the protocol. Allowing to create granular, adaptive, dynamic incentive landscapes.
+Weights are the most fundamental concept in the economics of Commune. Stake collectively weights the distribution of rewards. Validator Stake submits weights periodically representing the proportion of rewards each Miner should have according to their evaluation. This allows to granularly define and adapt the distribution of rewards between miners, while seperating the computation involved in calculating the weights from the protocol. Allowing to create granular, adaptive, dynamic incentive landscapes.
 
 Since this basic mechanism alone is vulnerable to selfish dishonest actors, subnets run a consensus calculation between the transformation of local weights to global weights based on Stake.
+
+## Setting Weights 
+
+To set weights you will first need:
+- Wallet
+- Balance
+
+You first have to pick a subnet on which you will set the weights on.
+
+1. Register your validator the a subnet
+
+First step is to have a key registered on a subnet of your choice
+
+```bash
+comx module register <name-of-validator> <key-name>
+```
+
+Validator doesn't need to have any exposed endpionts
+
+
+2. Stake your tokens to the desired subnet 
+
+```bash
+comx balance stake <key-name> <amount> <your-validator-addresses> --netuid <subnet-id>
+```
+
+
