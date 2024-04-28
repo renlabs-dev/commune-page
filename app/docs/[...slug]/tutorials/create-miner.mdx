@@ -1,4 +1,4 @@
-# Create miner
+# Create a Miner
 
 ## With communex
 
@@ -20,13 +20,16 @@ This defines a module that can be served with the command **comx module serve**.
 
 ## On your own
 
-You can just create and serve a REST-api as you prefer. Just make sure that all your schemas look like:
+You can just create and serve a HTTP api as you prefer. Just make sure that all your schemas look like:
+
 ```json
 "timestamp": <ISO-timestamp>
 "target-key": <str> // <- (this represents the ss58address of your miner)
 "params": <Any> // <- This is whatever data you would actually want to receive on your endpoint
 ```
-Beyond this, requests made with our CommuneClient will send you the following headers:
+
+Beyond this, requests made with our ModuleClient will send you the following headers:
+
 ```json
 "X-Signature": <hexstring> // This is the hexstring of the sr25519 signature of the data described above
 "X-Key": <hexstring> // The public key that signed the data

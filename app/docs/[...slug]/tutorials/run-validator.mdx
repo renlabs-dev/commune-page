@@ -3,8 +3,10 @@
 ## Description
 
 Running a validator consists of setting **weights** on miners. Once every **tempo**, rewards are distributed based on the score of modules.
-You can use the **vote** method of **CommuneClient**, which you can import from **communex.client** to set weights. 
-Please note that every subnet has its own **min_allowed_weights** and **max_allowed_weights** and you should respect this parameters when casting votes
+You can use the [vote](https://docs.communex.ai/communex/client#CommuneClient.vote) method to set weights. 
+Please note that every subnet has its own **min_allowed_weights** and **max_allowed_weights** and you should respect those parameters when casting votes
 
-This being said, how you're going to evaluate each module to decide it's weights is up to you. The general idea is to query the addresses of every
-module on the subnet, call their respective endpoints and run a scoring function against their answers. 
+The general idea is to query the addresses of every module on the subnet, 
+call their respective endpoints, run a scoring function, in accord to your subnet validation mechanism, against their answers and set weights. 
+
+For a more concrete example, you can take a look at this [sketch of a validator](https://github.com/agicommies/commune-subnet-template/blob/main/src/subnet/validator/validator.py)
