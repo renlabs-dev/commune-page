@@ -12,8 +12,6 @@ import SetupWallet from './setup-wallet.mdx' // done
 
 // Modules
 import WhatIsModule from './what-is-a-module.mdx' // done
-import ModuleBasics from './module-basics.mdx' // jairo todo
-import ModuleCreate from './module-create.mdx' // jairo todo
 import ModuleDeploy from './module-deploy.mdx' // done
 import ModuleRegister from './module-register.mdx' // done
 import ModuleConnect from './module-connect.mdx' // done
@@ -93,16 +91,6 @@ const modulesSection = [
     component: <WhatIsModule />,
     href: `what-is-a-module`,
     name: 'What is a module',
-  },
-  {
-    component: <ModuleBasics />,
-    href: `module-basics`,
-    name: 'Module Basics ',
-  },
-  {
-    component: <ModuleCreate />,
-    href: `module-create`,
-    name: 'Create a Module',
   },
   {
     component: <ModuleDeploy />,
