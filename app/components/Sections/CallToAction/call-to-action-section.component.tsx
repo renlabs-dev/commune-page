@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import { links } from '@/app/utils'
 import Image from 'next/image'
-import { covered_by_your_grace } from '@/app/fonts'
+import { links } from '@/app/utils'
 import { DiscordWidget } from '../..'
 
 export const CallToActionSection = async () => {
@@ -39,13 +38,6 @@ export const CallToActionSection = async () => {
       </div>
 
       <div className='relative w-full max-w-xl rounded-xl border-2 border-black shadow-cta-white-active transition duration-300 hover:scale-105 dark:border-titleDark dark:shadow-cta-dark-active lg:w-1/2'>
-        <div className='absolute flex h-full w-full items-center justify-center rounded-xl bg-white/[0.94] text-white dark:bg-[#131B2A]/[0.90]'>
-          <span
-            className={`${covered_by_your_grace.className}  text-5xl text-section-info dark:text-white lg:text-6xl`}
-          >
-            Coming soon
-          </span>
-        </div>
         <div className='flex flex-row items-center justify-start rounded-tr-xl border-b-2 border-dashed border-black bg-white p-4 dark:border-titleDark dark:bg-[#131B2A] lg:p-8'>
           <span className='mr-6 rounded-full border-2 border-black p-5 py-4 dark:border-titleDark dark:bg-titleDark'>
             <Image src={'/docs-icon.svg'} width={25} height={25} alt='' />
@@ -56,8 +48,7 @@ export const CallToActionSection = async () => {
         </div>
         <div className='flex w-full flex-col items-start justify-between rounded-br-xl bg-white p-8 py-10 dark:bg-[#131B2A] dark:text-white lg:flex-row lg:items-center'>
           <Link
-            // href={links.docs}
-            href={'https://rb.gy/3u89fy'}
+            href={links.docs}
             className='mb-5 text-3xl font-normal lg:mb-0 lg:mr-10 lg:min-w-40'
           >
             Go to <br /> Docs →
