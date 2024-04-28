@@ -2,7 +2,7 @@
 import Intro from './intro.mdx' // done
 
 // Concepts
-import Basics from './basics.mdx' // TODO: timo refactor
+import Basics from './basics.mdx' // done
 import WeightSystem from './weight-system.mdx' // done
 import Governance from './governance.mdx' // done
 
@@ -17,22 +17,24 @@ import ModuleRegister from './module-register.mdx' // done
 import ModuleConnect from './module-connect.mdx' // done
 
 // Subnets
-import WhatIsSubnet from './what-is-a-subnet.mdx'  // done
+import WhatIsSubnet from './what-is-a-subnet.mdx' // done
 import ParticipatingOnSubnet from './participating-on-a-subnet.mdx'
-import SubnetTemplate from './subnet-template.mdx' // TODO: honza
+import SubnetTemplate from './subnet-template.mdx' // done
+import BuildingSubnet from './building-a-subnet.mdx' // TODO: honza
 import DeployingSubnet from './deploying-a-subnet.mdx' // TODO: honza
 import SubnetParameters from './subnet-parameters.mdx' // TODO: timo
 import GeneralSubnetDao from './general-subnet-dao.mdx' // done
 import YumaSubnets from './yuma-subnets.mdx' // done
 import GeneralSubnet from './general-subnet.mdx' // done
-import SubnetList from './subnet-list.mdx' // TODO: honza 
+import SubnetList from './subnet-list.mdx' // TODO: honza
 
 // Working with Keys
 import KeyBasics from './key-basics.mdx' // done
+import BalanceOperations from './balance-operations.mdx' // done
 
 // Mining
 import WhatIsMining from './what-is-mining.mdx' // done
-import CreateMiner from './create-miner.mdx' // TODO: jairo 
+import CreateMiner from './create-miner.mdx' // TODO: jairo
 import RunMiner from './run-miner.mdx' // done
 
 // Validating
@@ -41,11 +43,11 @@ import CreateValidator from './create-validator.mdx' // TODO: jairo
 import RunValidator from './run-validator.mdx' // TOOD: jairo
 
 // Subspace
-import RegistrationBurnMechanism from './registration-burn-mechanism.mdx' // TODO: honza
+import CommuneBlockchain from './commune-blockchain.mdx' // TODO: honza
+import Testnet from './testnet.mdx' // done
 import GlobalParameters from './global-parameters.mdx' // TODO: timo
 import RunningLocalNode from './running-local-node.mdx' // TODO: honza
-import YumaConsensus from './yuma-consensus.mdx' // TODO: luiz add code examples
-import GeneralSubnetImplementation from './general-subnet-implementation.mdx' // TODO: luiz
+import YumaConsensus from './yuma-consensus.mdx' // done
 
 const gettingStartedSection = [
   {
@@ -90,7 +92,7 @@ const modulesSection = [
   {
     component: <WhatIsModule />,
     href: `what-is-a-module`,
-    name: 'What is a module',
+    name: 'What is a Module',
   },
   {
     component: <ModuleDeploy />,
@@ -118,7 +120,7 @@ const subnetsSection = [
   {
     component: <ParticipatingOnSubnet />,
     href: `participating-on-a-subnet`,
-    name: 'Participating on a subnet',
+    name: 'Participating on a Subnet',
   },
   {
     component: <SubnetTemplate />,
@@ -126,9 +128,14 @@ const subnetsSection = [
     name: 'Subnet Template',
   },
   {
+    component: <BuildingSubnet />,
+    href: `building-a-subnet`,
+    name: 'Building a Subnet',
+  },
+  {
     component: <DeployingSubnet />,
     href: `deploying-a-subnet`,
-    name: 'Deploying a subnet',
+    name: 'Deploying a Subnet',
   },
   {
     component: <SubnetParameters />,
@@ -162,6 +169,11 @@ const workingWithKeysSection = [
     component: <KeyBasics />,
     href: `key-basics`,
     name: 'Key Basics',
+  },
+  {
+    component: <BalanceOperations />,
+    href: `balance-operations`,
+    name: 'Balance Operations',
   },
 ]
 
@@ -246,9 +258,14 @@ const validatingSection = [
 
 const subspaceSection = [
   {
-    component: <RegistrationBurnMechanism />,
-    href: `registration-burn-mechanism`,
-    name: 'Registration Burn Mechanism',
+    component: <CommuneBlockchain />,
+    href: `commune-blockchain`,
+    name: 'Commune Blockchain',
+  },
+  {
+    component: <Testnet />,
+    href: `testnet`,
+    name: 'Testnet',
   },
   {
     component: <GlobalParameters />,
@@ -264,11 +281,6 @@ const subspaceSection = [
     component: <YumaConsensus />,
     href: `yuma-consensus`,
     name: 'Yuma Consensus',
-  },
-  {
-    component: <GeneralSubnetImplementation />,
-    href: `general-network`,
-    name: 'General Network',
   },
 ]
 
@@ -293,10 +305,10 @@ export const tutorials = [
     title: 'Modules',
     tutorialId: 'modules',
   },
-  { 
-    contents: subnetsSection, 
+  {
+    contents: subnetsSection,
     title: 'Subnets',
-    tutorialId: 'subnets' 
+    tutorialId: 'subnets',
   },
   {
     contents: workingWithKeysSection,

@@ -39,3 +39,46 @@ Yuma Consensus parameters can be adjusted on the fly to optimize its forces as n
 
 For more information and robustness proofs look [here](https://github.com/opentensor/subtensor/blob/development/docs/consensus.md).
 
+# Yuma Consensus Blockchain Implementation
+
+The Commune blockchain code implements the consensus as follows
+
+## **YumaCalc** Struct
+
+The **YumaCalc** struct is the main entry point for running the Yuma Consensus calculation. It contains various fields such as:
+
+- **module_count**: The number of modules on the subnet.
+- **netuid**: The UID of the subnet.
+- **kappa**: The consensus majority ratio (e.g., 51%).
+- **founder_key** and **founder_emission**: Information related to the founder's key and emission.
+- **to_be_emitted**: The total amount to be emitted.
+- **current_block**, **activity_cutoff**, **last_update**, and **block_at_registration**: Block-related information.
+- **validator_permits** and **validator_forbids**: Vectors indicating permitted and forbidden validators.
+- **max_allowed_validators**: The maximum number of allowed validators.
+
+## **run** Method
+
+The **run** method is the main function that performs the Yuma Consensus calculation. It follows these steps:
+
+1. Computes the weights based on the validator permits, self-weight masking, and normalization.
+2. Computes the stake and active stake based on the module states and validator permits.
+3. Computes the consensus weights and validator trust using weighted median calculation and clipping.
+4. Computes the incentives, ranks, and trust based on the consensus weights and active stake.
+5. Computes the bonds and dividends using exponential moving average (EMA) and matrix multiplication.
+6. Computes the emissions for servers, validators, and combined emissions based on the incentives and dividends.
+7. Updates the storage with the computed values, such as consensus, dividends, emissions, incentives, pruning scores, ranks, trust, and validator permits.
+8. Distributes the emissions to the respective accounts based on the computed values.
+
+## Key Functions
+
+The implementation includes several key functions that perform specific calculations:
+
+- **compute_weights**: Computes the weights based on the validator permits, self-weight masking, and normalization.
+- **compute_stake**: Computes the stake based on the module states.
+- **compute_active_stake**: Computes the active stake based on the inactive modules and validator permits.
+- **compute_consensus_and_trust**: Computes the consensus weights and validator trust using weighted median calculation and clipping.
+- **compute_incentive_and_trust**: Computes the incentives, ranks, and trust based on the consensus weights and active stake.
+- **compute_bonds_and_dividends**: Computes the bonds and dividends using exponential moving average (EMA) and matrix multiplication.
+- **compute_emissions**: Computes the emissions for servers, validators, and combined emissions based on the incentives and dividends.
+- **distribute_emissions**: Distributes the emissions to the respective accounts based on the computed values.
+

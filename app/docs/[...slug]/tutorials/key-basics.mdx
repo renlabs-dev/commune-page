@@ -14,6 +14,14 @@ comx key create key_name
 
 This command generates a new key with the specified name and stores it securely on disk.
 
+## Import Wallet From pre-existing Mnemonic
+
+To import a key from pre-existing mnemonic, use the following command:
+
+```bash
+comx key regen <my-wallet-name> <mnemonic>
+```
+
 ## Retrieving Key Information
 
 You can retrieve detailed information about a specific key by using:
@@ -23,7 +31,7 @@ comx key show key_name
 
 For sensitive information, such as the private key, add the `--show-private` flag:
 
-# Add the `--show-private` flag to show sentitive fields like private key.
+# Add the `--show-private` flag to show sensitive fields like private key.
 comx key show key_name --show-private
 ```
 
@@ -44,9 +52,18 @@ This command provides a quick overview of the names and addresses of all keys sa
 
 For a detailed view of the keys along with their respective balances, use:
 
-```sh
+```bash
 # Lists keys stored on disk with their balance (free, staked and total).
 comx key balances
 ```
 
 This lists all keys along with their free, staked, and total balances, offering a comprehensive snapshot of your key's financial status.
+You can also sort the balance by **all, free, staked** (default all summed balances).
+
+For example
+
+```bash
+comx key balances --sort-balance free
+```
+
+Will return the keys sorted by their free balance
