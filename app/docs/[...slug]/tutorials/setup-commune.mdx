@@ -1,107 +1,170 @@
-# Setup Commune
+# Create Commune
 
-To setup commune clone the repo and run the following commands
+## Installation
 
-1. **Clone the Commune Repository**: Open your terminal or command prompt and clone the Commune repository from GitHub:
+### Using pip
 
-```bash
-git clone https://github.com/commune-ai/commune.git
+#### Requirements: 
+- [Python 3.10+](https://www.python.org/)
+- [Pip](https://pip.pypa.io/en/stable/installation/)
+
+To install the **communex** Python package using pip, run:
+
+```sh
+pip install communex
 ```
 
-2. **Pull the Submodules**: Navigate to the cloned Commune repository and pull the submodules:
+Alternatively, to add **communex** to your Poetry project, use:
 
-```bash
-cd commune
-make pull # or git submodule update --init --recursive --force
+```sh
+poetry add communex
 ```
 
-# Now you have two paths, you can either run commune with docker or without docker
+### Using Nix
 
-Please note that running commune outside of docker will require you to install the dependencies yourself.
-If you are running commune with docker, you can skip to the next section.
+To install the **communex** CLI with Nix, execute:
 
-## Setting up Commune With Docker
-
-Ensure that you have Docker installed on your machine. If you don't, you can follow the official Docker installation guide for your operating system.
-
-3. **Build the Docker Image**: Navigate to the cloned Commune repository and build the Docker image using the provided Dockerfile, This can be done via the docker-compsoe file.:
-
-```bash
-docker-compose up # or docker build -t commune .
+```sh
+nix profile install .
 ```
 
-4. **Run Commune in Docker**: Start a Docker container with the Commune image:
+## Features
 
-```bash
-docker-compose up
+**CommuneX** offers a variety of features for token management and module interaction:
+
+- Commands for managing keys, tokens, and modules
+- Key management including creation and listing
+- Token operations such as transferring and staking
+- Module management for registration and updates
+- Client-server interactions for module management
+- Participation in governance processes
+
+## CLI Usage
+
+The **communex** CLI is structured as follows:
+
+```sh
+comx [OPTIONS] COMMAND [ARGS]
 ```
 
-5. **Enter the Docker Container**: Enter the Docker container:
+### Top-Level Subcommands
 
-```bash
-make enter # or docker exec -it commune bash
+- **balance**: Manage token balances and staking.
+- **key**: Handle key creation and management.
+- **module**: Manage information and operations related to modules.
+- **network**: Interact with network operations like block and proposal management.
+- **subnet**: Manage subnet information and updates.
+- **misc**: Access miscellaneous information such as APR and circulating supply.
+
+```sh
+comx subcommand [OPTIONS] COMMAND [ARGS]...
 ```
 
-To exit the container, run the following command:
+### Examples
 
-```bash
-exit
+#### Retrieving Balance
+
+```sh
+# Show staked, free and total balance.
+comx balance show 5FgfC2DY4yreEWEughz46RZYQ8oBhHVqD9fVq6gV89E6z4Ea
 ```
 
-To run commands inside the container, you can use the following command:
+#### Creating a Key
 
-```bash
-docker exec -it commune bash -c "c modules"
+```sh
+comx key create key_name
 ```
 
-To Kill the container, run the following command:
+#### Retrieving Key Info
 
-```bash
-docker-compose down
+```sh
+comx key show key_name
+
+# Add the `--show-private` flag to show sensitive fields like private key.
+comx key show key_name --show-private
 ```
 
-Congratulations! Commune is now set up and running inside a Docker container.
+#### Listing Keys
 
-## Setting up Commune Without Docker
-
-2. **Install Dependencies**: Navigate to the cloned Commune repository and install the required dependencies:
-
-```bash
-cd commune
-pip install -e ./
+```sh
+# Lists the names and addresses of keys stored on disk.
+comx key list
 ```
 
-```javascript
-const teste = 'teste'
+#### List Keys With Balances
+
+```sh
+# Lists keys stored on disk with their balance (free, staked and total).
+comx key balances
 ```
 
-3. **install npm pm2**
-   This is required for the webserver to run
+#### Retrieving Module Information
 
-```bash
-chmod +x ./scripts/* # make sure the scripts are executable
-sudo ./scripts/install_npm_env.sh
+```sh
+# Note that the module has to be registered on the network.
+comx module info vali::calc [--balance]
 ```
 
-4. Check if commune is installed correctly, try running the following command
+#### Retrieving Global Parameters
 
-```bash
-c modules
+```sh
+comx network params
 ```
 
-That's it! Commune is now set up and ready to roll on your local machine.
+#### Retrieving Subnet Parameters
 
-Whether you choose to set up Commune with Docker or without it, you're all set to leverage the power of Commune and connect your Python objects in a collaborative ecosystem. Have fun exploring the possibilities and making the most out of Commune!
-
-Note: Make sure to follow the official Commune documentation for detailed instructions and additional configuration options.
-
-## Ensure the port range is open or change the port range to a range of open ports for your module to be served on
-
-```bash
-# check the port range
-c port_range
+```sh
+comx subnet list
 ```
 
-```bash
-c set_port_range 8000 9000 # set the port range to 8000-9000
+#### Retrieving Circulating Supply
+
+```sh
+# Gets all tokens then were ever emitted minus burned tokens.
+comx misc circulating-supply
 ```
+
+### Completions
+
+You can enable completions for your shell by running:
+
+```sh
+# On bash
+comx --install-completion bash
+# On zsh
+comx --install-completion zsh
+```
+
+## Contributing
+
+Bug reports and pull requests and other forms of contribution are welcomed and
+encouraged! :)
+
+To report a bug or request a feature, please [open an issue on GitHub].
+
+If you have any questions, feel free to ask on the [CommuneX Discord channel] or
+post on our [GitHub discussions page].
+
+To contribute to the codebase, using Poetry you can install the development dependencies with:
+
+```sh
+poetry install --with dev
+```
+
+it can [require some environment-specific binaries to be installed][ruff-installation]
+
+## Commune compatibility
+
+Yes, **CommuneX** is compatible with the **commune** library/CLI. However, there are
+important considerations to note. **CommuneX** verifies the integrity of your
+keys, which means that mixing certain types of keys is not permissible.
+Specifically, if you possess node keys or other similar types that are not
+designed to receive tokens, you will need to relocate them outside of the key
+directory.
+
+---
+
+[open an issue on GitHub]: https://github.com/agicommies/communex/issues/new/choose
+[CommuneX Discord channel]: https://go.agicommies.org/communex-channel
+[GitHub discussions page]: https://github.com/agicommies/communex/discussions
+[ruff-installation]: https://docs.astral.sh/ruff/installation/
