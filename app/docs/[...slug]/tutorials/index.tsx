@@ -11,12 +11,12 @@ import SetupCommune from './setup-commune.mdx' // done
 import SetupWallet from './setup-wallet.mdx' // done
 
 // Modules
-import WhatIsModule from './what-is-a-module.mdx' // todo jairo refac
+import WhatIsModule from './what-is-a-module.mdx' // done
 import ModuleBasics from './module-basics.mdx' // jairo todo
 import ModuleCreate from './module-create.mdx' // jairo todo
-import ModuleDeploy from './module-deploy.mdx' // jairo todo
+import ModuleDeploy from './module-deploy.mdx' // done
 import ModuleRegister from './module-register.mdx' // done
-import ModuleConnect from './module-connect.mdx' // jairo todo
+import ModuleConnect from './module-connect.mdx' // done
 
 // Subnets
 import WhatIsSubnet from './what-is-a-subnet.mdx'  // done
