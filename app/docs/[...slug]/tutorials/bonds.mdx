@@ -14,7 +14,7 @@ instant bonds
 \Delta B_{ij} = S_i \cdot \vec{W}{ij} / \left(\sum_k S_k \cdot \vec{W}{kj}\right)
 
 EMA bonds 
-- calculated as exponential-moving-average over instant bonds, adjusted per timestep based on a=10% instant bond and 90% previous historic EMA bond
+- calculated as exponential-moving-average over instant bonds, adjusted per time-step based on a=10% instant bond and 90% previous historic EMA bond
 - pay dividends 
 
 B_{ij}^{(t)} = \alpha \cdot \Delta B_{ij} + (1 - \alpha) \cdot B_{ij}^{(t-1)}

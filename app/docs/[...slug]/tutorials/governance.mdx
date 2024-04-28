@@ -16,7 +16,7 @@ You can view and vote on proposals on the [Community Proposals](https://governan
 
 #### 3. **Voting Mechanism**
 
-Commune's voting mechanism allows stakeholders to cast votes on community proposals, with each stakeholder's voting power proportional to their stake. This system ensures that decisions are made by those who have a vested interest in the protocol's success and an increased likelyhood of understanding.
+Commune's voting mechanism allows stakeholders to cast votes on community proposals, with each stakeholder's voting power proportional to their stake. This system ensures that decisions are made by those who have a vested interest in the protocol's success and an increased likelihood of understanding.
 
 ### How to Participate in Community Proposals
 
@@ -85,45 +85,13 @@ comx network propose-globally <key-name>
 
 The call to the blockchain then gets processed as follows.
 
-```py
-def add_global_proposal(
-    self,
-    key: Keypair,
-    params: NetworkParams,
-) -> ExtrinsicReceipt:
-    general_params: dict[str, Any] = params
-
-    response = self.compose_call(
-        fn="add_global_proposal",
-        params=general_params,
-        key=key,
-    )
-    return response
-```
-
 2. Custom Proposal
 
-First go to the [Governance Page](https://governance.communeai.org/), click **New Proposal** and follow the steps to create the contents of your proposal. Copy the format and host it with an IPFS provider of your choice. For a full guidence follow [this article](https://mirror.xyz/0xD80E194aBe2d8084fAecCFfd72877e63F5822Fc5/FUvj1g9rPyVm8Ii_qLNu-IbRQPiCHkfZDLAmlP00M1Q).
-After retriving the IPFS cid
+First go to the [Governance Page](https://governance.communeai.org/), click **New Proposal** and follow the steps to create the contents of your proposal. Copy the format and host it with an IPFS provider of your choice. For a full guidance follow [this article](https://mirror.xyz/0xD80E194aBe2d8084fAecCFfd72877e63F5822Fc5/FUvj1g9rPyVm8Ii_qLNu-IbRQPiCHkfZDLAmlP00M1Q).
+After retrieving the IPFS cid
 
 ```bash
 comx network add-custom-proposal <key-name> <cid>
-```
-
-The call to the blockchain then gets processed as follows.
-
-```py
-def add_custom_proposal(
-    self,
-    key: Keypair,
-    cid: str,
-) -> ExtrinsicReceipt:
-    params = {
-        "data": cid
-    }
-
-    response = self.compose_call(fn="add_custom_proposal", params=params, key=key)
-    return response
 ```
 
 3. Changing Subnet Parameters
@@ -146,49 +114,10 @@ comx subnet propose-on-subnet <netuid> <key-name>
 [--max-weight-age]
 ```
 
-The call to the blockchain then gets processed as follows.
-
-```py
-def add_subnet_proposal(
-    self, key: Keypair, params: SubnetParams, netuid: int = 0
-) -> ExtrinsicReceipt:
-    general_params = dict(params)
-    general_params["netuid"] = netuid
-
-    response = self.compose_call(
-        fn="add_subnet_proposal",
-        params=general_params,
-        key=key,
-    )
-    return response
-```
-
 4. Custom Subnet Proposal
 
 First upload the contents of the proposal to IPFS (process described above)
 
 ```bash
 comx subnet add-custom-proposal <netuid> <key-name> <cid>
-```
-
-The call to the blockchain then gets processed as follows.
-
-```py
-def add_custom_subnet_proposal(
-    self,
-    key: Keypair,
-    cid: str,
-    netuid: int = 0,
-) -> ExtrinsicReceipt:
-    params = {
-        "data": cid,
-        "netuid": netuid,
-    }
-
-    response = self.compose_call(
-        fn="add_custom_subnet_proposal",
-        params=params,
-        key=key,
-    )
-    return response
 ```
