@@ -22,9 +22,9 @@ import BuildingSubnet from './building-a-subnet.mdx'
 import SubnetTemplate from './subnet-template.mdx'
 import DeployingSubnet from './deploying-a-subnet.mdx'
 import SubnetParameters from './subnet-parameters.mdx'
+import GeneralSubnet from './general-subnet.mdx'
 import GeneralSubnetDao from './general-subnet-dao.mdx'
 import YumaSubnets from './yuma-subnets.mdx'
-import GeneralSubnet from './general-subnet.mdx'
 import SubnetList from './subnet-list.mdx'
 
 // Working with Keys
@@ -43,10 +43,10 @@ import RunValidator from './run-validator.mdx'
 
 // Subspace
 import CommuneBlockchain from './commune-blockchain.mdx'
-import Testnet from './testnet.mdx'
 import GlobalParameters from './global-parameters.mdx'
-import RunningLocalNode from './running-local-node.mdx'
 import YumaConsensus from './yuma-consensus.mdx'
+import Testnet from './testnet.mdx'
+import RunningLocalNode from './running-local-node.mdx'
 
 const gettingStartedSection = [
   {
@@ -138,6 +138,11 @@ const subnetsSection = [
     name: 'Subnet Parameters',
   },
   {
+    component: <GeneralSubnet />,
+    href: `general-subnet`,
+    name: 'General Subnet',
+  },
+  {
     component: <GeneralSubnetDao />,
     href: `general-subnet-dao`,
     name: 'General Subnet DAO',
@@ -146,11 +151,6 @@ const subnetsSection = [
     component: <YumaSubnets />,
     href: `yuma-subnets`,
     name: 'Yuma Subnets',
-  },
-  {
-    component: <GeneralSubnet />,
-    href: `general-subnet`,
-    name: 'General Subnet',
   },
   {
     component: <SubnetList />,
@@ -258,24 +258,24 @@ const subspaceSection = [
     name: 'Commune Blockchain',
   },
   {
-    component: <Testnet />,
-    href: `testnet`,
-    name: 'Testnet',
-  },
-  {
     component: <GlobalParameters />,
     href: `global-parameters`,
     name: 'Global Parameters',
   },
   {
-    component: <RunningLocalNode />,
-    href: `running-local-node`,
-    name: 'Running a Local Node',
-  },
-  {
     component: <YumaConsensus />,
     href: `yuma-consensus`,
     name: 'Yuma Consensus',
+  },
+  {
+    component: <Testnet />,
+    href: `testnet`,
+    name: 'Testnet',
+  },
+  {
+    component: <RunningLocalNode />,
+    href: `running-local-node`,
+    name: 'Running a Local Node',
   },
 ]
 
