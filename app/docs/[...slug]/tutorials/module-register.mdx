@@ -20,66 +20,8 @@ The arguments inside braces are optional. Please note that if want to register a
 miner is running. **--stake** is how much stake you're going to put on your module initially, and it defaults to the minimum stake + the registration burn
 of the subnet you're being registered. You can use **--new-subnet-name** if you want to register the module on a brand new subnet that you're creating now.
 
-The call to the blockchain then gets processed as follows.
-
-```py
- def register_module(
-        self,
-        key: Keypair,
-        name: str,
-        address: str | None = None,
-        subnet: str = 'commune',
-        min_stake: int | None = None,
-        metadata: str | None = None,
-    ) -> ExtrinsicReceipt:
-
-        stake = self.get_min_stake() if min_stake is None else min_stake
-
-        key_addr = key.ss58_address
-
-        params = {
-            "network": subnet,
-            "address": address,
-            "name": name,
-            "stake": stake,
-            "module_key": key_addr,
-            "metadata": metadata,
-        }
-
-        response = self.compose_call("register", params=params, key=key)
-        return response
-```
-
-If you are not satisfied with any parameter on your module, you can update it
+If you are not satisfied with any parameter on your module, you can update it:
 
 ```bash
 comx module update <key-name> <module-name> <ip> <port> [--delegation-fee] [--netuid] [--metadata]
-```
-
-The call to the blockchain then gets processed as follows.
-
-```py
-def update_module(
-        self,
-        key: Keypair,
-        name: str,
-        address: str,
-        metadata: str | None = None,
-        delegation_fee: int = 20,
-        netuid: int = 0,
-    ) -> ExtrinsicReceipt:
-
-        assert isinstance(delegation_fee, int)
-
-        params = {
-            "netuid": netuid,
-            "name": name,
-            "address": address,
-            "delegation_fee": delegation_fee,
-            "metadata": metadata,
-        }
-
-        response = self.compose_call("update_module", params=params, key=key)
-
-        return response
 ```

@@ -23,7 +23,7 @@ sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd6
 ## Docker Image
 
 We provide the laster Docker image for the Commune node in [this Github
-package][docker-package] at the [**latest** tag][docker-image]. You can pull the
+package](https://github.com/agicommies/subspace-network/pkgs/container/subspace) at the [**latest** tag](https://github.com/agicommies/subspace-network/pkgs/container/subspace/164109015?tag=latest). You can pull the
 image with the command:
 
 ```sh
@@ -77,7 +77,7 @@ cp node-start.sh "$COMMUNE_NODE_DIR/node-start.sh"
 
 ## Running the node
 
-The provided [**./docker-compose.yml** file] expects the environment variable
+The provided [**docker-compose.yml** file](https://github.com/agicommies/communex/blob/main/docs/running_a_node/docker-compose.yml) expects the environment variable
 **COMMUNE_NODE_DIR** to be set to the node data directory, that will be mounted to
 **/node-data** inside the container. It will serve the P2P connection at **30333**
 and the RPC service at **9933**.
@@ -102,4 +102,4 @@ References:
 [docker-image]: https://github.com/orgs/agicommies/packages/container/subspace/164109015?tag=latest
 [**commune/modules/subspace/chain/chain.yaml** file]: https://github.com/commune-ai/commune/blob/main/commune/modules/subspace/chain/chain.yaml
 [**main/specs/main.json** file]: https://github.com/commune-ai/subspace/blob/main/specs/main.json
-[**./docker-compose.yml** file]: ./docker-compose.yml
+[**./docker-compose.yml** file]: https://github.com/agicommies/communex/blob/main/docs/running_a_node/docker-compose.yml
