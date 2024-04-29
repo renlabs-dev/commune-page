@@ -6,7 +6,7 @@ import { inter } from './fonts'
 export const metadata: Metadata = {
   title: 'Commune AI',
   description:
-    'Commune AI: Revolutionizing software development with seamless connectivity, effortless code reuse, limitless scalability, and honest, unbiased voting. Join us!',
+    'Decentralized. Permissionless. Composable. Collaborative. Incentivized. Adaptable. OpenSource. Untrademarked. join us!',
   robots: 'all',
 }
 
