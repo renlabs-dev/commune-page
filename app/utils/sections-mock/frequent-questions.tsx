@@ -18,9 +18,9 @@ const Hyperlink = (props: THyperLink) => {
 
 export const faqData = [
   {
-    question: 'What is Commune and its philosophy?',
+    question: 'What is CommuneAI and its philosophy?',
     answer:
-      'Commune is a censorship resistant peer to peer protocol leveraging cryptoeconomic incentives for the decentralized creation and access of machine intelligence and other digital commodities. Commune follows a radically OpenSource and modular design philosophy centered around cooperation, sharing and reusability of resources.',
+      'CommuneAI is a censorship resistant peer to peer protocol leveraging cryptoeconomic incentives for the decentralized creation and access of machine intelligence and other digital commodities. Commune follows a radically OpenSource and modular design philosophy centered around cooperation, sharing and reusability of resources.',
   },
   {
     question: 'Who is founder of CommuneAI?',
@@ -30,10 +30,10 @@ export const faqData = [
   {
     question: 'What makes commune unusual compared to other projects?',
     answer:
-      'Commune is cyberpunk at heart, wild and fully organic. There is no bureaucracy, foundation or VCs. only opensource code and developers making public contributions.',
+      'CommuneAI is cyberpunk at heart, wild and fully organic. There is no bureaucracy, foundation or VCs. only opensource code and developers making public contributions.',
   },
   {
-    question: 'How can AI and Blockchain work together at scale on Commune?',
+    question: 'How can AI and Blockchain work together at scale on CommuneAI?',
     answer: `Commune's blockchain only tracks the economic information of the AI activity rather than the AI activity itself. The AI validation happens offchain and only its results are submitted to the chain. This separates the computation heavy elements from the chain.`,
   },
   {
@@ -100,20 +100,20 @@ export const faqData = [
     ),
   },
   {
-    question: 'Are there YouTube videos about Commune?',
+    question: 'Are there YouTube videos about CommuneAI?',
     answer: (
       <span>
         Yes!{' '}
         <Hyperlink href='https://www.youtube.com/@omnipotentlabs'>
           Omnipotent Labs
         </Hyperlink>{' '}
-        produces regular Commune content to stay up to date.
+        produces regular CommuneAI content to stay up to date.
       </span>
     ),
   },
   {
-    question: 'What is the roadmap of Commune?',
-    answer: `Commune is emerging in a decentralized manner, meaning it is formed by the contributions of many different independent people who commit code or try to convince the community to implement an idea. This makes the conventional concept of a roadmap unapplicable. However the goal for the community will always be to increase the prosperity of the protocol by improving its mechanisms and the value produced by miners and validators, while keeping it as fair and decentralized as possible. So at large we will likely always work towards that direction.`,
+    question: 'What is the roadmap of CommuneAI?',
+    answer: `CommuneAI is emerging in a decentralized manner, meaning it is formed by the contributions of many different independent people who commit code or try to convince the community to implement an idea. This makes the conventional concept of a roadmap unapplicable. However the goal for the community will always be to increase the prosperity of the protocol by improving its mechanisms and the value produced by miners and validators, while keeping it as fair and decentralized as possible. So at large we will likely always work towards that direction.`,
   },
   {
     question: 'How can I help?',
