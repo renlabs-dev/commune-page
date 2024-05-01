@@ -186,6 +186,11 @@ export function SubnetListCards() {
         link='/docs/subnets/general-subnet-dao'
       />
       <Card
+        title='Mosaic Subnet'
+        description='Instantly visualize your ideas.'
+        link='https://mosaicx.org/'
+      />
+      <Card
         title='Synthia'
         description='Continuous stream of synthetic training data with verified quality at scale.'
         link='https://github.com/agicommies/synthia'
