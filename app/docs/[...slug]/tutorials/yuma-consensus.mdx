@@ -4,6 +4,8 @@ Yuma Consensus, the core invention of Bittensor, is a widely applicable mechanis
 
 It is a fuzzy consensus to determine a robust agreement in a decentralized trustless setting, using stake and its submitted weights. The consensus incentive forces the collective of validators to converege to a uniform validation methodology enforcing clear order on the chaotic nature of open permissionless environment. 
 
+You only need to understand 3 fundamental things about Yuma Consensus to navigate it. How the consensus weight is determined, how manipulation attempts are neutralized and how manipulation attempts are penalized.
+
 The consensus weight is calculated by determining the highest weight supported by at least the stake majority, meaning the majority has submitted either equal or higher weight. The majority level is adjustable through the k parameter.
 
 This is calculated using a weighted (k) stake-based median over the stakes-weights distribution. 
@@ -38,6 +40,9 @@ Parameters:
 Yuma Consensus parameters can be adjusted on the fly to optimize its forces as necessary.
 
 For more information and robustness proofs look [here](https://github.com/opentensor/subtensor/blob/development/docs/consensus.md).
+
+# Conlusion for builders
+You see, once understood Yuma Consensus is very straightforward. Especially relevant for you as a subnet builder or validator is understanding that all validators need to end up with approximately similar weights to everyone else. Every deviation from the consensus comes at a reward penalty. Yuma Consensus is build for a uniform measurement standard applied across the whole subnet. So if for example a validator uses a different dataset than others, both its weights impact and rewards will be strongly reduced. This forces subnets to converge to a clear structured methodology. order from chaos.
 
 # Yuma Consensus Blockchain Implementation
 
