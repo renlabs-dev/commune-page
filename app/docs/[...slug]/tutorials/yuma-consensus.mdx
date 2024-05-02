@@ -1,12 +1,12 @@
 # Yuma Consensus
 
-Yuma Consensus, the core invention of Bittensor, is a widely applicable mechanism for neutralizing manipulation attempts from minority groups in a dynamically stable honest majority equilibrium. 
+Yuma Consensus, the core invention of Bittensor, is a widely applicable mechanism for neutralizing manipulation attempts from dishonest minority groups in a dynamically stable honest majority equilibrium. 
 
-It is a fuzzy consensus to determine a robust agreement in a network full of divergent opinions, using stake and its submitted weights.
+It is a fuzzy consensus to determine a robust agreement in a decentralized trustless setting, using stake and its submitted weights. The consensus incentive forces the collective of validators to converege to a uniform validation methodology enforcing clear order on the chaotic nature of open permissionless environment. 
 
 The consensus weight is calculated by determining the highest weight supported by at least the stake majority, meaning the majority has submitted either equal or higher weight. The majority level is adjustable through the k parameter.
 
-This is calculated using a weighted (k) stake-based median over the cumulative stake-weight distribution. 
+This is calculated using a weighted (k) stake-based median over the stakes-weights distribution. 
 
 Stake setting weights on miners is 'bonding' to them. Bonds are Stake-weight proportional ownership over the share of emissions accrued by the miner, paid out as dividends every epoch. This is where yield comes from. 
 
@@ -18,7 +18,7 @@ After the consensus weight is determined, there are 2 core mechanisms for neutra
 
 note: weights set below the consensus weight are ignored in the nature of the median calculation
 
-2. slashing the bonds of Stake weight set above the consensus weight, reducing stake dividends. (based on β parameter)
+2. slashing the bonds of stake-weight set above the consensus weight, reducing stake dividends. (based on β parameter)
 
 note: setting weights below the consensus weight means a lower bond in a higher value miner, in its nature leading to dividend penalty. However, higher bonds have to be corrected.
 
