@@ -8,8 +8,8 @@ export const FrequentQuestions = () => {
     <section
       className={`relative overflow-hidden divide-y text-left text-white`}
     >
-      <div className='px-20 py-12 space-y-2'>
-        <h2 className=' text-5xl font-medium text-white'>
+      <div className='px-6 py-12 space-y-4 lg:px-20'>
+        <h2 className='text-3xl font-medium text-white lg:text-5xl'>
           Frequently asked
           <span
             className={`text-green-500`}
@@ -17,23 +17,23 @@ export const FrequentQuestions = () => {
             {' '} questions
           </span>
         </h2>
-        <p className='text-gray-400 font-medium'>A Knowledge Treasure Trove</p>
+        <p className='font-medium text-gray-400'>A Knowledge Treasure Trove</p>
       </div>
 
       <div className=''>
         <dl className='divide-y divide-white'>
           {faqData.map((faq) => (
-            <Disclosure as='div' key={faq.question} className='px-20 py-6 space-y-2'>
+            <Disclosure as='div' key={faq.question} className='p-6 space-y-4 lg:px-20'>
               {({ open }) => (
                 <>
                   <dt>
-                    <Disclosure.Button className='flex w-full items-center justify-between text-left'>
-                      <div>
-                        <span className='text-base font-semibold leading-7 text-white mr-8'>
+                    <Disclosure.Button className='flex items-center justify-between w-full text-left'>
+                      <div className='flex w-full'>
+                        <span className='w-[80%] text-base font-semibold leading-7 text-white'>
                           {faq.question}
                         </span>
                       </div>
-                      <span className='flex items-center border border-white py-4'>
+                      <span className='flex items-center py-4 border border-white'>
                         <Image
                           src={'/arrow-down-icon.svg'}
                           width={50}
@@ -52,7 +52,7 @@ export const FrequentQuestions = () => {
                     as='dd'
                     className='pr-12 mt-2 animate-fade-slide-down text-pretty'
                   >
-                    <p className='text-base leading-7 text-gray-400 mr-8'>
+                    <p className='mr-8 text-base leading-7 text-gray-400'>
                       {faq.answer}
                     </p>
                   </Disclosure.Panel>

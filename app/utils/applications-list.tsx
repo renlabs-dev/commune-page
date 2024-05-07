@@ -1,18 +1,6 @@
 import Image from "next/image"
 import { links } from "."
 
-// const serverId = '941362322000203776'
-// const uri = `https://discord.com/api/guilds/${serverId}/widget.json`
-
-// async function getDiscordWidgetData() {
-//   try {
-//     const res = await fetch(uri, { next: { revalidate: 2000 } })
-//     return res.json()
-//   } catch (error) {
-//     return null
-//   }
-// }
-
 export const applicationsList =
   [
     {
