@@ -2,12 +2,12 @@ export const WelcomeSection = () => {
   return (
     <div
       id='welcome'
-      className='flex h-auto w-full flex-col bg-black/30 p-10 px-20 justify-center items-start text-gray-400 border-y border-white'
+      className='flex flex-col items-start justify-center w-full h-auto p-10 px-6 text-gray-400 border-white bg-black/30 lg:px-20 border-y'
     >
-      <div className='flex w-full max-w-screen-sm flex-col justify-center space-y-3'>
-        <h3 className='text-white text-5xl font-medium'>
+      <div className='flex flex-col justify-center w-full max-w-screen-sm space-y-3'>
+        <h3 className='text-3xl font-medium text-white lg:text-5xl'>
           Welcome to the
-          <span className='text-green-500 font-normal'>
+          <span className='font-normal text-green-500'>
             {' '} commune
           </span>
         </h3>
