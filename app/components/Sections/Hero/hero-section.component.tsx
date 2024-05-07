@@ -61,8 +61,8 @@ export const HeroSection = async () => {
               </span>
               incentivized coordination network.
             </p>
-            <h1 className='text-4xl text-green-500 lg:text-7xl'>COMMUNE AI</h1>
-            <p className=''>
+            <Image src='/logo-asci.svg' width={200} height={100} alt='Commune ai logo' className='w-full py-4' />
+            <p className='font-normal'>
               Commune AI is a peer-to-peer protocol with a stake-based market of Modules, linking on-chain identifiers to off-chain computable objects via APIs. This setup supports complex computations and diverse applications, from AI models to storage solutions, independent of the blockchain.
             </p>
           </div>
@@ -78,7 +78,7 @@ export const HeroSection = async () => {
                         +
                       </span>
                     </p>
-                    <p className='text-sm text-left'>{spec.title}</p>
+                    <p className='text-sm font-normal text-left'>{spec.title}</p>
                   </div>
                 </div>
               )
