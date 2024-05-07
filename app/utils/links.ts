@@ -7,4 +7,5 @@ export const links = {
   x: 'https://twitter.com/communeaidotorg',
   telegram: 'https://t.me/communecommunity',
   governance: 'https://governance.communeai.org/',
+  updates: '/',
 }

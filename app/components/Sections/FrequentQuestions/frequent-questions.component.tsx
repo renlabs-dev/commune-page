@@ -1,40 +1,48 @@
 'use client'
 import { Disclosure } from '@headlessui/react'
-import { covered_by_your_grace } from '@/app/fonts'
 import { faqData } from '@/app/utils/sections-mock/frequent-questions'
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
 export const FrequentQuestions = () => {
   return (
     <section
-      className={`relative overflow-hidden bg-[#F9EFE4] px-10 py-16 text-left dark:bg-[#0C1320] md:p-12`}
+      className={`relative overflow-hidden divide-y text-left text-white`}
     >
-      <div className='mx-auto max-w-4xl divide-y divide-white/10'>
-        <h2 className='mb-10 text-center text-2xl font-bold text-title dark:text-white lg:mb-0 lg:text-4xl'>
+      <div className='px-20 py-12 space-y-2'>
+        <h2 className=' text-5xl font-medium text-white'>
           Frequently asked
           <span
-            className={`${covered_by_your_grace.className} -ml-3 text-4xl font-normal text-[#FF6C6C] dark:text-titleDark lg:text-5xl`}
+            className={`text-green-500`}
           >
-            {' '}
-            questions
+            {' '} questions
           </span>
         </h2>
-        <dl className='mt-10 space-y-6 divide-y divide-white/10'>
+        <p className='text-gray-400 font-medium'>A Knowledge Treasure Trove</p>
+      </div>
+
+      <div className=''>
+        <dl className='divide-y divide-white'>
           {faqData.map((faq) => (
-            <Disclosure as='div' key={faq.question} className='pt-6'>
+            <Disclosure as='div' key={faq.question} className='px-20 py-6 space-y-2'>
               {({ open }) => (
                 <>
                   <dt>
-                    <Disclosure.Button className='flex w-full items-start justify-between text-left text-subtitle dark:text-white'>
-                      <span className='text-base font-semibold leading-7'>
-                        {faq.question}
-                      </span>
-                      <span className='flex items-center ml-6 h-7'>
-                        <ChevronRightIcon
+                    <Disclosure.Button className='flex w-full items-center justify-between text-left'>
+                      <div>
+                        <span className='text-base font-semibold leading-7 text-white mr-8'>
+                          {faq.question}
+                        </span>
+                      </div>
+                      <span className='flex items-center border border-white py-4'>
+                        <Image
+                          src={'/arrow-down-icon.svg'}
+                          width={50}
+                          height={50}
+                          alt={'read'}
                           className={
                             open
-                              ? 'h-4 rotate-90 transform animate-open-accordion'
-                              : 'h-4 rotate-0 transform animate-close-accordion'
+                              ? 'h-5 rotate-0 transform animate-open-accordion'
+                              : 'h-5 -rotate-90 transform animate-close-accordion'
                           }
                         />
                       </span>
@@ -44,7 +52,7 @@ export const FrequentQuestions = () => {
                     as='dd'
                     className='pr-12 mt-2 animate-fade-slide-down text-pretty'
                   >
-                    <p className='text-base leading-7 text-subtitle dark:text-gray-200'>
+                    <p className='text-base leading-7 text-gray-400 mr-8'>
                       {faq.answer}
                     </p>
                   </Disclosure.Panel>
@@ -53,7 +61,7 @@ export const FrequentQuestions = () => {
             </Disclosure>
           ))}
         </dl>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }

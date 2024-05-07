@@ -16,7 +16,7 @@ const Hyperlink = (props: THyperLink) => {
     <Link
       target="_blank"
       href={href}
-      className="text-blue-600 hover:underline"
+      className="text-blue-500 hover:underline"
     >
       {children}
     </Link>
