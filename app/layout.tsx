@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${cairo.className}`}>
-      <body className="relative h-full animate-fade-in-up bg-[url('/bg-pattern.svg')] bg-cover">
+      <body className="relative h-full bg-black animate-fade-in-up bg-[url('/bg-pattern.svg')] bg-cover">
         <header>
           <link rel='icon' href='/commune-logo.svg' sizes='any' />
         </header>
