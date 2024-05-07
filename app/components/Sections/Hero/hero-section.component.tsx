@@ -93,10 +93,10 @@ export const HeroSection = async () => {
             className='w-full opacity-60'
             alt={''}
           />
-          <button className='flex items-center justify-center w-full px-5 py-3 border border-gray-200 lg:w-auto lg:absolute lg:left-8 lg:justify-start lg:bottom-8 hover:border-white hover:text-gray-200 hover:bg-gray-200/5'>
+          <Link href={'#welcome'} className='flex items-center justify-center w-full px-5 py-3 border border-gray-200 lg:w-auto lg:absolute lg:left-8 lg:justify-start lg:bottom-8 hover:border-white hover:text-gray-200 hover:bg-gray-200/5'>
             View More
             <Image src={'/arrow-down-icon.svg'} alt='Community icon' width={75} height={75} className='w-5 ml-1' />
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ export const HeroSection = async () => {
               className='w-full p-10 px-6 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
             >
               {app.icon}
-              <div className='flex justify-between'>
+              <div id='welcome' className='flex justify-between'>
                 <div>
                   <p className='text-white'>{app.title}</p>
                   {handleDescription(app.description)}

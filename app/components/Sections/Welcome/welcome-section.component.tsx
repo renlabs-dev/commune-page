@@ -1,7 +1,7 @@
 export const WelcomeSection = () => {
   return (
     <div
-      id='welcome'
+      id='start'
       className='flex flex-col items-start justify-center w-full h-auto p-10 px-6 text-gray-400 border-white bg-black/30 lg:px-20 border-y'
     >
       <div className='flex flex-col justify-center w-full max-w-screen-sm space-y-3'>
