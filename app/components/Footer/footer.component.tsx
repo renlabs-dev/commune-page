@@ -48,7 +48,7 @@ export const Footer = async () => {
     if (!description) {
       return (
         <div className='flex items-center gap-1'>
-          <span className='h-2 w-2  rounded-2xl bg-green-400' />
+          <span className='w-2 h-2 bg-green-400 rounded-2xl' />
           <p>{presence_count} Online (Discord)
           </p>
         </div>
@@ -59,27 +59,27 @@ export const Footer = async () => {
 
   return (
     <footer className="flex flex-col">
-      <div className='px-20 border-t border-white space-y-12'>
-        <div className='flex items-center gap-16 pt-20'>
-          <Image src='/commune-logo.svg' width={116} height={145} alt='Telegram icon' />
+      <div className='px-6 space-y-12 border-t border-white lg:px-20'>
+        <div className='flex flex-col gap-6 pt-10 lg:gap-16 lg:items-center lg:flex-row lg:pt-20'>
+          <Image src='/commune-logo.svg' width={116} height={145} className='w-12 h-16' alt='Telegram icon' />
           <div className='space-y-5'>
-            <h3 className='text-white text-5xl'>Join a Incentive-driven Coordination System for AI</h3>
+            <h3 className='text-3xl text-white lg:text-5xl'>Join a Incentive-driven Coordination System for AI</h3>
             <p className='text-gray-400'>Empowering Collaborative Solutions through Shared Resources</p>
           </div>
         </div>
-        <div className='flex justify-between space-x-4 pb-20'>
+        <div className='flex flex-col justify-between pb-10 space-y-4 lg:pb-20 lg:space-y-0 lg:space-x-4 lg:flex-row'>
           {applicationsList.map((app, index) => {
             return (
               <Link
                 key={index}
                 href={app.href}
-                className='p-8 w-full border-white border hover:bg-gray-200/5 text-gray-400 hover:text-gray-300'
+                className='w-full p-8 text-gray-400 border border-white hover:bg-gray-200/5 hover:text-gray-300'
               >
-                <div className='flex justify-between items-center mb-3'>
+                <div className='flex items-center justify-between mb-3'>
                   <div>
                     <p className='text-white'>{app.title}</p>
                   </div>
-                  <Image src={'/arrow-link-icon.svg'} alt='link icon' width={75} height={75} className='w-12 border-green-500 border p-3' />
+                  <Image src={'/arrow-link-icon.svg'} alt='link icon' width={75} height={75} className='w-12 p-3 border border-green-500' />
                 </div>
                 {handleDescription(app.description)}
               </Link>
@@ -87,11 +87,11 @@ export const Footer = async () => {
           })}
         </div>
       </div>
-      <div className='px-20 p-8 border-t border-white flex w-full justify-between items-center  '>
-        <p className='text-left text-sm leading-5 text-gray-400'>
+      <div className='flex flex-col items-center justify-between w-full gap-6 p-6 px-20 border-t border-white lg:gap-0 lg:flex-row '>
+        <p className='hidden text-sm leading-5 text-left text-gray-400 lg:block'>
           Renovating the way we build software for everyone.
         </p>
-        <div className='space-x-5 flex px-4'>
+        <div className='flex px-4 space-x-5'>
           {socialList.map((item) => (
             <Link
               key={item.name}
@@ -103,7 +103,7 @@ export const Footer = async () => {
           ))}
         </div>
 
-        <p className='text-center text-sm leading-5 text-gray-400 '>
+        <p className='text-sm leading-5 text-center text-gray-400 '>
           &copy; 2024 Commune, Inc. All rights reserved.
         </p>
       </div>
