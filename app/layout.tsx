@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Header } from './components'
-import { inter } from './fonts'
+import { cairo } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Commune AI',
@@ -16,14 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={`${inter.className}`}>
-      <body className='relative h-full animate-fade-in-up bg-white'>
+    <html lang='en' className={`${cairo.className}`}>
+      <body className="relative h-full animate-fade-in-up bg-[url('/bg-pattern.svg')] bg-cover">
         <header>
           <link rel='icon' href='/commune-logo.svg' sizes='any' />
         </header>
         <Header />
         {children}
       </body>
-    </html>
+    </html >
   )
 }
