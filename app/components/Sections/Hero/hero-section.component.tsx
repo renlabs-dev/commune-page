@@ -106,7 +106,7 @@ export const HeroSection = async () => {
             <Link
               key={index}
               href={app.href}
-              className='w-full p-10 px-6 border-b border-white lg:p-16 lg:py-10 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
+              className='w-full p-10 px-6 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
             >
               {app.icon}
               <div className='flex justify-between'>
