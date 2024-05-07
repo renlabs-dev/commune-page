@@ -52,7 +52,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
   const nextContent = getNextContent()
   return (
     <>
-      <section className={`mx-auto h-max w-full dark:bg-[#131B2A]`}>
+      <section className={`mx-auto h-max w-full`}>
         <DocSidebar
           params={params}
           activeTutorial={activeTutorial}
@@ -61,12 +61,12 @@ export default async function Docs({ params }: { params: { slug: string } }) {
         />
 
         <div className='flex h-[calc(100svh-129px)] w-full flex-col items-center overflow-y-scroll pt-6 md:pt-10 lg:h-[calc(100svh-81px)] lg:pl-[19.5rem]'>
-          <div className='prose flex w-full max-w-[100%] flex-col px-8 text-subtitle dark:prose-invert dark:text-gray-200 sm:max-w-[80%] xl:max-w-[70%] 2xl:max-w-6xl'>
-            <div className='mb-6 flex w-full'>
+          <div className='prose prose-invert flex w-full max-w-[100%] flex-col px-8 sm:max-w-[80%] xl:max-w-[70%] 2xl:max-w-6xl'>
+            <div className='flex w-full mb-6'>
               <Link
                 target='_blank'
                 href={`https://github.com/agicommies/commune-page/blob/main/app/docs/%5B...slug%5D/tutorials/${params.slug[1]}.mdx`}
-                className='flex rounded-xl text-center text-sm font-medium text-subtitle no-underline hover:underline dark:text-titleDark'
+                className='flex text-sm font-medium text-center no-underline rounded-xl text-titleDark hover:underline'
               >
                 <span>Edit this doc</span>
               </Link>
@@ -76,13 +76,13 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             <div className='mb-10 mt-20 flex w-full max-w-[100%] justify-between text-base'>
               {!!previousContent && (
                 <Link
-                  className='flex flex-col items-start rounded-2xl p-2 text-left text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
+                  className='flex flex-col items-start p-2 text-left text-gray-400 transition ease-in-out rounded-2xl hover:border-gray-300 hover:text-gray-200'
                   href={`${prefix}/${previousContent.id}/${previousContent.content.href}`}
                 >
-                  <span className='text-subtitle dark:text-white'>
+                  <span className='text-white'>
                     {previousContent.content.name}
                   </span>
-                  <span className='flex text-xs text-title dark:text-titleDark'>
+                  <span className='flex text-xs text-titleDark'>
                     <ArrowLongLeftIcon width={14} className='mr-2' />
                     Previous
                   </span>
@@ -90,13 +90,13 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               )}
               {!!nextContent && (
                 <Link
-                  className='ml-auto flex flex-col items-end rounded-2xl p-2 text-end text-gray-400 transition ease-in-out hover:border-gray-300 hover:text-gray-200'
+                  className='flex flex-col items-end p-2 ml-auto text-gray-400 transition ease-in-out rounded-2xl text-end hover:border-gray-300 hover:text-gray-200'
                   href={`${prefix}/${nextContent.id}/${nextContent.content.href}`}
                 >
-                  <span className='text-subtitle dark:text-white'>
+                  <span className='text-white '>
                     {nextContent.content.name}
                   </span>
-                  <span className='flex text-xs text-title dark:text-titleDark'>
+                  <span className='flex text-xs text-titleDark'>
                     Next
                     <ArrowLongRightIcon width={14} className='ml-2' />
                   </span>

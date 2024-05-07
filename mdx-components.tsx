@@ -7,7 +7,7 @@ type TMDXProps = ClassAttributes<HTMLPreElement> & HTMLAttributes<HTMLPreElement
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     pre: (props: TMDXProps) => (
-      <pre {...props} style={{ padding: 0, border: '2px solid #2E2F35', boxShadow: '3px 3px 0 0 #2E2F35' }} className='flex'>
+      <pre {...props} style={{ padding: 0, border: '2px solid #fff', boxShadow: '3px 3px 0 0 #fff' }} className='flex'>
         <div style={{ padding: '0.75rem', overflow: 'auto', width: '100%' }}>
           {props.children}
         </div>
