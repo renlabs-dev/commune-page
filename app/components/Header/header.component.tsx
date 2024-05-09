@@ -45,7 +45,7 @@ export const Header = () => {
   return (
     <>
       <div
-        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden`}
+        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden max-w-screen-2xl`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
           <div className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] lg:w-[30%]  bg-[url('/bg-pattern.svg')] border border-white bg-cover p-5`}>
@@ -108,26 +108,14 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none border-b border-white bg-black bg-opacity-75 backdrop-blur transition-colors duration-500`}
+        className={`sticky top-0 z-40 flex w-full flex-none border-b border-white bg-black bg-opacity-75 backdrop-blur transition-colors duration-500 `}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 lg:px-20`}
+          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 lg:px-20 xl:px-20 2xl:px-0 max-w-screen-2xl`}
           aria-label='Global'
         >
-          <Link href={links.home} className={`col-span-1 flex items-center w-fit`}>
-            <Image
-              src={'/commune-logo.svg'}
-              width={37}
-              height={45}
-              alt='commune logo'
-              priority
-              className='mr-[3px]'
-            />
-            <span
-              className={`ml-2 text-xl font-semibold text-gray-400`}
-            >
-              Commune Ai
-            </span>
+          <Link href={links.home} className={`ml-2 text-xl font-light text-gray-400 my-auto`}>
+            Commune Ai
           </Link>
           <div className='relative items-center justify-end hidden lg:flex lg:gap-x-6'>
             {navigation.map(({ name, href, external, border = false }) => (
