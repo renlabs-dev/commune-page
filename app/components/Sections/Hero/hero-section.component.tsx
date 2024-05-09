@@ -54,7 +54,7 @@ export const HeroSection = async () => {
     >
       <div className='flex flex-col-reverse lg:flex-row min-h-[55dvh]'>
         <div className='flex flex-col lg:border-r w-full lg:max-w-[60%] border-white justify-between'>
-          <div className='flex flex-col justify-center w-full h-full px-4 py-20 space-y-4 border-b border-white lg:p-20 lg:py-50'>
+          <div className='flex flex-col justify-center w-full h-full space-y-4 border-b border-white px-20'>
             <p className='text-xl font-medium'>
               <span className='text-green-400'>
                 Peer-to-peer {' '}
@@ -100,25 +100,29 @@ export const HeroSection = async () => {
         </div>
       </div>
 
-      <div className='flex flex-col justify-between border-t border-white lg:flex-row'>
-        {applicationsList.map((app, index) => {
-          return (
-            <Link
-              key={index}
-              href={app.href}
-              className='w-full p-10 px-4 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
-            >
-              {app.icon}
-              <div id='welcome' className='flex justify-between'>
-                <div>
-                  <p className='text-white'>{app.title}</p>
-                  {handleDescription(app.description)}
-                </div>
-                <Image src={'/arrow-link-icon.svg'} alt='link icon' width={75} height={75} className='w-12 p-3 border border-green-500' />
-              </div>
-            </Link>
-          )
-        })}
+      <div className='border-t'>
+        <div className='max-w-screen-2xl mx-auto'>
+          <div className='flex flex-col justify-between lg:flex-row'>
+            {applicationsList.map((app, index) => {
+              return (
+                <Link
+                  key={index}
+                  href={app.href}
+                  className='w-full p-10 px-4 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
+                >
+                  {app.icon}
+                  <div id='welcome' className='flex justify-between'>
+                    <div>
+                      <p className='text-white'>{app.title}</p>
+                      {handleDescription(app.description)}
+                    </div>
+                    <Image src={'/arrow-link-icon.svg'} alt='link icon' width={75} height={75} className='w-12 p-3 border border-green-500' />
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </div>
   )
