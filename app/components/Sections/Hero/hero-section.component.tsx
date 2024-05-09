@@ -54,7 +54,7 @@ export const HeroSection = async () => {
     >
       <div className='flex flex-col-reverse lg:flex-row min-h-[55dvh]'>
         <div className='flex flex-col lg:border-r w-full lg:max-w-[60%] border-white justify-between'>
-          <div className='flex flex-col justify-center w-full h-full px-6 py-20 space-y-4 border-b border-white lg:p-20 lg:py-50'>
+          <div className='flex flex-col justify-center w-full h-full px-4 py-20 space-y-4 border-b border-white lg:p-20 lg:py-50'>
             <p className='text-xl font-medium'>
               <span className='text-green-400'>
                 Peer-to-peer {' '}
@@ -70,7 +70,7 @@ export const HeroSection = async () => {
           <div className='flex justify-between w-full'>
             {networkSpecs.map((spec, index) => {
               return (
-                <div key={index} className='flex items-center justify-center w-1/3 py-8 border-white border-x first:border-none last:border-none'>
+                <div key={index} className='flex items-center justify-center w-1/3 py-8 border-white border-x lg:border-none first:border-none last:border-none'>
                   <div className='flex flex-col items-start justify-start w-auto'>
                     <p className='text-2xl font-semibold text-white lg:text-3xl'>
                       {spec.info}
@@ -85,7 +85,7 @@ export const HeroSection = async () => {
             })}
           </div>
         </div>
-        <div className='relative p-6 0 lg:p-0 lg:w-[45%] border-b border-white lg:border-none flex-col lg:flex-row flex items-center justify-center'>
+        <div className='relative p-4 0 lg:p-0 lg:w-[45%] border-b border-white lg:border-none flex-col lg:flex-row flex items-center justify-center'>
           <Image
             src='/hero-image.svg'
             height={100}
@@ -93,7 +93,7 @@ export const HeroSection = async () => {
             className='w-full opacity-60'
             alt={''}
           />
-          <Link href={'#welcome'} className='flex items-center justify-center w-full px-5 py-3 border border-gray-200 lg:w-auto lg:absolute lg:left-8 lg:justify-start lg:bottom-8 hover:border-white hover:text-gray-200 hover:bg-gray-200/5'>
+          <Link href={'#welcome'} className='flex items-center justify-center w-full mb-4 lg:mb-0  px-5 py-3 border border-gray-200 lg:w-auto lg:absolute lg:left-8 lg:justify-start lg:bottom-8 hover:border-white hover:text-gray-200 hover:bg-gray-200/5'>
             View More
             <Image src={'/arrow-down-icon.svg'} alt='Community icon' width={75} height={75} className='w-5 ml-1' />
           </Link>
@@ -106,7 +106,7 @@ export const HeroSection = async () => {
             <Link
               key={index}
               href={app.href}
-              className='w-full p-10 px-6 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
+              className='w-full p-10 px-4 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
             >
               {app.icon}
               <div id='welcome' className='flex justify-between'>
