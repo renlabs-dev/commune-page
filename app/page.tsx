@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <Suspense fallback={<Loading />}>
       <HeroSection />
-      {/* <WelcomeSection />
+      <WelcomeSection />
       {sections.map((section, index) => {
         return (
           <GenericSection
@@ -29,7 +29,7 @@ export default async function Home() {
         )
       })}
       <FrequentQuestions />
-      <Footer /> */}
+      <Footer />
     </Suspense>
   )
 }
