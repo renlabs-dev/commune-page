@@ -1,20 +1,20 @@
 import { applicationsList } from '@/app/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Animation from '@/app/components/Animation'
 
 const networkSpecs = [
   {
     title: 'Active Miners',
-    info: '345.850'
+    info: '345.850',
   },
   {
     title: 'Active Validators',
-    info: '128.250'
+    info: '128.250',
   },
   {
     title: 'Subnets',
-    info: '34'
+    info: '34',
   },
 ]
 
@@ -38,9 +38,8 @@ export const HeroSection = async () => {
     if (!description) {
       return (
         <div className='flex items-center gap-1'>
-          <span className='w-2 h-2 bg-green-400 rounded-2xl' />
-          <p>{presence_count} Online (Discord)
-          </p>
+          <span className='h-2 w-2 rounded-2xl bg-green-400' />
+          <p>{presence_count} Online (Discord)</p>
         </div>
       )
     }
@@ -50,79 +49,96 @@ export const HeroSection = async () => {
   return (
     <div
       id='hero'
-      className="flex flex-col justify-center w-full overflow-hidden text-gray-400"
+      className='flex w-full flex-col justify-center overflow-hidden text-gray-400'
     >
-      <div className='flex flex-col-reverse lg:flex-row min-h-[55dvh]'>
-        <div className='flex flex-col lg:border-r w-full lg:max-w-[60%] border-white justify-between'>
-          <div className='flex flex-col justify-center w-full h-full space-y-4 border-b border-white px-20'>
+      <div className='flex min-h-[55dvh] flex-col-reverse lg:flex-row'>
+        <div className='flex w-full flex-col justify-between border-white lg:max-w-[60%] lg:border-r'>
+          <div className='lg:py-50 flex h-full w-full flex-col justify-center space-y-4 border-b border-white px-4 py-20 lg:p-20'>
             <p className='text-xl font-medium'>
-              <span className='text-green-400'>
-                Peer-to-peer {' '}
-              </span>
+              <span className='text-green-400'>Peer-to-peer </span>
               incentivized coordination network.
             </p>
-            <Image src='/logo-asci.svg' width={200} height={100} alt='Commune ai logo' className='w-full py-4' />
+            <Image
+              src='/logo-asci.svg'
+              width={200}
+              height={100}
+              alt='Commune ai logo'
+              className='w-full py-4'
+            />
             <p className='font-normal'>
-              Commune AI is a peer-to-peer protocol with a stake-based market of Modules, linking on-chain identifiers to off-chain computable objects via APIs. This setup supports complex computations and diverse applications, from AI models to storage solutions, independent of the blockchain.
+              Commune AI is a peer-to-peer protocol with a stake-based market of
+              Modules, linking on-chain identifiers to off-chain computable
+              objects via APIs. This setup supports complex computations and
+              diverse applications, from AI models to storage solutions,
+              independent of the blockchain.
             </p>
           </div>
 
-          <div className='flex justify-between w-full'>
+          <div className='flex w-full justify-between'>
             {networkSpecs.map((spec, index) => {
               return (
-                <div key={index} className='flex items-center justify-center w-1/3 py-8 border-white border-x lg:border-none first:border-none last:border-none'>
-                  <div className='flex flex-col items-start justify-start w-auto'>
+                <div
+                  key={index}
+                  className='flex w-1/3 items-center justify-center border-x border-white py-8 first:border-none last:border-none lg:border-none'
+                >
+                  <div className='flex w-auto flex-col items-start justify-start'>
                     <p className='text-2xl font-semibold text-white lg:text-3xl'>
                       {spec.info}
-                      <span className='text-green-500'>
-                        +
-                      </span>
+                      <span className='text-green-500'>+</span>
                     </p>
-                    <p className='text-sm font-normal text-left'>{spec.title}</p>
+                    <p className='text-left text-sm font-normal'>
+                      {spec.title}
+                    </p>
                   </div>
                 </div>
               )
             })}
           </div>
         </div>
-        <div className='relative p-4 0 lg:p-0 lg:w-[45%] border-b border-white lg:border-none flex-col lg:flex-row flex items-center justify-center'>
-          <Image
-            src='/hero-image.svg'
-            height={100}
-            width={100}
-            className='w-full opacity-60'
-            alt={''}
-          />
-          <Link href={'#welcome'} className='flex items-center justify-center w-full mb-4 lg:mb-0  px-5 py-3 border border-gray-200 lg:w-auto lg:absolute lg:left-8 lg:justify-start lg:bottom-8 hover:border-white hover:text-gray-200 hover:bg-gray-200/5'>
+        <div className='0 relative flex flex-col items-center justify-center border-b border-white p-4 lg:w-[45%] lg:flex-row lg:border-none lg:p-0'>
+          <Animation />
+
+          <Link
+            href={'#welcome'}
+            className='mb-4 flex w-full items-center justify-center border  border-gray-200 px-5 py-3 hover:border-white hover:bg-gray-200/5 hover:text-gray-200 lg:absolute lg:bottom-8 lg:left-8 lg:mb-0 lg:w-auto lg:justify-start'
+          >
             View More
-            <Image src={'/arrow-down-icon.svg'} alt='Community icon' width={75} height={75} className='w-5 ml-1' />
+            <Image
+              src={'/arrow-down-icon.svg'}
+              alt='Community icon'
+              width={75}
+              height={75}
+              className='ml-1 w-5'
+            />
           </Link>
         </div>
       </div>
 
-      <div className='border-t'>
-        <div className='max-w-screen-2xl mx-auto'>
-          <div className='flex flex-col justify-between lg:flex-row'>
-            {applicationsList.map((app, index) => {
-              return (
-                <Link
-                  key={index}
-                  href={app.href}
-                  className='w-full p-10 px-4 border-b border-white lg:p-16 lg:py-10 lg:border-b-0 lg:border-l lg:border-r lg:first:border-none last:border-none hover:bg-gray-200/5 hover:text-gray-300'
-                >
-                  {app.icon}
-                  <div id='welcome' className='flex justify-between'>
-                    <div>
-                      <p className='text-white'>{app.title}</p>
-                      {handleDescription(app.description)}
-                    </div>
-                    <Image src={'/arrow-link-icon.svg'} alt='link icon' width={75} height={75} className='w-12 p-3 border border-green-500' />
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
+      <div className='flex flex-col justify-between border-t border-white lg:flex-row'>
+        {applicationsList.map((app, index) => {
+          return (
+            <Link
+              key={index}
+              href={app.href}
+              className='w-full border-b border-white p-10 px-4 last:border-none hover:bg-gray-200/5 hover:text-gray-300 lg:border-b-0 lg:border-l lg:border-r lg:p-16 lg:py-10 lg:first:border-none'
+            >
+              {app.icon}
+              <div id='welcome' className='flex justify-between'>
+                <div>
+                  <p className='text-white'>{app.title}</p>
+                  {handleDescription(app.description)}
+                </div>
+                <Image
+                  src={'/arrow-link-icon.svg'}
+                  alt='link icon'
+                  width={75}
+                  height={75}
+                  className='w-12 border border-green-500 p-3'
+                />
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

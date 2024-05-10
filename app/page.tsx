@@ -9,7 +9,6 @@ import Loading from './loading'
 import { sections } from './utils'
 import { WelcomeSection } from './components/Sections'
 
-
 export default async function Home() {
   return (
     <Suspense fallback={<Loading />}>
