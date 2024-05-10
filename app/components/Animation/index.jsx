@@ -1,7 +1,7 @@
 'use client'
 
 import * as THREE from 'three'
-import * as dat from 'lil-gui'
+// import * as dat from 'lil-gui'
 
 import { useEffect, useRef } from 'react'
 
@@ -78,29 +78,29 @@ export default function Animation() {
     animatedObject.rotation.x = -Math.PI * 0.3
     scene.add(animatedObject)
 
-    const gui = new dat.GUI({ width: 340 })
-    gui
-      .addColor(debugObject, 'depthColor')
-      .name('depthColor')
-      .onChange(() => {
-        animatedObject.material.uniforms.uDepthColor.value.set(
-          new THREE.Color(debugObject.depthColor)
-        )
-      })
-    gui
-      .addColor(debugObject, 'surfaceColor')
-      .name('surfaceColor')
-      .onChange(() => {
-        animatedObject.material.uniforms.uSurfaceColor.value.set(
-          new THREE.Color(debugObject.surfaceColor)
-        )
-      })
-    gui
-      .add(debugObject, 'wireframe')
-      .name('wireframe')
-      .onChange(() => {
-        animatedObject.material.wireframe = debugObject.wireframe
-      })
+    // const gui = new dat.GUI({ width: 340 })
+    // gui
+    //   .addColor(debugObject, 'depthColor')
+    //   .name('depthColor')
+    //   .onChange(() => {
+    //     animatedObject.material.uniforms.uDepthColor.value.set(
+    //       new THREE.Color(debugObject.depthColor)
+    //     )
+    //   })
+    // gui
+    //   .addColor(debugObject, 'surfaceColor')
+    //   .name('surfaceColor')
+    //   .onChange(() => {
+    //     animatedObject.material.uniforms.uSurfaceColor.value.set(
+    //       new THREE.Color(debugObject.surfaceColor)
+    //     )
+    //   })
+    // gui
+    //   .add(debugObject, 'wireframe')
+    //   .name('wireframe')
+    //   .onChange(() => {
+    //     animatedObject.material.wireframe = debugObject.wireframe
+    //   })
 
     const handleResize = () => {
       sizes.width = window.innerWidth
@@ -130,7 +130,7 @@ export default function Animation() {
     return () => {
       window.removeEventListener('resize', handleResize)
 
-      gui.destroy()
+      // gui.destroy()
     }
   }, [])
 
