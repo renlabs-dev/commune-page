@@ -19,8 +19,8 @@ function createAnimation({ container, debug }) {
   container.appendChild(canvas)
 
   const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window.screen.availWidth,
+    height: 600,
   }
   const clock = new THREE.Clock()
 
@@ -59,6 +59,8 @@ function createAnimation({ container, debug }) {
     objectsGroup.add(points)
     objectsGroup.add(lines)
     objectsGroup.rotation.x = -Math.PI * 0.3
+    objectsGroup.position.y = 1
+    objectsGroup.position.x = -4
 
     scene.add(objectsGroup)
   }
@@ -277,12 +279,12 @@ function createAnimation({ container, debug }) {
 
   function createCamera() {
     camera = new THREE.PerspectiveCamera(
-      75,
+      45,
       sizes.width / sizes.height,
       0.1,
       100
     )
-    camera.position.set(0, 1.5, 17)
+    camera.position.set(0, 1.5, 20)
     scene.add(camera)
   }
 
