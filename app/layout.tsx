@@ -1,6 +1,7 @@
-import type { Metadata } from 'next'
 import './globals.css'
+
 import { Header } from './components'
+import type { Metadata } from 'next'
 import { cairo } from './fonts'
 
 export const metadata: Metadata = {
@@ -17,13 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${cairo.className}`}>
-      <body className="relative h-full bg-black animate-fade-in-up bg-[url('/bg-pattern.svg')] bg-cover">
+      <body className="relative h-full animate-fade-in-up bg-black bg-[url('/bg-pattern.svg')] bg-cover">
         <header>
           <link rel='icon' href='/commune-logo.svg' sizes='any' />
         </header>
         <Header />
         {children}
       </body>
-    </html >
+    </html>
   )
 }
