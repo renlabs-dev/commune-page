@@ -1,76 +1,4 @@
-
-
-// Classic Perlin noise, periodic variant
-float pnoise(vec3 P, vec3 rep);
-
-float turbulence( vec3 p ) {
-  float t = -.5;
-  for (float f = 1.0 ; f <= 10.0 ; f++ ){
-    float power = pow( 2.0, f );
-    t += abs( pnoise( 1.5 * vec3( power * p ), vec3( 10.0, 10.0, 10.0 ) ) / power );
-  }
-  return t;
-}
-
-float f( vec3 p ) {
-  return pnoise( 1.2 * vec3( p ), vec3( 20.0, 20.0, 20.0 ) );
-}
-
-float PI = 3.141592653589793;
-
-varying float dist;
-uniform float uTime;
-uniform float uWeight;
-uniform float uTubeRadius;
-uniform float uTorusRadius;
-
-void main() {
-  float R = uTorusRadius;
-  float r = uTubeRadius;
-
-  float x = position.x;
-  float y = position.y;
-  float z = position.z;
-
-  float timeShift = uTime * 1.2;
-
-  // Theta remains constant, based on the initial layout of vertices
-  float theta = atan(y, x) + timeShift * 0.5;
-
-  // Calculate the effective radius from the torus center to the x-y projection of the point
-  float xyRadius = sqrt(x * x + y * y);
-
-  // Compute cos(phi)
-  float cosPhi = (xyRadius - R) / r;
-
-  // Clamp the value to the valid range of acos to prevent undefined results due to floating point precision issues
-  cosPhi = clamp(cosPhi, -1.0, 1.0);
-  
-  // Calculate phi
-  float phi = acos(cosPhi) * 2.0 + timeShift;
-
-  // Compute the new position using the modified phi
-  float newX = (R + r * cos(phi)) * cos(theta);
-  float newY = (R + r * cos(phi)) * sin(theta);
-  float newZ = r * sin(phi);
-
-  // Vertex Rotation
-  vec3 newPosition = vec3(-newX, -newY, -newZ);
-  /// ------ //
-
-  vec3 evNormal = normal;
-  vec3 aniNormal = 1.0 * evNormal + uTime;
-  float f0 = uWeight * f( aniNormal );
-
-  // Apply noise
-  newPosition += f0 * evNormal;
-
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0 );
-
-  // Send dist to fragment shader
-  dist = normalize(f0 * evNormal).z;
-}
-
+// Noise Shader
 
 vec3 mod289(vec3 x)
 {
@@ -95,8 +23,6 @@ vec4 taylorInvSqrt(vec4 r)
 vec3 fade(vec3 t) {
   return t*t*t*(t*(t*6.0-15.0)+10.0);
 }
-
-
 
 float pnoise(vec3 P, vec3 rep)
 {
@@ -166,3 +92,94 @@ float pnoise(vec3 P, vec3 rep)
   float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x);
   return 2.2 * n_xyz;
 }
+
+float turbulence( vec3 p ) {
+  float t = -.5;
+  for (float f = 1.0 ; f <= 10.0 ; f++ ){
+    float power = pow( 2.0, f );
+    t += abs( pnoise( 1.5 * vec3( power * p ), vec3( 10.0, 10.0, 10.0 ) ) / power );
+  }
+  return t;
+}
+
+float f( vec3 p ) {
+  return pnoise( 1.2 * vec3( p ), vec3( 20.0, 20.0, 20.0 ) );
+}
+
+// Vertex Shader
+
+attribute float aScale;
+attribute float aOpacity;
+
+uniform float uColorOpacity;
+uniform float uTime;
+uniform float uWeight;
+uniform float uTubeRadius;
+uniform float uTorusRadius;
+
+varying vec3 vColor;
+varying float vOpacity;
+
+void main() {
+  // Compute noise
+  vec3 evNormal = normal;
+  vec3 aniNormal = 1.0 * evNormal + uTime;
+  float f0 = uWeight * f( aniNormal );
+  // End of noise computation
+
+  float R = uTorusRadius;
+  float r = uTubeRadius;
+
+  float x = position.x;
+  float y = position.y;
+  float z = position.z;
+
+  float timeShift = uTime * 1.2;
+
+  // Theta remains constant, based on the initial layout of vertices
+  float theta = atan(y, x) + timeShift * 0.5;
+
+  // Calculate the effective radius from the torus center to the x-y projection of the point
+  float xyRadius = sqrt(x * x + y * y);
+
+  // Compute cos(phi)
+  float cosPhi = (xyRadius - R) / r;
+
+  // Clamp the value to the valid range of acos to prevent undefined results due to floating point precision issues
+  cosPhi = clamp(cosPhi, -1.0, 1.0);
+  
+  // Calculate phi
+  float phi = acos(cosPhi) * 2.0 + timeShift;
+
+  // Compute the new position using the modified phi
+  float newX = (R + r * cos(phi)) * cos(theta);
+  float newY = (R + r * cos(phi)) * sin(theta);
+  float newZ = r * sin(phi);
+
+  // Vertex Rotation
+  vec3 newPosition = vec3(-newX, -newY, -newZ);
+
+  // Apply noise
+  newPosition += f0 * evNormal;
+
+  vec4 modelPosition = modelMatrix * vec4(newPosition, 1.0);
+
+  vec4 viewPosition = viewMatrix * modelPosition;
+  vec4 projectedPosition = projectionMatrix * viewPosition;
+
+  gl_Position = projectedPosition;
+
+  gl_PointSize = 30.0 * aScale;
+  gl_PointSize *= (1.0 / - viewPosition.z);
+
+  float opacity = uColorOpacity;
+
+  if (uColorOpacity == 0.0) {
+    opacity = aOpacity;
+  }
+
+  vColor = color;
+  vOpacity = opacity;
+}
+
+
