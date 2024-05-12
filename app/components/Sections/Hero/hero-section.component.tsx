@@ -52,10 +52,10 @@ export const HeroSection = async () => {
       className='flex w-full flex-col justify-center overflow-hidden text-gray-400'
     >
       <div className='flex flex-col-reverse lg:flex-row'>
-        <div className='flex w-full flex-col justify-between border-white lg:max-w-[60%] lg:border-r'>
-          <div className='lg:py-50 flex h-full flex-col justify-center space-y-4 border-b border-white px-4 py-20 lg:p-20'>
-            <div className='flex w-full justify-end'>
-              <div className='flex w-full flex-col justify-between lg:max-w-4xl lg:pl-24'>
+        <div className="flex w-full flex-col justify-between border-white bg-[url('/bg-pattern.svg')] lg:max-w-[60%] lg:border-r">
+          <div className='flex h-full flex-col justify-center space-y-4 border-b border-white px-8'>
+            <div className='flex w-full py-16 lg:justify-end'>
+              <div className='flex w-full flex-col justify-between lg:max-w-4xl xl:pl-10'>
                 <p className='text-xl font-medium'>
                   <span className='text-green-400'>Peer-to-peer </span>
                   incentivized coordination network.
@@ -101,7 +101,7 @@ export const HeroSection = async () => {
           </div>
         </div>
         <div className='0 relative flex flex-col items-center justify-center border-b border-white p-4 lg:w-[45%] lg:flex-row lg:border-none lg:p-0'>
-          <div className='-z-50 animate-fade-in-up'>
+          <div className='-z-50 animate-fade-in-up pr-0 2xl:pr-44'>
             <Animation />
           </div>
 
