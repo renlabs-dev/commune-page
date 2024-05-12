@@ -36,6 +36,7 @@ function createAnimation({ container, debug }) {
   function init() {
     createScene()
     createCamera()
+    playIntroAnimation()
     createRenderer()
     createControls()
     createObjects()
@@ -50,7 +51,6 @@ function createAnimation({ container, debug }) {
       onResize()
     })
   }
-
   function createObjects() {
     const points = createPoints()
     const lines = createLines(points.geometry)
@@ -210,9 +210,9 @@ function createAnimation({ container, debug }) {
     const scales = []
 
     for (let i = 0; i < positions.length; i += 3) {
-      const r = positions[i] / maxPosition + 0.1
-      const g = positions[i + 1] / maxPosition + 1
-      const b = positions[i + 2] / maxPosition + 0.1
+      const r = positions[i] / maxPosition + 0.4
+      const g = positions[i + 1] / maxPosition + 6
+      const b = positions[i + 2] / maxPosition + 0.4
 
       colors.push(r, g * 2, b)
       scales.push(getRandNum(0.5, 3))
@@ -281,7 +281,8 @@ function createAnimation({ container, debug }) {
       0.1,
       100
     )
-    camera.position.set(0, 0.5, 20)
+    camera.position.set(0, 10, 30) // Set initial position (zoomed out)
+    camera.rotation.x = -Math.PI / 4 // Set initial rotation (tilted)
     scene.add(camera)
   }
 
@@ -312,6 +313,42 @@ function createAnimation({ container, debug }) {
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  }
+
+  function playIntroAnimation() {
+    const targetPosition = new THREE.Vector3(0, 0.5, 20) // Target position after the animation
+    const targetRotation = new THREE.Euler(0, 0, 0) // Target rotation after the animation
+    const duration = 12 // Duration of the animation in seconds
+
+    const startTime = performance.now()
+
+    function animate() {
+      const currentTime = performance.now()
+      const elapsedTime = (currentTime - startTime) / 4000
+
+      if (elapsedTime <= duration) {
+        const t = elapsedTime / duration
+
+        // Interpolate position
+        camera.position.lerpVectors(camera.position, targetPosition, t)
+
+        // Interpolate rotation
+        camera.rotation.x = THREE.MathUtils.lerp(
+          camera.rotation.x,
+          targetRotation.x,
+          t
+        )
+        camera.rotation.y = THREE.MathUtils.lerp(0, Math.PI * 2, t) // Spin around the y-axis
+
+        requestAnimationFrame(animate)
+      } else {
+        // Animation finished, set the final position and rotation
+        camera.position.copy(targetPosition)
+        camera.rotation.copy(targetRotation)
+      }
+    }
+
+    animate()
   }
 
   function tick() {
