@@ -101,7 +101,7 @@ export const HeroSection = async () => {
           </div>
         </div>
         <div className='0 relative flex flex-col items-center justify-center border-b border-white p-4 lg:w-[45%] lg:flex-row lg:border-none lg:p-0'>
-          <div className='-z-50 animate-fade-in-up pr-0 2xl:pr-44'>
+          <div className='-z-50 animate-fade-in-up'>
             <Animation />
           </div>
 
