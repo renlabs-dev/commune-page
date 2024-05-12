@@ -210,11 +210,11 @@ function createAnimation({ container, debug }) {
     const scales = []
 
     for (let i = 0; i < positions.length; i += 3) {
-      const r = positions[i] / maxPosition + 0.2
-      const g = positions[i + 1] / maxPosition + 0.5
-      const b = positions[i + 2] / maxPosition + 0.2
+      const r = positions[i] / maxPosition + 0.1
+      const g = positions[i + 1] / maxPosition + 1
+      const b = positions[i + 2] / maxPosition + 0.1
 
-      colors.push(r, g, b * 2)
+      colors.push(r, g * 2, b)
       scales.push(getRandNum(0.5, 3))
     }
     customGeometry.setAttribute(
