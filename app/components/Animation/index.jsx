@@ -60,8 +60,6 @@ function createAnimation({ container, debug }) {
     objectsGroup.add(lines)
     objectsGroup.rotation.x = -Math.PI * 0.3
     objectsGroup.position.y = 1
-    objectsGroup.position.x = -4
-
     scene.add(objectsGroup)
   }
 
@@ -212,14 +210,13 @@ function createAnimation({ container, debug }) {
     const scales = []
 
     for (let i = 0; i < positions.length; i += 3) {
-      const r = positions[i] / maxPosition + 0.5
+      const r = positions[i] / maxPosition + 0.2
       const g = positions[i + 1] / maxPosition + 0.5
-      const b = positions[i + 2] / maxPosition + 0.5
+      const b = positions[i + 2] / maxPosition + 0.2
 
       colors.push(r, g, b * 2)
       scales.push(getRandNum(0.5, 3))
     }
-
     customGeometry.setAttribute(
       'position',
       new THREE.BufferAttribute(new Float32Array(positions), 3)
@@ -284,7 +281,7 @@ function createAnimation({ container, debug }) {
       0.1,
       100
     )
-    camera.position.set(0, 1.5, 20)
+    camera.position.set(0, 0.5, 20)
     scene.add(camera)
   }
 
