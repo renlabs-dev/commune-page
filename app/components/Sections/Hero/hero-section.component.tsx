@@ -1,6 +1,7 @@
-import { applicationsList } from '@/app/utils'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+import { applicationsList } from '@/app/utils'
+//app/components/Animation/index.jsx
 import Animation from '@/app/components/Animation'
 
 const networkSpecs = [
@@ -96,7 +97,9 @@ export const HeroSection = async () => {
           </div>
         </div>
         <div className='0 relative flex flex-col items-center justify-center border-b border-white p-4 lg:w-[45%] lg:flex-row lg:border-none lg:p-0'>
-          <Animation />
+          <div className='-z-50'>
+            <Animation />
+          </div>
 
           <Link
             href={'#welcome'}
