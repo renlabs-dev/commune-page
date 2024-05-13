@@ -43,12 +43,12 @@ const config: Config = {
           to: { opacity: '1' },
         },
         openAccordion: {
-          from: { transform: 'rotate(0deg)' },
-          to: { transform: 'rotate(90deg)' },
+          from: { transform: 'rotate(-90deg)' },
+          to: { transform: 'rotate(0deg)' },
         },
         closeAccordion: {
-          from: { transform: 'rotate(90deg)' },
-          to: { transform: 'rotate(0deg)' },
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-90deg)' },
         },
         scaleUpSm: {
           from: { scale: '1' },

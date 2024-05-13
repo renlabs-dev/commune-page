@@ -1,14 +1,12 @@
 'use client'
+
 import Image from 'next/image'
 import { useState } from 'react'
-import {
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
-import { cairo } from '@/app/fonts'
-import { DarkModeToggle } from '../DarkMode'
+import { oxanium } from '@/app/fonts'
 
 type THeaderLinkProps = {
   href: string
@@ -31,9 +29,9 @@ const HeaderLink = ({
 )
 
 const navigation = [
-  // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Docs', href: links.docs, external: false },
+  { name: 'Blocs', href: links.articles, external: true },
   { name: 'Join Community', href: links.discord, external: true },
 ]
 
@@ -42,33 +40,27 @@ export const Header = () => {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
   const commonButtonClass =
-    'flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100/10 text-title p-1.5 hover:bg-gray-100/[0.15] dark:bg-titleDark'
+    'flex h-12 w-12 items-center justify-center text-white p-1.5 hover:bg-gray-400/[0.10]'
 
   return (
     <>
       <div
-        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden`}
+        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} max-w-screen-2xl animate-menu-fade lg:hidden`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
-          <div className='min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] rounded-xl bg-white p-5 dark:bg-[#131B2A] sm:w-[40%]'>
-            <div
-              className={`absolute right-12 top-0 z-50 m-5 h-8 w-8 rounded-xl bg-white`}
-            >
-              <DarkModeToggle />
-            </div>
+          <div
+            className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] border  border-gray-500 bg-[url('/bg-pattern.svg')] bg-cover p-5 lg:w-[30%]`}
+          >
             <button
               type='button'
-              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 rounded-xl`}
+              className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 `}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon
-                className='dark:text- h-6 w-6 text-title'
-                aria-hidden='true'
-              />
+              <XMarkIcon className='h-6 w-6 text-white' aria-hidden='true' />
             </button>
             <div className='flow-root'>
-              <div className='-my-6 space-y-4 divide-y divide-gray-400/20'>
+              <div className='-my-6 space-y-4 divide-y divide-gray-200/40'>
                 <div className='ml-2 mt-6 space-y-2'>
                   {navigation.map(({ name, href, external }) => (
                     <Link
@@ -76,13 +68,13 @@ export const Header = () => {
                       href={href}
                       onClick={toggleMobileMenu}
                       target={external ? '_blank' : '_self'}
-                      className='-mx-3 block w-[70%] rounded-xl px-3 py-1 text-base font-semibold leading-7 text-title hover:bg-gray-400/10 hover:backdrop-blur-sm dark:text-white'
+                      className='-mx-3 block w-[80%] px-3 py-1 text-base font-semibold leading-7 text-white hover:bg-gray-400/10 hover:backdrop-blur-sm'
                     >
                       {name}
                     </Link>
                   ))}
                 </div>
-                <div className='flex space-x-3 py-6'>
+                <div className='flex justify-between space-x-3 py-4'>
                   <HeaderLink
                     href={links.discord}
                     icon='/discord-icon.svg'
@@ -115,52 +107,52 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-900/[0.06] bg-white bg-opacity-90 backdrop-blur transition-colors duration-500 dark:bg-[#131B2A] dark:text-white dark:shadow-lg`}
+        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-500 bg-black bg-opacity-75 backdrop-blur transition-colors duration-500 `}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 max-w-screen-xl `}
+          className={`mx-auto flex w-full max-w-screen-2xl items-center justify-between py-3`}
           aria-label='Global'
         >
-          <Link href={links.home} className={`col-span-1 flex items-center`}>
+          <Link
+            href={'/'}
+            className='flex items-center gap-2 text-2xl font-light text-white'
+          >
             <Image
-              src={'/commune-logo.svg'}
-              width={37}
-              height={45}
-              alt='commune logo'
-              priority
-              className='mr-[3px]'
+              src='/commune-logo-white.svg'
+              width={100}
+              height={100}
+              className='ml-2 h-10 w-10'
+              alt='Telegram icon'
             />
-            <span
-              className={`${cairo.className} ml-2 text-2xl font-semibold text-title dark:text-white`}
-            >
-              Commune Ai
-            </span>
+            <p className={`${oxanium.className} ml-1`}>Commune AI</p>
           </Link>
-          <div className='relative hidden items-center justify-end lg:flex lg:gap-x-6'>
+          <div className='hidden lg:flex lg:gap-x-8'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className='flex flex-col items-center text-sm font-semibold leading-6 text-[#222222] hover:text-gray-600 active:animate-squeeze dark:text-white'
+                className={`flex flex-col items-center text-lg font-normal leading-6 text-white hover:text-green-500 active:animate-squeeze`}
               >
                 {name}
               </Link>
             ))}
-            <DarkModeToggle />
-          </div >
-          <div className='col-span-3 ml-auto self-center lg:hidden '>
+          </div>
+          <div className='ml-auto mr-8 lg:hidden'>
             <button
               type='button'
               className={`${commonButtonClass} -m-2.5`}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Open main menu</span>
-              <EllipsisVerticalIcon className='h-6 w-6' aria-hidden='true' />
+              <EllipsisVerticalIcon
+                className='h-6 w-6 fill-white'
+                aria-hidden='true'
+              />
             </button>
           </div>
-        </nav >
-      </header >
+        </nav>
+      </header>
     </>
   )
 }
