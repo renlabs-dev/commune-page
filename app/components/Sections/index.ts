@@ -1,5 +1,4 @@
 export { GenericSection } from './GenericSection'
 export { HeroSection } from './Hero'
 export { WelcomeSection } from './Welcome'
-export { CallToActionSection } from './CallToAction'
 export { FrequentQuestions } from './FrequentQuestions'

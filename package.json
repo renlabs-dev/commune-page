@@ -17,11 +17,15 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.1.0",
     "@types/mdx": "^2.0.11",
+    "lil-gui": "^0.19.2",
     "next": "14.0.4",
+    "raw-loader": "^4.0.2",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
     "rehype-pretty-code": "^0.13.1",
     "shiki": "^1.2.3",
+    "three": "^0.164.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
@@ -29,6 +33,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.164.0",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "autoprefixer": "^10.4.17",

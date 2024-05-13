@@ -1,57 +1,125 @@
-import { covered_by_your_grace, cairo } from '@/app/fonts'
-import { links } from '@/app/utils'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+import { applicationsList } from '@/app/utils'
+import { CountUpArea } from '../../CountUpArea'
+import Animation from '@/app/components/Animation'
 
-export const HeroSection = () => {
+const serverId = '941362322000203776'
+const uri = `https://discord.com/api/guilds/${serverId}/widget.json`
+
+async function getDiscordWidgetData() {
+  try {
+    const res = await fetch(uri, { next: { revalidate: 5000 } })
+    return res.json()
+  } catch (error) {
+    return null
+  }
+}
+
+export const HeroSection = async () => {
+  const { presence_count } = await getDiscordWidgetData()
+
+  const handleDescription = (description: string | null) => {
+    if (!presence_count && !description) return <p>loading...</p>
+    if (!description) {
+      return (
+        <div className='flex items-center gap-1'>
+          <span className='h-2 w-2 rounded-2xl bg-green-400' />
+          <p>{presence_count} Online (Discord)</p>
+        </div>
+      )
+    }
+    return <p>{description}</p>
+  }
+
   return (
     <div
       id='hero'
-      className="flex h-auto min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white bg-[url('/hero-background.svg')] bg-cover p-10 py-12 dark:bg-[#131B2A] dark:bg-[url('/hero-background-dark-mode.svg')] lg:flex-row"
+      className='flex w-full flex-col justify-center overflow-hidden text-gray-400'
     >
-      <Image
-        src='/commune-logo.svg'
-        width={417}
-        height={481}
-        alt={`Commune's logo`}
-        className='w-2/3 max-w-sm pb-10 lg:mr-24 lg:w-auto lg:max-w-none lg:pb-0'
-      />
-      <div className='flex h-full w-full flex-col items-center justify-center lg:w-auto lg:items-start'>
-        <h1
-          className={`${cairo.className} pb-16 text-center text-5xl font-bold text-title dark:text-white lg:pb-0 lg:text-left lg:text-6xl`}
-        >
-          Commune Ai
-        </h1>
-        <h2 className='text-center text-xl font-medium text-subtitle dark:text-gray-200 lg:text-left'>
-          Renovating the way we build software for{' '}
-          <span
-            className={`${covered_by_your_grace.className} text-2xl font-normal text-[#62ABFF] dark:text-titleDark`}
-          >
-            everyone
-          </span>
-          .
-        </h2>
-        <div className='flex gap-4 mt-8 flex-col w-full lg:flex-row items-center'>
+      <div className='flex flex-col lg:flex-row'>
+        <div className="flex w-full flex-col justify-between border-gray-500 bg-[url('/bg-pattern.svg')] lg:max-w-[60%] lg:border-r">
+          <div className='flex h-full flex-col justify-center space-y-4 border-b border-gray-500 px-8'>
+            <div className='flex w-full py-16 lg:justify-end'>
+              <div className='flex w-full flex-col justify-between lg:max-w-4xl xl:pl-10'>
+                <p className='text-xl font-medium'>
+                  <span className='text-green-400'>Peer-to-peer </span>
+                  incentivized coordination network.
+                </p>
+                <Image
+                  src='/logo-asci.svg'
+                  width={200}
+                  height={100}
+                  alt='Commune ai logo'
+                  className='w-full py-4'
+                />
+                <p className='mt-1 text-lg'>
+                  Protocol and Market System for Incentive-driven Coordination
+                  of Decentralized AI.
+                </p>
+                <p className='text-lg'>
+                  Fully community driven, no bureaucracy, no team, no premine.
+                  Only code and contributors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='flex w-full justify-end'>
+            <CountUpArea />
+          </div>
+        </div>
+        <div className='0 relative flex h-96 flex-col items-center justify-center border-b border-gray-500 p-4 md:h-full lg:w-[45%] lg:flex-row lg:border-none lg:p-0'>
+          <div className='-z-50 animate-fade-in-up'>
+            <Animation />
+          </div>
+
           <Link
-            href='#welcome'
-            className=' w-full max-w-screen-sm rounded-xl border-2 border-title bg-white px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-gray-200 dark:border-titleDark dark:bg-[#131B2A] dark:text-titleDark dark:shadow-custom-dark-active lg:w-auto'
+            href={'#welcome'}
+            className='absolute bottom-0 mb-4 hidden w-full items-center justify-center border border-gray-500 bg-black/50 px-5 py-3 hover:border-gray-500  hover:bg-black/70 hover:text-gray-200 md:flex lg:bottom-8 lg:left-8 lg:mb-0 lg:w-auto lg:justify-start'
           >
-            <span aria-label='Get started with Commune AI'>GET STARTED NOW</span>
-          </Link>
-          <Link
-            href={links.discord}
-            target='_blank'
-            className='w-full max-w-screen-sm rounded-xl border-2 border-title bg-[#FF6C6C] px-8 py-4 text-center text-sm font-bold text-title shadow-custom transition duration-300 hover:animate-squeeze hover:bg-red-500 dark:border-blue-500 dark:bg-[#131B2A] dark:shadow-custom-blue lg:w-auto'
-          >
-            <span
-              aria-label='Get started with Commune AI'
-              className='text-header-links dark:text-blue-500'
-            >
-              JOIN COMMUNITY
-            </span>
+            View More
+            <Image
+              src={'/arrow-down-icon.svg'}
+              alt='Community icon'
+              width={75}
+              height={75}
+              className='ml-1 w-5'
+            />
           </Link>
         </div>
+      </div>
 
+      <div className='flex justify-center border-t border-gray-500'>
+        <div className='flex w-full max-w-screen-2xl flex-col lg:flex-row'>
+          {applicationsList.map((app, index) => {
+            return (
+              <Link
+                key={index}
+                href={app.href}
+                target={app.target ? app.target : '_self'}
+                className='w-full border-b border-gray-500 p-8 px-4 last:border-none hover:bg-black/20 hover:text-gray-300 lg:border-b-0 lg:border-l lg:border-r lg:p-16 lg:py-16 lg:first:border-none'
+              >
+                {app.icon}
+                <div
+                  id='welcome'
+                  className='flex flex-row justify-between gap-6 md:flex-col xl:flex-row'
+                >
+                  <div>
+                    <p className='text-white'>{app.title}</p>
+                    {handleDescription(app.description)}
+                  </div>
+                  <Image
+                    src={'/arrow-link-icon.svg'}
+                    alt='link icon'
+                    width={75}
+                    height={75}
+                    className='w-12 border border-green-500 bg-black/50 p-3 hover:bg-black/70'
+                  />
+                </div>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
