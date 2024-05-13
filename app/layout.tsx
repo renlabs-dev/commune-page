@@ -1,14 +1,14 @@
 import './globals.css'
 
-import { Header } from './components'
-import type { Metadata } from 'next'
 import { cairo } from './fonts'
+import { Header } from './components'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Commune AI',
   description:
     'Decentralized. Permissionless. Composable. Collaborative. Incentivized. Adaptable. OpenSource. Untrademarked. join us!',
   robots: 'all',
+  icons: [{ rel: 'icon', url: '/commune-logo.svg' }],
 }
 
 export default function RootLayout({

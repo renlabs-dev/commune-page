@@ -27,8 +27,8 @@ function createAnimation({ container, debug }) {
   const debugObject = {
     tubeRadius: 4,
     torusRadius: 4.5,
-    radialSegments: 30,
-    tabularSegments: 60,
+    radialSegments: 27,
+    tabularSegments: 56,
   }
 
   let scene, camera, renderer, controls, objectsGroup
@@ -270,7 +270,7 @@ function createAnimation({ container, debug }) {
     scene = new THREE.Scene()
   }
 
-  const fov = window.innerWidth <= 768 ? 75 : 47
+  const fov = window.innerWidth <= 768 ? 7 : 47
 
   function createCamera() {
     camera = new THREE.PerspectiveCamera(
