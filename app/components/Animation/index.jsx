@@ -46,10 +46,6 @@ function createAnimation({ container, debug }) {
     }
 
     tick()
-
-    window.addEventListener('resize', () => {
-      onResize()
-    })
   }
   function createObjects() {
     const points = createPoints()
@@ -210,9 +206,9 @@ function createAnimation({ container, debug }) {
     const scales = []
 
     for (let i = 0; i < positions.length; i += 3) {
-      const r = positions[i] / maxPosition + 0.4
-      const g = positions[i + 1] / maxPosition + 6
-      const b = positions[i + 2] / maxPosition + 0.4
+      const r = positions[i] / maxPosition + 0.3
+      const g = positions[i] / maxPosition + 3
+      const b = positions[i] / maxPosition + 0.3
 
       colors.push(r, g * 2, b)
       scales.push(getRandNum(0.5, 3))
@@ -299,20 +295,6 @@ function createAnimation({ container, debug }) {
   function createControls() {
     controls = new OrbitControls(camera, canvas)
     controls.enableDamping = true
-  }
-
-  function onResize() {
-    // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
-
-    // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
-
-    // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   }
 
   function playIntroAnimation() {

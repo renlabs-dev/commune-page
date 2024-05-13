@@ -1,9 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import {
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
@@ -31,7 +29,7 @@ const HeaderLink = ({
 const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
-  { name: 'Whitepaper', href: links.whitepaper, external: true },
+  { name: 'Docs', href: links.docs, external: false },
   { name: 'Join Community', href: links.discord, external: true },
 ]
 
@@ -45,24 +43,23 @@ export const Header = () => {
   return (
     <>
       <div
-        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden max-w-screen-2xl`}
+        className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} max-w-screen-2xl animate-menu-fade lg:hidden`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
-          <div className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] lg:w-[30%]  bg-[url('/bg-pattern.svg')] border border-gray-500 bg-cover p-5`}>
+          <div
+            className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] border  border-gray-500 bg-[url('/bg-pattern.svg')] bg-cover p-5 lg:w-[30%]`}
+          >
             <button
               type='button'
               className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 `}
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Close menu</span>
-              <XMarkIcon
-                className='w-6 h-6 text-white'
-                aria-hidden='true'
-              />
+              <XMarkIcon className='h-6 w-6 text-white' aria-hidden='true' />
             </button>
             <div className='flow-root'>
               <div className='-my-6 space-y-4 divide-y divide-gray-200/40'>
-                <div className='mt-6 ml-2 space-y-2'>
+                <div className='ml-2 mt-6 space-y-2'>
                   {navigation.map(({ name, href, external }) => (
                     <Link
                       key={name}
@@ -75,7 +72,7 @@ export const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <div className='flex py-4 space-x-3'>
+                <div className='flex justify-between space-x-3 py-4'>
                   <HeaderLink
                     href={links.discord}
                     icon='/discord-icon.svg'
@@ -111,21 +108,30 @@ export const Header = () => {
         className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-500 bg-black bg-opacity-75 backdrop-blur transition-colors duration-500 `}
       >
         <nav
-          className={`flex w-full py-6 mx-auto max-w-screen-2xl`}
+          className={`mx-auto flex w-full max-w-screen-2xl items-center justify-between py-3`}
           aria-label='Global'
         >
-          <div className='relative mx-auto hidden lg:flex lg:gap-x-6'>
+          <Link href={'/'}>
+            <Image
+              src='/commune-logo.svg'
+              width={100}
+              height={100}
+              className='ml-2 h-14 w-14'
+              alt='Telegram icon'
+            />
+          </Link>
+          <div className='hidden lg:flex lg:gap-x-8'>
             {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className={`flex flex-col items-center text-lg font-normal leading-6 text-white hover:text-gray-300 active:animate-squeeze`}
+                className={`flex flex-col items-center text-lg font-normal leading-6 text-white hover:text-green-500 active:animate-squeeze`}
               >
                 {name}
               </Link>
             ))}
-          </div >
+          </div>
           <div className='ml-auto mr-8 lg:hidden'>
             <button
               type='button'
@@ -133,11 +139,14 @@ export const Header = () => {
               onClick={toggleMobileMenu}
             >
               <span className='sr-only'>Open main menu</span>
-              <EllipsisVerticalIcon className='w-6 h-6 fill-white' aria-hidden='true' />
+              <EllipsisVerticalIcon
+                className='h-6 w-6 fill-white'
+                aria-hidden='true'
+              />
             </button>
           </div>
-        </nav >
-      </header >
+        </nav>
+      </header>
     </>
   )
 }
