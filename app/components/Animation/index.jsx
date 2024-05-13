@@ -270,7 +270,7 @@ function createAnimation({ container, debug }) {
     scene = new THREE.Scene()
   }
 
-  const fov = window.innerWidth <= 768 ? 7 : 47
+  const fov = window.innerWidth <= 768 ? 74 : 47
 
   function createCamera() {
     camera = new THREE.PerspectiveCamera(
