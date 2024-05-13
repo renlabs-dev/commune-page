@@ -6,15 +6,15 @@ import Animation from '@/app/components/Animation'
 const networkSpecs = [
   {
     title: 'Active Miners',
-    info: '345.850',
+    info: '5.000',
   },
   {
     title: 'Active Validators',
-    info: '128.250',
+    info: '200',
   },
   {
     title: 'Subnets',
-    info: '34',
+    info: '3',
   },
 ]
 
@@ -51,7 +51,7 @@ export const HeroSection = async () => {
       id='hero'
       className='flex w-full flex-col justify-center overflow-hidden text-gray-400'
     >
-      <div className='flex flex-col-reverse lg:flex-row'>
+      <div className='flex flex-col lg:flex-row'>
         <div className="flex w-full flex-col justify-between border-gray-500 bg-[url('/bg-pattern.svg')] lg:max-w-[60%] lg:border-r">
           <div className='flex h-full flex-col justify-center space-y-4 border-b border-gray-500 px-8'>
             <div className='flex w-full py-16 lg:justify-end'>
@@ -78,7 +78,7 @@ export const HeroSection = async () => {
             </div>
           </div>
           <div className='flex w-full justify-end'>
-            <div className='flex w-full justify-between lg:max-w-5xl lg:pl-12'>
+            <div className='flex w-full justify-between border-b border-gray-500 lg:max-w-5xl lg:border-none lg:pl-12'>
               {networkSpecs.map((spec, index) => {
                 return (
                   <div
@@ -107,7 +107,7 @@ export const HeroSection = async () => {
 
           <Link
             href={'#welcome'}
-            className='mb-4 flex w-full items-center justify-center border  border-gray-500 px-5 py-3 hover:border-gray-500  bg-black/50 hover:bg-black/70 hover:text-gray-200 lg:absolute lg:bottom-8 lg:left-8 lg:mb-0 lg:w-auto lg:justify-start'
+            className='mb-4 flex w-full items-center justify-center border  border-gray-500 bg-black/50 px-5 py-3  hover:border-gray-500 hover:bg-black/70 hover:text-gray-200 lg:absolute lg:bottom-8 lg:left-8 lg:mb-0 lg:w-auto lg:justify-start'
           >
             View More
             <Image
@@ -141,7 +141,7 @@ export const HeroSection = async () => {
                     alt='link icon'
                     width={75}
                     height={75}
-                    className='w-12 border border-green-500 p-3 bg-black/50 hover:bg-black/70'
+                    className='w-12 border border-green-500 bg-black/50 p-3 hover:bg-black/70'
                   />
                 </div>
               </Link>
