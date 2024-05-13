@@ -111,7 +111,10 @@ export const Header = () => {
           className={`mx-auto flex w-full max-w-screen-2xl items-center justify-between py-3`}
           aria-label='Global'
         >
-          <Link href={'/'}>
+          <Link
+            href={'/'}
+            className='flex items-center gap-2 text-2xl font-light text-gray-500'
+          >
             <Image
               src='/commune-logo.svg'
               width={100}
@@ -119,6 +122,7 @@ export const Header = () => {
               className='ml-2 h-14 w-14'
               alt='Telegram icon'
             />
+            Commune AI
           </Link>
           <div className='hidden lg:flex lg:gap-x-8'>
             {navigation.map(({ name, href, external }) => (
