@@ -21,6 +21,7 @@
     "next": "14.0.4",
     "raw-loader": "^4.0.2",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
     "rehype-pretty-code": "^0.13.1",
     "shiki": "^1.2.3",
