@@ -54,8 +54,8 @@ function createAnimation({ container, debug }) {
     objectsGroup = new THREE.Group()
     objectsGroup.add(points)
     objectsGroup.add(lines)
-    objectsGroup.rotation.x = -Math.PI * 0.3
-    objectsGroup.position.y = 1
+    objectsGroup.rotation.x = -Math.PI * 0.35
+    objectsGroup.position.y = 1.3
     scene.add(objectsGroup)
   }
 
@@ -272,10 +272,10 @@ function createAnimation({ container, debug }) {
 
   function createCamera() {
     camera = new THREE.PerspectiveCamera(
-      45,
+      47,
       sizes.width / sizes.height,
       0.1,
-      100
+      200
     )
     camera.position.set(0, 10, 30) // Set initial position (zoomed out)
     camera.rotation.x = -Math.PI / 4 // Set initial rotation (tilted)
