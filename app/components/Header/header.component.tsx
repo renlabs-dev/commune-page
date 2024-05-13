@@ -32,7 +32,7 @@ const navigation = [
   // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
   { name: 'Whitepaper', href: links.whitepaper, external: true },
-  { name: 'Join Community', href: links.discord, external: true, border: true },
+  { name: 'Join Community', href: links.discord, external: true },
 ]
 
 export const Header = () => {
@@ -48,7 +48,7 @@ export const Header = () => {
         className={`absolute z-50 h-full w-full backdrop-blur-sm ${mobileMenuOpen ? 'visible' : 'hidden'} animate-menu-fade lg:hidden max-w-screen-2xl`}
       >
         <nav className={`fixed z-40 h-full w-full`}>
-          <div className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] lg:w-[30%]  bg-[url('/bg-pattern.svg')] border border-white bg-cover p-5`}>
+          <div className={`min-w-1/4 sticky right-3 top-3 z-[50] ml-auto h-auto w-[70%] lg:w-[30%]  bg-[url('/bg-pattern.svg')] border border-gray-500 bg-cover p-5`}>
             <button
               type='button'
               className={`${commonButtonClass} absolute right-0 top-0 m-5 h-8 w-8 `}
@@ -108,28 +108,25 @@ export const Header = () => {
       </div>
 
       <header
-        className={`sticky top-0 z-40 flex w-full flex-none border-b border-white bg-black bg-opacity-75 backdrop-blur transition-colors duration-500 `}
+        className={`sticky top-0 z-40 flex w-full flex-none border-b border-gray-500 bg-black bg-opacity-75 backdrop-blur transition-colors duration-500 `}
       >
         <nav
-          className={`mx-auto grid w-full grid-flow-col grid-cols-2 p-4 px-6 lg:px-20 xl:px-20 2xl:px-0 max-w-screen-2xl`}
+          className={`flex w-full py-6 mx-auto max-w-screen-2xl`}
           aria-label='Global'
         >
-          <Link href={links.home} className={`ml-2 text-xl font-light text-gray-400 my-auto`}>
-            Commune Ai
-          </Link>
-          <div className='relative items-center justify-end hidden lg:flex lg:gap-x-6'>
-            {navigation.map(({ name, href, external, border = false }) => (
+          <div className='relative mx-auto hidden lg:flex lg:gap-x-6'>
+            {navigation.map(({ name, href, external }) => (
               <Link
                 key={name}
                 href={href}
                 target={external ? '_blank' : '_self'}
-                className={`${border && 'border border-gray-200 px-5 py-3 hover:border-white hover:text-white hover:bg-gray-200/5'} flex flex-col items-center text-lg font-normal leading-6 text-gray-400 hover:text-gray-300 active:animate-squeeze`}
+                className={`flex flex-col items-center text-lg font-normal leading-6 text-white hover:text-gray-300 active:animate-squeeze`}
               >
                 {name}
               </Link>
             ))}
           </div >
-          <div className='self-center col-span-3 ml-auto lg:hidden '>
+          <div className='ml-auto mr-8 lg:hidden'>
             <button
               type='button'
               className={`${commonButtonClass} -m-2.5`}
