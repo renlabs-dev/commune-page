@@ -74,7 +74,7 @@ export const Footer = async () => {
                 <Link
                   key={index}
                   href={app.href}
-                  className='w-full p-8 text-gray-400 border border-white hover:bg-gray-200/5 hover:text-gray-300'
+                  className='w-full p-8 text-gray-400 border border-gray-500 bg-black/50 hover:bg-black/70 hover:text-gray-300'
                 >
                   <div className='flex items-center justify-between mb-3'>
                     <div>

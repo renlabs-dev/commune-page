@@ -24,10 +24,10 @@ export const GenericSection = ({
     <div className='border-b lg:px-20'>
       <section
         id={sectionName}
-        className={`flex-col lg:flex-row lg:divide-x flex h-full w-full items-center justify-center max-w-screen-2xl mx-auto`}
+        className={`flex-col lg:flex-row lg:divide-x divide-gray-500 flex h-full w-full items-center justify-center max-w-screen-2xl mx-auto`}
 
       >
-        <div className={`flex flex-col w-full border-white border-b lg:border-none lg:w-1/3 gap-2 px-4 py-8 lg:pr-8 lg:px-0`}>
+        <div className={`flex flex-col w-full border-gray-500 border-b lg:border-none lg:w-1/3 gap-2 px-4 py-8 lg:pr-8 lg:px-0`}>
           <p className='mt-2 text-3xl font-semibold tracking-tight text-left text-white'>
             {title}
           </p>

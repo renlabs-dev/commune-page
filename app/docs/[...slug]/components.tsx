@@ -11,7 +11,7 @@ export function StartCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-white rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -66,7 +66,7 @@ export function BasicsCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-white rounded-xl shadow-custom-dark md:w-1/3'>
+      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/3'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -130,7 +130,7 @@ export function SubnetCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-white rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -165,7 +165,7 @@ export function SubnetListCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-white rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -205,7 +205,7 @@ export function SubnetTemplateCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-white rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
