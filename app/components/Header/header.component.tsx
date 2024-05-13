@@ -31,7 +31,7 @@ const HeaderLink = ({
 const navigation = [
   { name: 'Governance', href: links.governance, external: true },
   { name: 'Docs', href: links.docs, external: false },
-  { name: 'Articles', href: links.articles, external: true },
+  { name: 'Blocs', href: links.articles, external: true },
   { name: 'Join Community', href: links.discord, external: true },
 ]
 
