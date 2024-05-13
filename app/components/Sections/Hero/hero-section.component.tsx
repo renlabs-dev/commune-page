@@ -1,12 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { applicationsList } from '@/app/utils'
 import Animation from '@/app/components/Animation'
+import CountUp from 'react-countup'
 
 const networkSpecs = [
   {
     title: 'Active Miners',
-    info: '1,000',
+    info: '1000',
   },
   {
     title: 'Active Validators',
@@ -68,8 +71,8 @@ export const HeroSection = async () => {
                   className='w-full py-4'
                 />
                 <p className='mt-1 text-lg'>
-                  Peer to Peer Protocol and Market System for Incentive-driven
-                  Coordination of Decentralized AI.
+                  Protocol and Market System for Incentive-driven Coordination
+                  of Decentralized AI.
                 </p>
                 <p className='text-lg'>
                   Fully community driven, no bureaucracy, no team, no premine.
@@ -88,7 +91,12 @@ export const HeroSection = async () => {
                   >
                     <div className='flex w-auto flex-col items-start justify-start'>
                       <p className='text-2xl font-semibold text-white lg:text-3xl'>
-                        {spec.info}
+                        <CountUp
+                          end={parseInt(spec.info)}
+                          delay={0.7}
+                          duration={4}
+                          decimal=','
+                        />
                         <span className='text-green-500'>+</span>
                       </p>
                       <p className='text-left text-sm font-normal'>
@@ -129,10 +137,14 @@ export const HeroSection = async () => {
               <Link
                 key={index}
                 href={app.href}
-                className='w-full border-b border-gray-500 p-10 px-4 last:border-none hover:bg-black/20 hover:text-gray-300 lg:border-b-0 lg:border-l lg:border-r lg:p-16 lg:py-10 lg:first:border-none'
+                target={app.target ? app.target : '_self'}
+                className='w-full border-b border-gray-500 p-8 px-4 last:border-none hover:bg-black/20 hover:text-gray-300 lg:border-b-0 lg:border-l lg:border-r lg:p-16 lg:py-16 lg:first:border-none'
               >
                 {app.icon}
-                <div id='welcome' className='flex justify-between'>
+                <div
+                  id='welcome'
+                  className='flex flex-row justify-between gap-6 md:flex-col xl:flex-row'
+                >
                   <div>
                     <p className='text-white'>{app.title}</p>
                     {handleDescription(app.description)}
