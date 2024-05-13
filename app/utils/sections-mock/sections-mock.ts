@@ -1,23 +1,15 @@
-import { networkingFeatures } from './networking-features'
-import { reusabilityFeatures } from './reusability-features'
+import { modularFeatures } from './reusability-features'
 import { scalabilityFeatures } from './scalability-features'
 import { tokenomicsFeatures } from './tokenomics-features'
 import { validatorsFeatures } from './validators-features'
 
 export const sections = [
   {
-    sectionName: 'networking',
-    title: 'Networking & Wrapping',
-    subtitle: 'Everything you need',
-    features: networkingFeatures,
-    iconSrc: '/networking-icon.svg',
-  },
-  {
-    sectionName: 'reusability',
-    title: 'Reusability',
+    sectionName: 'modular',
+    title: 'Modular',
     subtitle: 'Effortless Code Reuse',
     iconSrc: '/reusability-icon.svg',
-    features: reusabilityFeatures,
+    features: modularFeatures,
   },
   {
     sectionName: 'scalability',

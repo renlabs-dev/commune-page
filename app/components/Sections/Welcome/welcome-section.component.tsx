@@ -10,7 +10,9 @@ export const WelcomeSection = () => {
             Welcome to
             <span className='font-normal text-green-500'> Commune</span>
           </h3>
-          <p>A place for everyone to develop design and create.</p>
+          <p>
+            A place for permissionless and censorship resistant cooperation .
+          </p>
         </div>
       </div>
     </div>
