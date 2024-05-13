@@ -31,7 +31,7 @@ export const CountUpArea = () => {
                 <CountUp
                   end={parseInt(spec.info)}
                   delay={0.7}
-                  duration={4}
+                  duration={2}
                   decimal=','
                 />
                 <span className='text-green-500'>+</span>
