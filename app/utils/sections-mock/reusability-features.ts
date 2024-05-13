@@ -1,8 +1,4 @@
-import {
-  ArrowPathIcon,
-  ShareIcon,
-  SquaresPlusIcon,
-} from '@heroicons/react/20/solid'
+import { ShareIcon, SquaresPlusIcon } from '@heroicons/react/20/solid'
 
 export const modularFeatures = [
   {
@@ -14,10 +10,5 @@ export const modularFeatures = [
     description:
       'Commune facilitates the sharing and discovery of reusable modules among developers, enabling them to contribute their own modules and benefit from the shared pool of resources. ',
     icon: ShareIcon,
-  },
-  {
-    description:
-      'By reusing code and components from the Commune ecosystem, developers can reduce development time and effort, build upon tested and reliable solutions, ensure consistent quality, and accelerate their project timelines.',
-    icon: ArrowPathIcon,
   },
 ]
