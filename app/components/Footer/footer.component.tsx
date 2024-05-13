@@ -75,16 +75,9 @@ export const Footer = async () => {
       <div className='px-4 lg:px-20'>
         <div className='mx-auto max-w-screen-2xl space-y-12'>
           <div className='flex flex-col gap-6 pt-10 lg:flex-row lg:items-center lg:gap-16 lg:pt-20'>
-            <Image
-              src='/commune-logo.svg'
-              width={116}
-              height={145}
-              className='h-16 w-12 lg:h-auto lg:w-auto'
-              alt='Telegram icon'
-            />
             <div className='space-y-5'>
               <h3 className='text-3xl text-white lg:text-5xl'>
-                Join a Incentive-driven Coordination System for AI
+                Join the revolution of Incentive-driven Decentralized AI
               </h3>
               <p className='text-gray-400'>
                 Empowering Collaborative Solutions through Shared Resources
