@@ -115,7 +115,7 @@ export const Footer = async () => {
       <div className='border-t border-gray-500 bg-black/50 px-4 lg:px-20'>
         <div className='mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-between gap-6 p-6 lg:flex-row lg:gap-0'>
           <p className='hidden text-left text-sm leading-5 text-gray-400 lg:block'>
-            Renovating the way we build software for everyone.
+            Making decentralized AI for everyone
           </p>
           <div className='flex space-x-5 px-4'>
             {socialList.map((item) => (
@@ -130,7 +130,7 @@ export const Footer = async () => {
           </div>
 
           <p className='text-center text-sm leading-5 text-gray-400 '>
-            &copy; 2024 Commune, Inc. All rights reserved.
+            &copy; 2024 Commune, Inc. No rights reserved.
           </p>
         </div>
       </div>

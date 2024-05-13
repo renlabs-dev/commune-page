@@ -7,7 +7,7 @@ export const sections = [
   {
     sectionName: 'modular',
     title: 'Modular',
-    subtitle: 'Effortless Code Reuse',
+    subtitle: 'Composable architecture',
     iconSrc: '/reusability-icon.svg',
     features: modularFeatures,
   },
