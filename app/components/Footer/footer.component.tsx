@@ -79,9 +79,6 @@ export const Footer = async () => {
               <h3 className='text-3xl text-white lg:text-5xl'>
                 Join the revolution of Incentive-driven Decentralized AI
               </h3>
-              <p className='text-gray-400'>
-                Empowering Collaborative Solutions through Shared Resources
-              </p>
             </div>
           </div>
           <div className='flex flex-col justify-between space-y-4 pb-10 lg:flex-row lg:space-x-4 lg:space-y-0 lg:pb-20'>
