@@ -8,4 +8,5 @@ export const links = {
   telegram: 'https://t.me/communecommunity',
   governance: 'https://governance.communeai.org/',
   updates: '/',
+  articles: 'https://mirror.xyz/0xD80E194aBe2d8084fAecCFfd72877e63F5822Fc5',
 }

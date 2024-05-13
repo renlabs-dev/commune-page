@@ -5,6 +5,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { links } from '@/app/utils'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
+import { oxanium } from '@/app/fonts'
 
 type THeaderLinkProps = {
   href: string
@@ -27,9 +28,9 @@ const HeaderLink = ({
 )
 
 const navigation = [
-  // { name: 'Docs', href: links.docs, external: false },
   { name: 'Governance', href: links.governance, external: true },
   { name: 'Docs', href: links.docs, external: false },
+  { name: 'Articles', href: links.articles, external: true },
   { name: 'Join Community', href: links.discord, external: true },
 ]
 
@@ -113,16 +114,16 @@ export const Header = () => {
         >
           <Link
             href={'/'}
-            className='flex items-center gap-2 text-2xl font-light text-gray-500'
+            className='flex items-center gap-2 text-2xl font-light text-white'
           >
             <Image
-              src='/commune-logo.svg'
+              src='/commune-logo-white.svg'
               width={100}
               height={100}
-              className='ml-2 h-14 w-14'
+              className='ml-2 h-10 w-10'
               alt='Telegram icon'
             />
-            Commune AI
+            <p className={`${oxanium.className} ml-1`}>Commune AI</p>
           </Link>
           <div className='hidden lg:flex lg:gap-x-8'>
             {navigation.map(({ name, href, external }) => (
