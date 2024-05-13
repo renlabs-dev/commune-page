@@ -13,8 +13,8 @@ const networkSpecs = [
     info: '200',
   },
   {
-    title: 'Subnets',
-    info: '3',
+    title: 'Contributors',
+    info: '100',
   },
 ]
 

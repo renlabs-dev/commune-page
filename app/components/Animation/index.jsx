@@ -27,8 +27,8 @@ function createAnimation({ container, debug }) {
   const debugObject = {
     tubeRadius: 4,
     torusRadius: 4.5,
-    radialSegments: 34,
-    tabularSegments: 72,
+    radialSegments: 30,
+    tabularSegments: 60,
   }
 
   let scene, camera, renderer, controls, objectsGroup
