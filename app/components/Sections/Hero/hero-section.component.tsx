@@ -6,7 +6,7 @@ import Animation from '@/app/components/Animation'
 const networkSpecs = [
   {
     title: 'Active Miners',
-    info: '5.000',
+    info: '1,000',
   },
   {
     title: 'Active Validators',
@@ -67,12 +67,13 @@ export const HeroSection = async () => {
                   alt='Commune ai logo'
                   className='w-full py-4'
                 />
-                <p className='font-normal'>
-                  Commune AI is a peer-to-peer protocol with a stake-based
-                  market of Modules, linking on-chain identifiers to off-chain
-                  computable objects via APIs. This setup supports complex
-                  computations and diverse applications, from AI models to
-                  storage solutions, independent of the blockchain.
+                <p className='mt-1 text-lg'>
+                  Peer to Peer Protocol and Market System for Incentive-driven
+                  Coordination of Decentralized AI.
+                </p>
+                <p className='text-lg'>
+                  Fully community driven, no bureaucracy, no team, no premine.
+                  Only code and contributors.
                 </p>
               </div>
             </div>

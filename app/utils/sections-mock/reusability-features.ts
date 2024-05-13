@@ -4,7 +4,7 @@ import {
   SquaresPlusIcon,
 } from '@heroicons/react/20/solid'
 
-export const reusabilityFeatures = [
+export const modularFeatures = [
   {
     description:
       'Commune supports a modular architecture that encourages code reuse, allowing developers to create self-contained modules that can be easily integrated into multiple projects. This enhances scalability and maintainability. ',
