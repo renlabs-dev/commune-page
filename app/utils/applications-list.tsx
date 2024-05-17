@@ -31,7 +31,7 @@ export const applicationsList = [
     ),
   },
   {
-    title: 'Blocs',
+    title: 'Blogs',
     target: '_blank',
     description: 'View recent updates',
     href: links.articles,
