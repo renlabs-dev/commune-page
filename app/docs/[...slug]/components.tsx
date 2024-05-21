@@ -11,7 +11,7 @@ export function StartCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between rounded-xl border border-gray-500 px-6 pb-6 shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -66,7 +66,7 @@ export function BasicsCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/3'>
+      <div className='flex flex-col justify-between rounded-xl border border-gray-500 px-6 pb-6 shadow-custom-dark md:w-1/3'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -130,7 +130,7 @@ export function SubnetCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between rounded-xl border border-gray-500 px-6 pb-6 shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -165,7 +165,7 @@ export function SubnetListCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between rounded-xl border border-gray-500 px-6 pb-6 shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
@@ -179,26 +179,44 @@ export function SubnetListCards() {
   }
 
   return (
-    <div className='flex flex-col gap-4 md:flex-row'>
-      <Card
-        title='General Subnet'
-        description='The general subnet, designed for human validation.'
-        link='/docs/subnets/general-subnet-dao'
-      />
-      <Card
-        title='Mosaic Subnet'
-        description='Instantly visualize your ideas.'
-        link='https://mosaicx.org/'
-      />
-      <Card
-        title='Synthia'
-        description='Continuous stream of synthetic training data with verified quality at scale.'
-        link='https://github.com/agicommies/synthia'
-      />
+    <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-4 md:flex-row'>
+        <Card
+          title='General Subnet'
+          description='The general subnet, designed for human validation.'
+          link='/docs/subnets/general-subnet-dao'
+        />
+        <Card
+          title='Mosaic Subnet'
+          description='Instantly visualize your ideas.'
+          link='https://mosaicx.org/'
+        />
+        <Card
+          title='Synthia'
+          description='Continuous stream of synthetic training data with verified quality at scale.'
+          link='https://github.com/agicommies/synthia'
+        />
+      </div>
+      <div className='flex flex-col gap-4 md:flex-row'>
+        <Card
+          title='Eden'
+          description='Decentralized Vector Store.'
+          link='https://github.com/Agent-Artificial/eden-subnet'
+        />
+        <Card
+          title='OpenScope'
+          description='Decentralized AI for Crypto Markets'
+          link='https://open.0xscope.com/'
+        />
+        <Card
+          title='Market Compass'
+          description='Search layer for Web3'
+          link='https://marketcompass.ai/'
+        />
+      </div>
     </div>
   )
 }
-
 export function SubnetTemplateCards() {
   function Card({
     title,
@@ -210,7 +228,7 @@ export function SubnetTemplateCards() {
     link: string
   }) {
     return (
-      <div className='flex flex-col justify-between px-6 pb-6 border border-gray-500 rounded-xl shadow-custom-dark md:w-1/2'>
+      <div className='flex flex-col justify-between rounded-xl border border-gray-500 px-6 pb-6 shadow-custom-dark md:w-1/2'>
         <h3>{title}</h3>
         <p>{description}</p>
         <Link
