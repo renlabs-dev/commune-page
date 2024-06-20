@@ -10,4 +10,5 @@ export const links = {
   wallet: 'https://wallet.communeai.org/',
   updates: '/',
   articles: 'https://mirror.xyz/0xD80E194aBe2d8084fAecCFfd72877e63F5822Fc5',
+  stats: 'https://stats.communex.ai/',
 }
