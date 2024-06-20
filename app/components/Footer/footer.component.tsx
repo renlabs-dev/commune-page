@@ -112,9 +112,9 @@ export const Footer = async () => {
       <div className='border-t border-gray-500 bg-black/50 px-4 lg:px-20'>
         <div className='mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-between gap-6 p-6 lg:flex-row lg:gap-0'>
           <p className='hidden text-left text-sm leading-5 text-gray-400 lg:block'>
-            Making decentralized AI for everyone, for blockchain data visit{' '}
+            Making decentralized AI for everyone, for blockchain data{' '}
             <Link href={links.stats} className='text-green-500 hover:underline'>
-              here
+              visit explorer
             </Link>
             .
           </p>
